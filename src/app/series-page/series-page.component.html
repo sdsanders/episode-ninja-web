@@ -1,0 +1,19 @@
+<div class="card" *ngFor="let episode of series.episodes; let even = even; let odd = odd; let index = index;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 pl-0" *ngIf="odd">
+        <img class="img-fluid w-100"[src]="'http://thetvdb.com/banners/' + episode.filename">
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-8 col-xl-6 flex-md-middle h-100">
+        <h4 class="card-title">#{{index}} - {{episode.episodeName}}</h4>
+        <h6 class="card-subtitle text-muted">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h6>
+        <p class="card-text">{{episode.overview}}</p>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 pr-0" *ngIf="even">
+        <img class="img-fluid w-100"[src]="'http://thetvdb.com/banners/' + episode.filename">
+      </div>
+    </div>
+  </div>
+</div>
