@@ -1,3 +1,28 @@
-<p>
-  home-page works!
-</p>
+<form #form="ngForm" class="py-3">
+  <div class="container" style="max-width: 600px">
+    <div class="form-group dropdown" [class.open]="items.length > 0">
+      <label for="search">Search for a TV Show...</label>
+      <input type="search" class="form-control form-control-lg" [(ngModel)]="search" name="search" placeholder="South Park" autocomplete="off">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug">
+          <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
+        </a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="bg-inverse py-3">
+  <div class="container">
+    <h3 class="text-white">Popular Shows</h3>
+
+    <div class="row">
+      <div class="col-sm" *ngFor="let show of popular">
+        <div class="card card-block">
+          <h4 class="card-title">{{show.seriesName}}</h4>
+          <a [routerLink]="'/series/' + show.slug" class="btn btn-primary">View Episodes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

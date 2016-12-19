@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -8,31 +10,44 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  @ViewChild('form') form: any;
   private searchQuery: string = '';
-  private items: any[];
+  private items: any[] = [];
+  private popular: any[] = [];
 
   constructor(
     private http: Http
   ) {}
 
   ngOnInit() {
+    this.getPopular();
+
+    this.form.valueChanges
+      .debounceTime(500)
+      .distinctUntilChanged()
+      .subscribe(form => {
+        if (form.search) {
+          this.getItems(form.search);
+        }
+      });
   }
 
-  getItems(ev: any) {
-    // set val to the value of the searchbar
-    let val = ev.target.value;
+  getItems(val: string) {
+    this.http.get('http://localhost:3000/search/' + val).map(res => {
+      let body = res.json();
+      return body || [];
+    }).subscribe(results => {
+      this.items = results;
+    });
+  }
 
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      let params = new URLSearchParams();
-      params.set('name', val);
-      this.http.get('http://localhost:3000/search/series', { search: params }).map(res => {
-        let body = res.json();
-        return body.data || { };
-      }).subscribe(results => {
-        this.items = results;
-      })
-    }
+  getPopular() {
+    this.http.get('http://localhost:3000/popular').map(res => {
+      let body = res.json();
+      return body || [];
+    }).subscribe(shows => {
+      this.popular = shows;
+    });
   }
 
 }

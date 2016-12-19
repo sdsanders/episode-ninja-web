@@ -9,6 +9,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent }
 ];
 
