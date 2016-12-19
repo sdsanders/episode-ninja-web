@@ -1,0 +1,7 @@
+.series-background {
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(0,0,0,0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

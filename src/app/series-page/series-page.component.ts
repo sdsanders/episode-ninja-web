@@ -31,7 +31,7 @@ export class SeriesPageComponent implements OnInit {
       console.log('series', series);
       this.series = series;
 
-      this.http.get('http://localhost:3000/series/' + this.series.id + '/images/query?keyType=poster').map(res => {
+      this.http.get('http://localhost:3000/series/' + this.series.id + '/images/query?keyType=fanart').map(res => {
         let body = res.json();
         return body.data || {};
       }).map(images => {
