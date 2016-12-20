@@ -59,7 +59,6 @@
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
   },
-  "preinstall": "npm install -g universal-cli",
   "postinstall": "ung build --prod",
   "engines": {
     "node": "6.9.1",
