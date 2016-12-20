@@ -33,7 +33,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getItems(val: string) {
-    this.http.get('http://localhost:3000/search/' + val).map(res => {
+    this.http.get('http://episodes.stevendsanders.com/search/' + val).map(res => {
       let body = res.json();
       return body || [];
     }).subscribe(results => {
@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getPopular() {
-    this.http.get('http://localhost:3000/popular').map(res => {
+    this.http.get('http://episodes.stevendsanders.com/popular').map(res => {
       let body = res.json();
       return body || [];
     }).subscribe(shows => {

@@ -24,14 +24,14 @@ export class SeriesPageComponent implements OnInit {
   }
 
   getSeries(slug: string) {
-    this.http.get('http://localhost:3000/episodes/' + slug).map(res => {
+    this.http.get('http://episodes.stevendsanders.com/episodes/' + slug).map(res => {
       let body = res.json();
       return body || {};
     }).subscribe(series => {
       console.log('series', series);
       this.series = series;
 
-      this.http.get('http://localhost:3000/series/' + this.series.id + '/images/query?keyType=fanart').map(res => {
+      this.http.get('http://episodes.stevendsanders.com/series/' + this.series.id + '/images/query?keyType=fanart').map(res => {
         let body = res.json();
         return body.data || {};
       }).map(images => {
