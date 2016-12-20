@@ -60,5 +60,6 @@
     "webdriver-manager": "10.2.5"
   },
   "preinstall": "npm install -g universal-cli",
-  "postinstall": "ung build --prod"
+  "postinstall": "ung build --prod",
+  "engine": "node 6.9.1"
 }
