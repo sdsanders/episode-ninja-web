@@ -2,6 +2,7 @@
  * the polyfills must be the first thing imported
  */
 import './polyfills.ts';
+import './__2.1.1.workaround.ts'; // temporary until 2.1.1 things are patched in Core
 import * as path from 'path';
 import * as express from 'express';
 import * as compression from 'compression';
@@ -28,7 +29,7 @@ if (environment.production) {
  * Express View
  */
 app.engine('.html', createEngine({}));
-app.set('views', __dirname);
+app.set('views', path.join(ROOT, 'client'));
 app.set('view engine', 'html');
 
 /**
@@ -39,7 +40,7 @@ app.use(compression());
 /**
  * serve static files
  */
-app.use(express.static(path.join(ROOT, 'dist'), {index: false}));
+app.use('/', express.static(path.join(ROOT, 'client'), {index: false}));
 
 /**
  * place your api routes here
