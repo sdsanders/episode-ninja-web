@@ -4,7 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "node ./dist/server.bundle.js",
+    "start": "node ./dist/server/server.bundle.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ung test",
     "preinstall": "npm install -g universal-cli",
