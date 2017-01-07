@@ -9,8 +9,10 @@
 import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './index';
 import { RouterModule, Routes } from '@angular/router';
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
+
+import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
 
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
      */
     UniversalModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ]
 })
 export class AppModule {
