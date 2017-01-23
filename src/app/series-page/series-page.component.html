@@ -3,12 +3,12 @@
     <h1 class="text-white pt-1">{{series.seriesName}}</h1>
 
     <div class="card mt-1 mb-3" *ngFor="let episode of series.episodes; let index = index;">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-sm-12 col-md-6 col-lg-4">
           <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + episode.filename">
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-8 flex-md-middle h-100">
+        <div class="col-sm-12 col-md-6 col-lg-8 h-100">
           <h4 class="card-title">
             #{{index + 1}} - {{episode.episodeName}}
             <small class="float-md-right text-muted mr-1"><i class="fa fa-star"></i> {{episode.rating | number: '1.2-2'}}</small>
