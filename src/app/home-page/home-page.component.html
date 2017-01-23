@@ -1,9 +1,9 @@
 <form #form="ngForm" class="py-3">
   <div class="container" style="max-width: 600px">
-    <div class="form-group dropdown" [class.open]="items.length > 0">
+    <div class="form-group dropdown" [class.show]="items.length > 0">
       <label for="search">Search for a TV Show...</label>
       <input type="search" class="form-control form-control-lg" [(ngModel)]="search" name="search" placeholder="South Park" autocomplete="off">
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu">
         <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug">
           <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
         </a>
