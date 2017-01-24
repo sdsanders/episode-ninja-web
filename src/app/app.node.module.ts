@@ -15,10 +15,14 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
+import { ShowsPageComponent } from './shows-page/shows-page.component';
+
+import { NinjaService } from './ninja.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'series/:slug', component: SeriesPageComponent }
+  { path: 'series/:slug', component: SeriesPageComponent },
+  { path: 'shows', component: ShowsPageComponent }
 ];
 
 /**
@@ -31,7 +35,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomePageComponent,
-    SeriesPageComponent
+    SeriesPageComponent,
+    ShowsPageComponent
   ],
   imports: [
     /**
@@ -42,6 +47,9 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
+  ],
+  providers: [
+    NinjaService
   ]
 })
 export class AppModule {

@@ -1,0 +1,7 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let show of shows">
+      <a [routerLink]="'/series/' + show.slug">{{show.seriesName}}</a>
+    </li>
+  </ul>
+</div>
