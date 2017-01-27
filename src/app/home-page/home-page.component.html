@@ -1,8 +1,8 @@
-<form #form="ngForm" class="py-3">
-  <div class="container" style="max-width: 600px">
-    <div class="form-group dropdown" [class.show]="items.length > 0">
-      <label for="search">Search for a TV Show...</label>
-      <input type="search" class="form-control form-control-lg" [(ngModel)]="search" name="search" placeholder="South Park" autocomplete="off">
+<form #form="ngForm" class="py-5 bg-inverse">
+  <div class="container my-md-5" style="max-width: 600px">
+    <div class="form-group dropdown text-center" [class.show]="items.length > 0">
+      <label for="search" class="h3 text-white">The Best Episodes of Your Favorite Shows</label>
+      <input type="search" class="form-control form-control-lg" [(ngModel)]="search" name="search" placeholder="Search for a show..." autocomplete="off">
       <div class="dropdown-menu">
         <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug">
           <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
@@ -12,9 +12,9 @@
   </div>
 </form>
 
-<div class="bg-inverse py-3">
+<div class="py-3">
   <div class="container">
-    <h3 class="text-white">Popular Shows</h3>
+    <h3>Popular Shows</h3>
 
     <div class="row">
       <div class="col-sm" *ngFor="let show of popular">
