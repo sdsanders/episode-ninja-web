@@ -10,5 +10,6 @@
  * ];
  **/
 export const routes: string[] = [
-  'series'
+  'series',
+  'shows'
 ];
