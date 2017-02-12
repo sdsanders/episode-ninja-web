@@ -12,6 +12,9 @@ import { AppModule } from './app/app.node.module';
 import { environment } from './environments/environment';
 import { routes } from './server.routes';
 
+const sm = require('sitemap');
+const rp = require('request-promise-native');
+
 // App
 
 const app  = express();
@@ -24,6 +27,28 @@ const port = process.env.PORT || 4200;
 if (environment.production) {
   enableProdMode();
 }
+
+/**
+ * Sitemap
+ */
+let sitemap = sm.createSitemap ({
+  hostname: 'http://episode.ninja',
+  cacheTime: 600000
+});
+
+sitemap.add({url: '/'});
+sitemap.add({url: '/shows'});
+
+
+rp({
+  uri: 'http://episodes.stevendsanders.com/shows',
+  json: true
+}).then(shows => {
+  shows.forEach(show => {
+    let slug = show.seriesName.replace(/ /g, '-').toLowerCase();
+    sitemap.add({url: `/series/${slug}`});
+  })
+});
 
 /**
  * Express View
@@ -71,6 +96,16 @@ app.get('/', ngApp);
 routes.forEach(route => {
   app.get(`/${route}`, ngApp);
   app.get(`/${route}/*`, ngApp);
+});
+
+app.get('/sitemap.xml', function(req, res) {
+  sitemap.toXML((err, xml) => {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send( xml );
+  });
 });
 
 /**
