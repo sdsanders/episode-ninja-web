@@ -18,6 +18,7 @@ import { SeriesPageComponent } from './series-page/series-page.component';
 import { ShowsPageComponent } from './shows-page/shows-page.component';
 
 import { NinjaService } from './ninja.service';
+import { MetaService } from './meta.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   providers: [
-    NinjaService
+    NinjaService,
+    MetaService
   ]
 })
 export class AppModule {

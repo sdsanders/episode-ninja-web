@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MetaService } from '../meta.service';
 
 @Component({
   selector: 'app-series-page',
@@ -15,6 +16,8 @@ export class SeriesPageComponent implements OnInit {
     private http: Http,
     private route: ActivatedRoute,
     private router: Router,
+    public renderer: Renderer,
+    public meta: MetaService
   ) { }
 
   ngOnInit() {
@@ -28,20 +31,9 @@ export class SeriesPageComponent implements OnInit {
       let body = res.json();
       return body || {};
     }).subscribe(series => {
-      console.log('series', series);
       this.series = series;
-
-      this.http.get('http://episodes.stevendsanders.com/series/' + this.series.id + '/images/query?keyType=fanart').map(res => {
-        let body = res.json();
-        return body.data || {};
-      }).map(images => {
-        return images.sort((a, b) => {
-          return b.ratingsInfo.average - a.ratingsInfo.average;
-        });
-      }).subscribe(images => {
-        console.log('images', images);
-        this.images = images;
-      });
+      this.meta.setTitle(this.renderer, `Best Episodes of ${this.series.seriesName} | episode.ninja`);
+      this.meta.addTag(this.renderer, 'description', `The highest user rated episodes of ${this.series.seriesName}`);
     });
   }
 

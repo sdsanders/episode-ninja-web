@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Renderer } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
+import { MetaService } from '../meta.service';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +17,9 @@ export class HomePageComponent implements OnInit {
   private popular: any[] = [];
 
   constructor(
-    private http: Http
+    private http: Http,
+    public renderer: Renderer,
+    public meta: MetaService
   ) {}
 
   ngOnInit() {
@@ -30,6 +33,11 @@ export class HomePageComponent implements OnInit {
           this.getItems(form.search);
         }
       });
+  }
+
+  ngAfterViewInit() {
+    this.meta.setTitle(this.renderer, 'episode.ninja | The Best Episodes of Your Favorite Shows');
+    this.meta.addTag(this.renderer, 'description', 'The highest user rated episodes of any show');
   }
 
   getItems(val: string) {
