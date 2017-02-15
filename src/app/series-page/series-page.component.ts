@@ -33,7 +33,22 @@ export class SeriesPageComponent implements OnInit {
     }).subscribe(series => {
       this.series = series;
       this.meta.setTitle(this.renderer, `Best Episodes of ${this.series.seriesName} | episode.ninja`);
-      this.meta.addTag(this.renderer, 'description', `The highest user rated episodes of ${this.series.seriesName}`);
+      this.meta.addTag(this.renderer, {
+        property: 'og:title',
+        content: `The Best Episodes of ${this.series.seriesName}`
+      });
+      this.meta.addTag(this.renderer, {
+        name: 'description',
+        content: `The highest user rated episodes of ${this.series.seriesName}`
+      });
+      this.meta.addTag(this.renderer, {
+        property: 'og:description',
+        content: `The highest user rated episodes of ${this.series.seriesName}`
+      });
+      this.meta.addTag(this.renderer, {
+        property: 'og:image',
+        content: `http://thetvdb.com/banners/${this.series.fanart}`
+      });
     });
   }
 

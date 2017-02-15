@@ -37,7 +37,10 @@ export class HomePageComponent implements OnInit {
 
   ngAfterViewInit() {
     this.meta.setTitle(this.renderer, 'episode.ninja | The Best Episodes of Your Favorite Shows');
-    this.meta.addTag(this.renderer, 'description', 'The highest user rated episodes of any show');
+    this.meta.addTag(this.renderer, {
+      name: 'description',
+      content: 'The highest user rated episodes of any show'
+    });
   }
 
   getItems(val: string) {

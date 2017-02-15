@@ -17,9 +17,11 @@ export class MetaService {
     }
   }
 
-  public addTag(renderer: Renderer, name: string, content: string) {
+  public addTag(renderer: Renderer, attributes: any) {
     const elem = renderer.createElement(this.document.head, 'meta');
-    renderer.setElementAttribute(elem, 'name', name);
-    renderer.setElementAttribute(elem, 'content', content);
+
+    for (var prop in attributes) {
+      renderer.setElementAttribute(elem, prop, attributes[prop]);
+    }
   }
 }
