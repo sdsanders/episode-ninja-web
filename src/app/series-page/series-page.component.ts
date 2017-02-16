@@ -49,6 +49,8 @@ export class SeriesPageComponent implements OnInit {
         property: 'og:image',
         content: `http://thetvdb.com/banners/${this.series.fanart}`
       });
+    }, error => {
+      console.log('error', error);
     });
   }
 
