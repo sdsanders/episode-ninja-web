@@ -11,5 +11,6 @@
  **/
 export const routes: string[] = [
   'series',
-  'shows'
+  'shows',
+  'director'
 ];

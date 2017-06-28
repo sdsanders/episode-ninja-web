@@ -30,6 +30,19 @@ export class SeriesPageComponent implements OnInit {
     this.http.get('http://episodes.stevendsanders.com/episodes/' + slug).map(res => {
       let body = res.json();
       return body || {};
+    }).map(series => {
+      series.episodes.map(episode => {
+        let directorObjects = [];
+        episode.directors.forEach(director => {
+          directorObjects.push({
+            name: director,
+            slug: director.replace(/ /g, '-').toLowerCase()
+          });
+        });
+        episode.directors = directorObjects;
+        return episode;
+      });
+      return series;
     }).subscribe(series => {
       this.series = series;
       this.meta.setTitle(this.renderer, `Best Episodes of ${this.series.seriesName} | episode.ninja`);

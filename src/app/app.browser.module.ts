@@ -16,6 +16,7 @@ import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
 import { ShowsPageComponent } from './shows-page/shows-page.component';
+import { DirectorPageComponent } from './director-page/director-page.component';
 
 import { NinjaService } from './ninja.service';
 import { MetaService } from './meta.service';
@@ -23,7 +24,8 @@ import { MetaService } from './meta.service';
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent },
-  { path: 'shows', component: ShowsPageComponent }
+  { path: 'shows', component: ShowsPageComponent },
+  { path: 'director/:slug', component: DirectorPageComponent }
 ];
 
 /**
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomePageComponent,
     SeriesPageComponent,
-    ShowsPageComponent
+    ShowsPageComponent,
+    DirectorPageComponent
   ],
   imports: [
     /**

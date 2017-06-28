@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="pt-1">The Best Episodes Directed by {{director}}</h1>
+
+  <div class="card mt-1 mb-3" *ngFor="let episode of episodes; let index = index;">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + episode.filename">
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-8 h-100">
+        <h4 class="card-title">
+          #{{index + 1}} - {{episode.episodeName}}
+          <small class="float-md-right text-muted mr-1"><i class="fa fa-star"></i> {{episode.rating | number: '1.2-2'}}</small>
+        </h4>
+        <h6 class="card-subtitle text-muted">
+          <a [routerLink]="'/series/' + episode.seriesSlug">{{episode.seriesName}}</a> - Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}
+        </h6>
+        <p class="card-text">{{episode.overview}}</p>
+      </div>
+    </div>
+  </div>
+</div>
