@@ -14,7 +14,6 @@ export class HomePageComponent implements OnInit {
   @ViewChild('form') form: any;
   private searchQuery: string = '';
   private items: any[] = [];
-  private popular: any[] = [];
 
   constructor(
     private http: Http,
@@ -23,8 +22,6 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getPopular();
-
     this.form.valueChanges
       .debounceTime(500)
       .distinctUntilChanged()
@@ -49,15 +46,6 @@ export class HomePageComponent implements OnInit {
       return body || [];
     }).subscribe(results => {
       this.items = results;
-    });
-  }
-
-  getPopular() {
-    this.http.get('http://episodes.stevendsanders.com/popular').map(res => {
-      let body = res.json();
-      return body || [];
-    }).subscribe(shows => {
-      this.popular = shows;
     });
   }
 

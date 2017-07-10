@@ -20,6 +20,7 @@ import { DirectorPageComponent } from './director-page/director-page.component';
 
 import { NinjaService } from './ninja.service';
 import { MetaService } from './meta.service';
+import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     HomePageComponent,
     SeriesPageComponent,
     ShowsPageComponent,
-    DirectorPageComponent
+    DirectorPageComponent,
+    PopularShowsComponent
   ],
   imports: [
     /**

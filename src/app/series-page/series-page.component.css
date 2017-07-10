@@ -5,3 +5,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.sharing-button {
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
+
+.sharing-button.facebook {
+  background: #3b5999;
+  fill: #fff;
+}
+
+.sharing-button.twitter {
+  background: #55acee;
+  fill: #fff;
+}
