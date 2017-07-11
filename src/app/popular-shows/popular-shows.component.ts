@@ -19,7 +19,7 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.http.get('http://episodes.stevendsanders.com/popular').map(res => {
+    this.http.get('https://episodes.stevendsanders.com/popular').map(res => {
       let body = res.json();
       return body || [];
     }).subscribe(shows => {

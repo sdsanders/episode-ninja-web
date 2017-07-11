@@ -5,7 +5,7 @@
       <input type="search" class="form-control form-control-lg" [(ngModel)]="search" name="search" placeholder="Search for a show..." autocomplete="off">
       <div class="dropdown-menu">
         <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug">
-          <img class="img-fluid w-100" [src]="'http://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
+          <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
         </a>
       </div>
     </div>

@@ -32,7 +32,7 @@ export class DirectorPageComponent implements OnInit {
   }
 
   getDirector(slug: string) {
-    this.http.get('http://episodes.stevendsanders.com/director/' + slug).map(res => {
+    this.http.get('https://episodes.stevendsanders.com/director/' + slug).map(res => {
       let body = res.json();
       return body || {};
     }).subscribe(episodes => {

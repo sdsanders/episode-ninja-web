@@ -27,7 +27,7 @@ export class SeriesPageComponent implements OnInit {
   }
 
   getSeries(slug: string) {
-    this.http.get('http://episodes.stevendsanders.com/episodes/' + slug).map(res => {
+    this.http.get('https://episodes.stevendsanders.com/episodes/' + slug).map(res => {
       let body = res.json();
       return body || {};
     }).map(series => {
@@ -60,7 +60,7 @@ export class SeriesPageComponent implements OnInit {
       });
       this.meta.addTag(this.renderer, {
         property: 'og:image',
-        content: `http://thetvdb.com/banners/${this.series.fanart}`
+        content: `https://thetvdb.com/banners/${this.series.fanart}`
       });
     }, error => {
       console.log('error', error);

@@ -32,7 +32,7 @@ if (environment.production) {
  * Sitemap
  */
 let sitemap = sm.createSitemap ({
-  hostname: 'http://episode.ninja',
+  hostname: 'https://episode.ninja',
   cacheTime: 600000
 });
 
@@ -41,7 +41,7 @@ sitemap.add({url: '/shows'});
 
 
 rp({
-  uri: 'http://episodes.stevendsanders.com/shows',
+  uri: 'https://episodes.stevendsanders.com/shows',
   json: true
 }).then(shows => {
   shows.forEach(show => {

@@ -41,7 +41,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getItems(val: string) {
-    this.http.get('http://episodes.stevendsanders.com/search/' + val).map(res => {
+    this.http.get('https://episodes.stevendsanders.com/search/' + val).map(res => {
       let body = res.json();
       return body || [];
     }).subscribe(results => {

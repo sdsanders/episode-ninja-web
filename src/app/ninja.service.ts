@@ -11,7 +11,7 @@ export class NinjaService {
 
 
   getAllShows() {
-    return this.http.get('http://episodes.stevendsanders.com/shows').map(res => {
+    return this.http.get('https://episodes.stevendsanders.com/shows').map(res => {
       let body = res.json();
       return body || [];
     });

@@ -4,7 +4,7 @@
   <div class="row no-gutters">
     <div class="col-sm-6 col-lg-4" *ngFor="let show of popular">
       <a class="card card-inverse" [routerLink]="'/series/' + show.slug">
-        <img class="card-img img-fluid" [src]="'http://thetvdb.com/banners/' + show.fanart" [alt]="show.seriesName">
+        <img class="card-img img-fluid" [src]="'https://thetvdb.com/banners/' + show.fanart" [alt]="show.seriesName">
         <div class="card-img-overlay">
           <h4 class="card-title">{{show.seriesName}}</h4>
         </div>
