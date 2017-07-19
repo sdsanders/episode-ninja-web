@@ -2,7 +2,7 @@
   <label for="search" class="sr-only">Search for a show</label>
   <input type="search" class="form-control" [(ngModel)]="search" name="search" placeholder="Search for a show..." autocomplete="off">
   <div class="dropdown-menu">
-    <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug">
+    <a class="form-group" *ngFor="let item of items" [routerLink]="'/series/' + item.slug" (click)="items = []; search = '';">
       <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + item.banner" [alt]="item.seriesName">
     </a>
   </div>
