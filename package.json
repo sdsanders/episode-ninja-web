@@ -42,6 +42,7 @@
     "angular2-universal": "2.1.0-rc.1",
     "angular2-universal-polyfills": "2.1.0-rc.1",
     "angulartics2": "^1.6.3",
+    "apicache": "^0.8.7",
     "bootstrap": "^4.0.0-alpha.6",
     "codelyzer": "~2.0.0-beta.1",
     "compression": "1.6.2",

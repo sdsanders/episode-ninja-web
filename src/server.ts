@@ -14,12 +14,15 @@ import { routes } from './server.routes';
 
 const sm = require('sitemap');
 const rp = require('request-promise-native');
+const apicache = require('apicache');
 
 // App
 
 const app  = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
 const port = process.env.PORT || 4200;
+const cache = apicache.middleware;
+const cacheDuration = '30 days';
 
 /**
  * enable prod mode for production environments
@@ -38,7 +41,6 @@ let sitemap = sm.createSitemap ({
 
 sitemap.add({url: '/'});
 sitemap.add({url: '/shows'});
-
 
 rp({
   uri: 'https://episodes.stevendsanders.com/shows',
@@ -92,10 +94,10 @@ function ngApp(req: any, res: any) {
 /**
  * use universal for specific routes
  */
-app.get('/', ngApp);
+app.get('/', cache(cacheDuration), ngApp);
 routes.forEach(route => {
-  app.get(`/${route}`, ngApp);
-  app.get(`/${route}/*`, ngApp);
+  app.get(`/${route}`, cache(cacheDuration), ngApp);
+  app.get(`/${route}/*`, cache(cacheDuration), ngApp);
 });
 
 app.get('/sitemap.xml', function(req, res) {
