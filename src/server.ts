@@ -22,7 +22,7 @@ const app  = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
 const port = process.env.PORT || 4200;
 const cache = apicache.middleware;
-const cacheDuration = '30 days';
+const cacheDuration = '14 days';
 
 /**
  * enable prod mode for production environments
