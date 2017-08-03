@@ -12,5 +12,6 @@
 export const routes: string[] = [
   'series',
   'shows',
-  'director'
+  'director',
+  'about'
 ];

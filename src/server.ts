@@ -41,6 +41,7 @@ let sitemap = sm.createSitemap ({
 
 sitemap.add({url: '/'});
 sitemap.add({url: '/shows'});
+sitemap.add({url: '/about'});
 
 rp({
   uri: 'https://episodes.stevendsanders.com/shows',

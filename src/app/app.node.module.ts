@@ -22,11 +22,13 @@ import { NinjaService } from './ninja.service';
 import { MetaService } from './meta.service';
 import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 import { SearchComponent } from './search/search.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent },
-  { path: 'shows', component: ShowsPageComponent }
+  { path: 'shows', component: ShowsPageComponent },
+  { path: 'about', component: AboutPageComponent }
 ];
 
 /**
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     ShowsPageComponent,
     DirectorPageComponent,
     PopularShowsComponent,
-    SearchComponent
+    SearchComponent,
+    AboutPageComponent
   ],
   imports: [
     /**
