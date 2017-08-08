@@ -1,6 +1,16 @@
 <div class="series-background" [style.background-image]="'url(https://thetvdb.com/banners/' + series.fanart + ')'">
   <div class="container">
-    <h1 class="text-white pt-1">The Best Episodes of {{series.seriesName}}</h1>
+    <div class="row">
+      <div class="col-sm-9">
+        <h1 class="text-white pt-1">The {{worst ? 'Worst' : 'Best'}} Episodes of {{series.seriesName}}</h1>
+      </div>
+      <div class="col-sm-3">
+        <div *ngIf="series.totalEpisodes >= 50" class="btn-group my-2" role="group">
+          <a [routerLink]="'/series/' + series.slug" class="btn" [class.btn-primary]="!worst" [class.btn-secondary]="worst">Best</a>
+          <a [routerLink]="'/series/' + series.slug + '/worst-episodes'" class="btn" [class.btn-primary]="worst" [class.btn-secondary]="!worst">Worst</a>
+        </div>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-sm-9">

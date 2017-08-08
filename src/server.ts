@@ -50,7 +50,10 @@ rp({
   shows.forEach(show => {
     let slug = show.seriesName.replace(/ /g, '-').toLowerCase();
     sitemap.add({url: `/series/${slug}`});
-  })
+    if (show.totalEpisodes >= 50) {
+      sitemap.add({url: `/series/${slug}/worst-episodes`});
+    }
+  });
 });
 
 /**

@@ -27,6 +27,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent },
+  { path: 'series/:slug/worst-episodes', component: SeriesPageComponent },
   { path: 'shows', component: ShowsPageComponent },
   { path: 'about', component: AboutPageComponent }
 ];

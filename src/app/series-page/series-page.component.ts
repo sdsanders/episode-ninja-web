@@ -11,6 +11,7 @@ import { MetaService } from '../meta.service';
 export class SeriesPageComponent implements OnInit {
   series: any = {};
   images: any = [];
+  worst: boolean = false;
 
   constructor(
     private http: Http,
@@ -22,12 +23,14 @@ export class SeriesPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.getSeries(params['slug']);
+      this.worst = this.router.url.includes('worst-episodes');
+      this.getSeries(params['slug'], this.worst);
     });
   }
 
-  getSeries(slug: string) {
-    this.http.get('https://episodes.stevendsanders.com/episodes/' + slug).map(res => {
+  getSeries(slug: string, worst: boolean) {
+    const params = worst ? `${slug}?worst=true` : slug;
+    this.http.get(`https://episodes.stevendsanders.com/episodes/${params}`).map(res => {
       let body = res.json();
       return body || {};
     }).map(series => {
@@ -45,18 +48,18 @@ export class SeriesPageComponent implements OnInit {
       return series;
     }).subscribe(series => {
       this.series = series;
-      this.meta.setTitle(this.renderer, `Best Episodes of ${this.series.seriesName} | episode.ninja`);
+      this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} Episodes of ${this.series.seriesName} | episode.ninja`);
       this.meta.addTag(this.renderer, {
         property: 'og:title',
-        content: `The Best Episodes of ${this.series.seriesName}`
+        content: `The ${worst ? 'Worst' : 'Best'} Episodes of ${this.series.seriesName}`
       });
       this.meta.addTag(this.renderer, {
         name: 'description',
-        content: `The highest user rated episodes of ${this.series.seriesName}`
+        content: `The ${worst ? 'lowest' : 'highest'} user rated episodes of ${this.series.seriesName}`
       });
       this.meta.addTag(this.renderer, {
         property: 'og:description',
-        content: `The highest user rated episodes of ${this.series.seriesName}`
+        content: `The ${worst ? 'lowest' : 'highest'} user rated episodes of ${this.series.seriesName}`
       });
       this.meta.addTag(this.renderer, {
         property: 'og:image',
