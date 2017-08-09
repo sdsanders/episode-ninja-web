@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Http } from '@angular/http';
+import { NinjaService } from '../ninja.service';
 
 @Component({
   selector: 'app-popular-shows',
@@ -11,7 +11,7 @@ export class PopularShowsComponent implements OnInit {
   private popular: any[] = [];
 
   constructor(
-    private http: Http
+    private ninjaService: NinjaService
   ) { }
 
   ngOnInit() {
@@ -19,10 +19,7 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.http.get('https://episodes.stevendsanders.com/popular').map(res => {
-      let body = res.json();
-      return body || [];
-    }).subscribe(shows => {
+    this.ninjaService.getPopularShows().subscribe(shows => {
       this.popular = shows;
     });
   }

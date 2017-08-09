@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer } from '@angular/core';
-import { Http } from '@angular/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MetaService } from '../meta.service';
+import { NinjaService } from '../ninja.service';
 
 @Component({
   selector: 'app-director-page',
@@ -13,11 +13,11 @@ export class DirectorPageComponent implements OnInit {
   director: string = '';
 
   constructor(
-    private http: Http,
     private route: ActivatedRoute,
     private router: Router,
     public renderer: Renderer,
-    public meta: MetaService
+    public meta: MetaService,
+    public ninjaService: NinjaService
   ) { }
 
   ngOnInit() {
@@ -32,10 +32,7 @@ export class DirectorPageComponent implements OnInit {
   }
 
   getDirector(slug: string) {
-    this.http.get('https://episodes.stevendsanders.com/director/' + slug).map(res => {
-      let body = res.json();
-      return body || {};
-    }).subscribe(episodes => {
+    this.ninjaService.getDirector(slug).subscribe(episodes => {
       this.episodes = episodes;
       this.meta.setTitle(this.renderer, `Best Episodes Directed by ${this.director} | episode.ninja`);
       this.meta.addTag(this.renderer, {
