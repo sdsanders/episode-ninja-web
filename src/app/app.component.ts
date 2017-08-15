@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  currentYear = new Date().getFullYear();
+
   constructor(
     public router: Router
   ) {}
