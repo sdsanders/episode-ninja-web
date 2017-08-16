@@ -31,25 +31,53 @@ export class SeriesPageComponent implements OnInit {
   getSeries(slug: string, worst: boolean) {
     this.ninjaService.getSeries(slug, worst).subscribe(series => {
       this.series = series;
-      this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} Episodes of ${this.series.seriesName} | episode.ninja`);
-      this.meta.addTag(this.renderer, {
-        property: 'og:title',
-        content: `The ${worst ? 'Worst' : 'Best'} Episodes of ${this.series.seriesName}`
-      });
-      this.meta.addTag(this.renderer, {
-        name: 'description',
-        content: `The ${worst ? 'lowest' : 'highest'} user rated episodes of ${this.series.seriesName}`
-      });
-      this.meta.addTag(this.renderer, {
-        property: 'og:description',
-        content: `The ${worst ? 'lowest' : 'highest'} user rated episodes of ${this.series.seriesName}`
-      });
-      this.meta.addTag(this.renderer, {
-        property: 'og:image',
-        content: `https://thetvdb.com/banners/${this.series.fanart}`
-      });
+      this.setMeta(this.series, worst);
     }, error => {
       console.log('error', error);
+    });
+  }
+
+  setMeta(series, worst: boolean) {
+    const description = `The ${worst ? 'lowest' : 'highest'} user rated episodes of ${series.seriesName}`;
+    const title = `The ${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName}`;
+    const image = `https://thetvdb.com/banners/${series.fanart}`;
+
+    this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName} | episode.ninja`);
+    this.meta.addTag(this.renderer, {
+      property: 'og:title',
+      content: title
+    });
+    this.meta.addTag(this.renderer, {
+      name: 'description',
+      content: description
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'og:description',
+      content: description
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'og:image',
+      content: image
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'twitter:card',
+      content: 'summary_large_image'
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'twitter:title',
+      content: title
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'twitter:description',
+      content: description
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'twitter:image',
+      content: image
+    });
+    this.meta.addTag(this.renderer, {
+      property: 'twitter:site',
+      content: '@theepisodeninja'
     });
   }
 
