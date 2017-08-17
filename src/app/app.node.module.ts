@@ -23,6 +23,7 @@ import { MetaService } from './meta.service';
 import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 import { SearchComponent } from './search/search.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ShowCardComponent } from './show-card/show-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     DirectorPageComponent,
     PopularShowsComponent,
     SearchComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    ShowCardComponent
   ],
   imports: [
     /**

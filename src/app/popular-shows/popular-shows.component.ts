@@ -1,14 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { NinjaService } from '../ninja.service';
 
 @Component({
   selector: 'app-popular-shows',
   templateUrl: './popular-shows.component.html',
-  styleUrls: ['./popular-shows.component.css']
+  styleUrls: ['./popular-shows.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PopularShowsComponent implements OnInit {
   @Input('sidebar') sidebar: boolean;
-  private popular: any[] = [];
+  public popularShows: any[] = [];
+  public newShows: any[] = [];
 
   constructor(
     private ninjaService: NinjaService
@@ -19,8 +21,9 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.ninjaService.getPopularShows().subscribe(shows => {
-      this.popular = shows;
+    this.ninjaService.getFeaturedShows().subscribe(({popular, recent}) => {
+      this.popularShows = popular;
+      this.newShows = recent;
     });
   }
 }

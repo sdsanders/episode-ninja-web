@@ -16,8 +16,8 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/shows`).map(this.extractData);
   }
 
-  getPopularShows() {
-    return this.http.get(`${environment.apiUrl}/popular`).map(this.extractData);
+  getFeaturedShows() {
+    return this.http.get(`${environment.apiUrl}/featured`).map(this.extractData);
   }
 
   getDirector(slug: string) {
