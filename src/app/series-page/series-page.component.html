@@ -17,7 +17,7 @@
         <div class="card mt-1 mb-3" *ngFor="let episode of series.episodes; let index = index;">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-6 col-lg-4">
-              <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + episode.filename || series.fanart" [alt]="episode.episodeName">
+              <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + (episode.filename || series.fanart)" [alt]="episode.episodeName" (error)="episode.filename = series.fanart">
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-8 h-100">
