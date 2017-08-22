@@ -114,6 +114,10 @@ app.get('/sitemap.xml', function(req, res) {
   });
 });
 
+app.post('/clear-cache', (req, res) => {
+  res.json(apicache.clear());
+});
+
 /**
  * if you want to use universal for all routes, you can use the '*' wildcard
  */
