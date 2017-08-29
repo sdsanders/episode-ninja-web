@@ -24,6 +24,8 @@ const port = process.env.PORT || 4200;
 const cache = apicache.middleware;
 const cacheDuration = '14 days';
 
+let sitemap;
+
 /**
  * enable prod mode for production environments
  */
@@ -34,27 +36,34 @@ if (environment.production) {
 /**
  * Sitemap
  */
-let sitemap = sm.createSitemap ({
-  hostname: 'https://episode.ninja',
-  cacheTime: 600000
-});
-
-sitemap.add({url: '/'});
-sitemap.add({url: '/shows'});
-sitemap.add({url: '/about'});
-
-rp({
-  uri: 'https://episodes.stevendsanders.com/shows',
-  json: true
-}).then(shows => {
-  shows.forEach(show => {
-    let slug = show.seriesName.replace(/ /g, '-').toLowerCase();
-    sitemap.add({url: `/series/${slug}`});
-    if (show.totalEpisodes >= 50) {
-      sitemap.add({url: `/series/${slug}/worst-episodes`});
-    }
+function generateSitemap() {
+  let newSitemap = sm.createSitemap ({
+    hostname: 'https://episode.ninja',
+    cacheTime: 600000
   });
-});
+
+  newSitemap.add({url: '/'});
+  newSitemap.add({url: '/shows'});
+  newSitemap.add({url: '/about'});
+
+  rp({
+    uri: 'https://episodes.stevendsanders.com/shows',
+    json: true
+  }).then(shows => {
+    shows.forEach(show => {
+      let slug = show.seriesName.replace(/ /g, '-').toLowerCase();
+      newSitemap.add({url: `/series/${slug}`});
+      if (show.totalEpisodes >= 50) {
+        newSitemap.add({url: `/series/${slug}/worst-episodes`});
+      }
+    });
+
+    sitemap = newSitemap;
+  });
+}
+
+generateSitemap();
+
 
 /**
  * Express View
@@ -115,6 +124,7 @@ app.get('/sitemap.xml', function(req, res) {
 });
 
 app.post('/clear-cache', (req, res) => {
+  generateSitemap();
   res.json(apicache.clear());
 });
 
