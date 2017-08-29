@@ -1,18 +1,13 @@
-<nav class="navbar navbar-inverse bg-inverse">
+<nav class="navbar" [class.bg-inverse]="!router.url.includes('series')">
   <div class="container">
       <div class="row">
         <div class="col-sm-8 d-flex">
-          <a class="navbar-brand" routerLink="/">
+          <a class="navbar-brand text-white" routerLink="/">
+            <img src="/assets/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Episode Ninja">
             episode.ninja
           </a>
-
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/shows">Browse All Shows</a>
-            </li>
-          </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 hidden-sm-down">
           <app-search *ngIf="router.url !== '/'" style="min-width: 250px;"></app-search>
         </div>
       </div>
@@ -23,12 +18,12 @@
   <router-outlet></router-outlet>
 </main>
 
-<footer class="bg-faded text-muted pt-3 pb-2">
+<footer class="bg-inverse text-white pt-3 pb-2">
   <div class="container">
-    <span class="float-sm-right">&copy; Copyright {{currentYear}} <a routerLink="/">episode.ninja</a></span>
+    <span class="float-sm-right">&copy; Copyright {{currentYear}} <a routerLink="/" class="text-white">episode.ninja</a></span>
     <ul class="list-inline">
-      <li class="list-inline-item"><a routerLink="/about">About</a></li>
-      <li class="list-inline-item"><a routerLink="/shows">Shows</a></li>
+      <li class="list-inline-item"><a routerLink="/about" class="text-white">About</a></li>
+      <li class="list-inline-item"><a routerLink="/shows" class="text-white">Shows</a></li>
     </ul>
   </div>
 </footer>

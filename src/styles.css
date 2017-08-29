@@ -2,3 +2,57 @@
 
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~font-awesome/css/font-awesome.css';
+
+body,
+.form-control {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: #fafafa;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+.navbar-brand {
+  font-family: 'Francois One', sans-serif;
+}
+
+.navbar-brand {
+  text-shadow: 0 0 20px #000;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-block {
+  white-space: normal;
+}
+
+.btn-primary {
+  background-color: #004D40;
+}
+
+.btn-success {
+  background-color: #1B5E20;
+  border-color: #1B5E20;
+}
+
+.btn-warning {
+  background-color: #B71C1C;
+  border-color: #B71C1C;
+}
+
+.card {
+  border-radius: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-img {
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.18);
+}

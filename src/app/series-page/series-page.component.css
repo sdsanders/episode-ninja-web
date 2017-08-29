@@ -1,24 +1,81 @@
 .series-background {
-  background-attachment: fixed;
-  background-blend-mode: overlay;
-  background-color: rgba(0,0,0,0.4);
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: inset 0 0 500px 500px rgba(0,0,0,0.5);
+  margin-top: -56px;
+  min-height: 250px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 0 20px #000;
 }
 
 .sharing-button {
-  border-radius: 50%;
   display: inline-block;
   height: 30px;
   width: 30px;
 }
 
 .sharing-button.facebook {
-  background: #3b5999;
-  fill: #fff;
+  fill: #3b5999;
 }
 
 .sharing-button.twitter {
-  background: #55acee;
-  fill: #fff;
+  fill: #55acee;
+}
+
+.card {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.episode-rating {
+  font-family: 'Francois One', sans-serif;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 544px) {
+  .series-name {
+    font-size: 1.5rem;
+  }
+
+  .series-description {
+    font-size: 0.85rem;
+    line-height: 1.25;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 545px) and (max-width: 767px) {
+  .series-name {
+    font-size: 2rem;
+  }
+
+  .series-description {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+
+@media (min-width: 545px) {
+  .series-background {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .series-background {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .series-background {
+    background-attachment: fixed;
+    height: 70vh;
+  }
 }
