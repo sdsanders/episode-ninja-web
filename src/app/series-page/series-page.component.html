@@ -24,7 +24,7 @@
               <h3 class="h6 card-subtitle text-muted mb-3">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h3>
               <p class="card-text mr-3">{{episode.overview}}</p>
               <div class="episode-rating float-md-right text-muted mr-3">
-                <i class="fa fa-star"></i> {{episode.rating | number: '1.2-2'}}
+                <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
               </div>
               <span *ngIf="episode.directors.length">Directors: <a *ngFor="let director of episode.directors; let i = index;" [routerLink]="'/director/' + director.slug">
                 {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>

@@ -4,7 +4,7 @@ import { NinjaService } from '../ninja.service';
 @Component({
   selector: 'app-popular-shows',
   templateUrl: './popular-shows.component.html',
-  styleUrls: ['./popular-shows.component.css'],
+  styleUrls: ['./popular-shows.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class PopularShowsComponent implements OnInit {

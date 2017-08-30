@@ -5,8 +5,7 @@ import { NinjaService } from '../ninja.service';
 
 @Component({
   selector: 'app-director-page',
-  templateUrl: './director-page.component.html',
-  styleUrls: ['./director-page.component.css']
+  templateUrl: './director-page.component.html'
 })
 export class DirectorPageComponent implements OnInit {
   episodes = [];
