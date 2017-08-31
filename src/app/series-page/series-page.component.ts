@@ -6,7 +6,7 @@ import { NinjaService } from '../ninja.service';
 @Component({
   selector: 'app-series-page',
   templateUrl: './series-page.component.html',
-  styleUrls: ['./series-page.component.css']
+  styleUrls: ['./series-page.component.scss']
 })
 export class SeriesPageComponent implements OnInit {
   series: any = {};
