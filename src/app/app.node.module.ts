@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { AdsenseModule } from 'ng2-adsense';
 
 import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'series/:slug', component: SeriesPageComponent },
   { path: 'series/:slug/worst-episodes', component: SeriesPageComponent },
   { path: 'shows', component: ShowsPageComponent },
+  { path: 'director/:slug', component: DirectorPageComponent },
   { path: 'about', component: AboutPageComponent }
 ];
 
@@ -57,7 +59,11 @@ const appRoutes: Routes = [
      */
     UniversalModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-1168742975782022',
+      adSlot: 1165171159
+    })
   ],
   providers: [
     NinjaService,
