@@ -10,7 +10,6 @@ import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -59,8 +58,7 @@ const appRoutes: Routes = [
      */
     UniversalModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
-    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     NinjaService,
