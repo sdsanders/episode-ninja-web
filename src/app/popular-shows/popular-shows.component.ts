@@ -21,7 +21,7 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.ninjaService.getFeaturedShows().subscribe(({popular, recent}) => {
+    this.ninjaService.getFeaturedShows().subscribe(({popular, recent}: any) => {
       this.popularShows = popular;
       this.newShows = recent;
     });

@@ -9,7 +9,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class SearchComponent implements OnInit {
   @ViewChild('form') form: any;
-  public searchQuery: string = '';
+  public search: string = '';
   public items: any[] = [];
 
   constructor(
@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
   }
 
   getItems(val: string) {
-    this.ninjaService.search(val).subscribe(results => {
+    this.ninjaService.search(val).subscribe((results: any) => {
       this.items = results;
     });
   }

@@ -31,7 +31,7 @@ export class DirectorPageComponent implements OnInit {
   }
 
   getDirector(slug: string) {
-    this.ninjaService.getDirector(slug).subscribe(episodes => {
+    this.ninjaService.getDirector(slug).subscribe((episodes: any) => {
       this.episodes = episodes;
       this.meta.setTitle(this.renderer, `Best Episodes Directed by ${this.director} | episode.ninja`);
       this.meta.addTag(this.renderer, {

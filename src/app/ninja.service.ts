@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -8,28 +8,27 @@ import 'rxjs/add/operator/map';
 export class NinjaService {
 
   constructor(
-    private http: Http
+    private http: HttpClient
   ) { }
 
 
   getAllShows() {
-    return this.http.get(`${environment.apiUrl}/shows`).map(this.extractData);
+    return this.http.get(`${environment.apiUrl}/shows`);
   }
 
   getFeaturedShows() {
-    return this.http.get(`${environment.apiUrl}/featured`).map(this.extractData);
+    return this.http.get(`${environment.apiUrl}/featured`);
   }
 
   getDirector(slug: string) {
-    return this.http.get(`${environment.apiUrl}/director/${slug}`).map(this.extractData);
+    return this.http.get(`${environment.apiUrl}/director/${slug}`);
   }
 
   getSeries(slug: string, worst: boolean) {
     const params = worst ? `${slug}?worst=true` : slug;
 
     return this.http.get(`${environment.apiUrl}/episodes/${params}`)
-      .map(this.extractData)
-      .map(series => {
+      .map((series: any) => {
         series.episodes.map(episode => {
           let directorObjects = [];
           episode.directors.forEach(director => {
@@ -46,11 +45,6 @@ export class NinjaService {
   }
 
   search(searchTerm: string) {
-    return this.http.get(`${environment.apiUrl}/search/${searchTerm}`).map(this.extractData);
-  }
-
-  private extractData(res) {
-    let body = res.json();
-    return body || [];
+    return this.http.get(`${environment.apiUrl}/search/${searchTerm}`);
   }
 }

@@ -14,7 +14,7 @@ export class ShowsPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.ninjaService.getAllShows().subscribe(shows => {
+    this.ninjaService.getAllShows().subscribe((shows: any) => {
       this.shows = shows;
     });
   }
