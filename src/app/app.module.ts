@@ -4,8 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AdsenseModule } from 'ng2-adsense';
-
 import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
@@ -50,11 +48,7 @@ const appRoutes: Routes = [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
-    AdsenseModule.forRoot({
-      adClient: 'ca-pub-1168742975782022',
-      adSlot: 1165171159
-    })
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     NinjaService,
