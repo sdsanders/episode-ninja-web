@@ -24,6 +24,7 @@ const cache = apicache.middleware;
 const cacheDuration = '14 days';
 
 let sitemap;
+let showList;
 
 enableProdMode();
 
@@ -42,11 +43,11 @@ function generateSitemap() {
     uri: 'https://episodes.stevendsanders.com/shows',
     json: true
   }).then(shows => {
+    showList = shows;
     shows.forEach(show => {
-      let slug = show.seriesName.replace(/ /g, '-').toLowerCase();
-      newSitemap.add({url: `/series/${slug}`});
+      newSitemap.add({url: `/series/${show.slug}`});
       if (show.totalEpisodes >= 50) {
-        newSitemap.add({url: `/series/${slug}/worst-episodes`});
+        newSitemap.add({url: `/series/${show.slug}/worst-episodes`});
       }
     });
 
@@ -104,7 +105,29 @@ app.post('/clear-cache', (req, res) => {
 app.get('*.*', express.static(join(__dirname, 'dist')));
 
 app.get('*', cache(cacheDuration), (req, res) => {
-  res.render('index', {req});
+  // If this is a series and the slug has changed
+  // 301 redirect to the new slug
+  let matchFound = false;
+  let urlParts = req.originalUrl.split('/');
+
+  if(urlParts[1] === 'series') {
+    for (let show of showList) {
+      if (!show.oldSlug) {
+        continue;
+      }
+
+      if (urlParts[2] === show.oldSlug) {
+        matchFound = true;
+        res.redirect(301, `/series/${show.slug}`);
+        res.end();
+        break;
+      }
+    }
+  }
+
+  if (!matchFound) {
+    res.render('index', {req});
+  }
 });
 
 app.listen(port, () => {
