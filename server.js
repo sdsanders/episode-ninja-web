@@ -116,7 +116,7 @@ app.get('*', cache(cacheDuration), (req, res) => {
         continue;
       }
 
-      if (urlParts[2] === show.oldSlug) {
+      if (urlParts[2] === show.oldSlug || decodeURIComponent(urlParts[2]) === show.oldSlug) {
         matchFound = true;
         res.redirect(301, `/series/${show.slug}`);
         res.end();
