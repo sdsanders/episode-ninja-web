@@ -38,7 +38,7 @@ export class SeriesPageComponent implements OnInit {
   }
 
   setMeta(series, worst: boolean) {
-    const description = `A list of the 25 ${worst ? 'lowest' : 'highest'} episodes of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
+    const description = `A list of the 25 ${worst ? 'lowest' : 'highest'} rated episodes of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
     const title = `The ${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName}`;
     const image = `https://thetvdb.com/banners/${series.fanart}`;
 
