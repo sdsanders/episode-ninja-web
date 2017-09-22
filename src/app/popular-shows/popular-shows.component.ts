@@ -9,6 +9,7 @@ import { NinjaService } from '../ninja.service';
 })
 export class PopularShowsComponent implements OnInit {
   @Input('sidebar') sidebar: boolean;
+  @Input('shows') shows: any[] = [];
   public popularShows: any[] = [];
   public newShows: any[] = [];
 
