@@ -1,6 +1,6 @@
 <div [class.sidebar]="sidebar" class="featured">
-  <h3 *ngIf="shows">Similar Shows</h3>
-  <div *ngIf="shows" class="row no-gutters mb-3">
+  <h3 *ngIf="shows && shows.length">Similar Shows</h3>
+  <div *ngIf="shows && shows.length" class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of shows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
 
