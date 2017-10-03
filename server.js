@@ -16,7 +16,7 @@ const renderModuleFactory = require('@angular/platform-server').renderModuleFact
 // Import the AOT compiled factory for your AppServerModule.
 const AppServerModuleNgFactory = require('./dist-server/main.bundle').AppServerModuleNgFactory;
 
-const template = readFileSync('./dist/index.html', { encoding: 'utf8' });
+const template = readFileSync('./index.html', { encoding: 'utf8' });
 
 const app = express();
 const port = process.env.PORT || 4200;
@@ -24,7 +24,7 @@ const cache = apicache.middleware;
 const cacheDuration = '14 days';
 
 let sitemap;
-let showList;
+let showList = [];
 
 enableProdMode();
 

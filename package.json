@@ -8,7 +8,7 @@
     "test": "ng test",
     "appbuild": "ng build --prod",
     "serverbuild": "ng build --prod --app 1",
-    "build": "npm run appbuild && npm run serverbuild && cp dist-server/styles.*.bundle.css dist-server/styles.bundle.css && cp dist-server/main.*.bundle.js dist-server/main.bundle.js"
+    "build": "npm run appbuild && npm run serverbuild && cp dist-server/styles.*.bundle.css dist/styles.bundle.css && cp dist-server/main.*.bundle.js dist-server/main.bundle.js"
   },
   "engines": {
     "node": "7.6.0",

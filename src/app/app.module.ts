@@ -16,6 +16,8 @@ import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 import { SearchComponent } from './search/search.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowCardComponent } from './show-card/show-card.component';
+import { AmazonAdComponent } from './amazon-ad/amazon-ad.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
   { path: 'series/:slug/worst-episodes', component: SeriesPageComponent },
   { path: 'shows', component: ShowsPageComponent },
   { path: 'director/:slug', component: DirectorPageComponent },
-  { path: 'about', component: AboutPageComponent }
+  { path: 'about', component: AboutPageComponent },
+  { path: 'search', component: SearchPageComponent }
 ];
 
 /**
@@ -42,7 +45,9 @@ const appRoutes: Routes = [
     PopularShowsComponent,
     SearchComponent,
     AboutPageComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    AmazonAdComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
