@@ -9,30 +9,36 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
-      <div class="card mt-1 mb-3" *ngFor="let episode of series.episodes; let index = index;">
-        <div class="row align-items-center">
-          <div class="col-sm-12 col-md-6 col-lg-5">
-            <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + (episode.filename || series.fanart)" [alt]="episode.episodeName" (error)="episode.filename = series.fanart">
-          </div>
-
-          <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
-            <h2 class="h2 card-title mb-1">
-              #{{index + 1}} - {{episode.episodeName}}
-            </h2>
-            <h3 class="h6 card-subtitle text-muted mb-3">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h3>
-            <p class="card-text mr-3">{{episode.overview}}</p>
-            <div class="float-md-right text-muted mr-3">
-              <div class="episode-rating">
-                <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
-              </div>
-              {{episode.ratingCount | number:'.0'}} votes
+      <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
+        <div class="card mt-1 mb-3">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-5">
+              <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + (episode.filename || series.fanart)" [alt]="episode.episodeName" (error)="episode.filename = series.fanart">
             </div>
-            <div *ngIf="episode.directors.length">Directors: <a *ngFor="let director of episode.directors; let i = index;" [routerLink]="'/director/' + director.slug">
-              {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
-            </a></div>
+
+            <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
+              <h2 class="h2 card-title mb-1">
+                #{{index + 1}} - {{episode.episodeName}}
+              </h2>
+              <h3 class="h6 card-subtitle text-muted mb-3">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h3>
+              <p class="card-text mr-3">{{episode.overview}}</p>
+              <div class="float-md-right text-muted mr-3">
+                <div class="episode-rating">
+                  <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
+                </div>
+                {{episode.ratingCount | number:'.0'}} votes
+              </div>
+              <div *ngIf="episode.directors.length">Directors: <a *ngFor="let director of episode.directors; let i = index;" [routerLink]="'/director/' + director.slug">
+                {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
+              </a></div>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div *ngIf="index === 4" class="card mt-1 mb-3">
+          <app-amazon-ad class="p-3"></app-amazon-ad>
+        </div>
+      </ng-template>
     </div>
     <aside class="col-lg-3 sidebar">
       <div *ngIf="series.totalEpisodes >= 50" class="my-2">
