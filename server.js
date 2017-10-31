@@ -98,6 +98,10 @@ app.post('/clear-cache', (req, res) => {
   res.json(apicache.clear());
 });
 
+app.post('/clear-cache/:slug?', (req, res) => {
+  res.json(apicache.clear(`/series/${req.params.slug}`));
+});
+
 
 /**
  * serve static files
