@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Renderer } from '@angular/core';
+import { Component, AfterViewInit, Renderer } from '@angular/core';
 import { MetaService } from '../meta.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html'
 })
-export class HomePageComponent {
+export class HomePageComponent implements AfterViewInit {
 
   constructor(
     public renderer: Renderer,
@@ -16,7 +16,7 @@ export class HomePageComponent {
     this.meta.setTitle(this.renderer, 'episode.ninja | The Best Episodes of Your Favorite Shows');
     this.meta.addTag(this.renderer, {
       name: 'description',
-      content: 'The highest user rated episodes of any show'
+      content: 'The best episodes of any television show chosen by millions of ratings from fans!'
     });
   }
 
