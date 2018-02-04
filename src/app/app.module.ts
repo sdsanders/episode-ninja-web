@@ -16,7 +16,6 @@ import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 import { SearchComponent } from './search/search.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowCardComponent } from './show-card/show-card.component';
-import { AmazonAdComponent } from './amazon-ad/amazon-ad.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 
 const appRoutes: Routes = [
@@ -46,7 +45,6 @@ const appRoutes: Routes = [
     SearchComponent,
     AboutPageComponent,
     ShowCardComponent,
-    AmazonAdComponent,
     SearchPageComponent
   ],
   imports: [
