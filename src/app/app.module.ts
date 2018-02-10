@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { AppComponent } from './index';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -17,6 +19,7 @@ import { SearchComponent } from './search/search.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowCardComponent } from './show-card/show-card.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -25,8 +28,14 @@ const appRoutes: Routes = [
   { path: 'shows', component: ShowsPageComponent },
   { path: 'director/:slug', component: DirectorPageComponent },
   { path: 'about', component: AboutPageComponent },
-  { path: 'search', component: SearchPageComponent }
+  { path: 'search', component: SearchPageComponent },
+  { path: 'not-found', component: NotFoundPageComponent },
+  { path: '**', redirectTo: 'not-found' }
 ];
+
+export function ninjaServiceFactory(http, router) {
+  return new NinjaService(http, router);
+}
 
 /**
  * Top-level NgModule "container"
@@ -45,7 +54,8 @@ const appRoutes: Routes = [
     SearchComponent,
     AboutPageComponent,
     ShowCardComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
@@ -54,7 +64,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    NinjaService,
+    {
+      provide: NinjaService,
+      useFactory: ninjaServiceFactory,
+      deps: [HttpClient, Router]
+    },
     MetaService
   ]
 })

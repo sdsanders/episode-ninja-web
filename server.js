@@ -9,6 +9,7 @@ const { join } =  require('path');
 require('zone.js/dist/zone-node');
 
 const { enableProdMode } = require('@angular/core');
+const { REQUEST, RESPONSE } = require('@nguniversal/express-engine/tokens');
 
 // Import renderModuleFactory from @angular/platform-server.
 const renderModuleFactory = require('@angular/platform-server').renderModuleFactory;
@@ -64,8 +65,12 @@ app.engine('html', (_, options, callback) => {
   const opts = {
     document: template, url: options.req.url, extraProviders: [
       {
-        provide: 'REQUEST',
+        provide: REQUEST,
         useValue: options.req,
+      },
+      {
+        provide: RESPONSE,
+        useValue: options.res,
       }]
   };
 
@@ -130,7 +135,7 @@ app.get('*', cache(cacheDuration), (req, res) => {
   }
 
   if (!matchFound) {
-    res.render('index', {req});
+    res.render('index', {req, res});
   }
 });
 
