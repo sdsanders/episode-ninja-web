@@ -20,6 +20,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowCardComponent } from './show-card/show-card.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { MediaNetAdComponent } from './media-net-ad/media-net-ad.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -55,7 +56,8 @@ export function ninjaServiceFactory(http, router) {
     AboutPageComponent,
     ShowCardComponent,
     SearchPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    MediaNetAdComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
