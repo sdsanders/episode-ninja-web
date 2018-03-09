@@ -5,6 +5,9 @@ import { Component, Input, Renderer2, OnInit, ElementRef } from '@angular/core';
   template: ''
 })
 export class MediaNetAdComponent implements OnInit {
+  @Input() id: string;
+  @Input() width: string;
+  @Input() height: string;
   constructor(
     private renderer: Renderer2,
     private el: ElementRef
@@ -21,9 +24,9 @@ export class MediaNetAdComponent implements OnInit {
   }
 
   generateSettingsScript() {
-    let settingsString = 'medianet_width = "300";';
-    settingsString += 'medianet_height = "250";';
-    settingsString += 'medianet_crid = "374940282";';
+    let settingsString = `medianet_width = "${this.width}";`;
+    settingsString += `medianet_height = "${this.height}";`;
+    settingsString += `medianet_crid = "${this.id}";`;
     settingsString += 'medianet_versionId = "3111299";';
 
     const text = this.renderer.createText(settingsString);
