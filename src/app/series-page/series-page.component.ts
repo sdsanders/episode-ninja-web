@@ -37,6 +37,13 @@ export class SeriesPageComponent implements OnInit {
     });
   }
 
+  episodeImage(episode) {
+    if (episode.imageUrl) { return episode.imageUrl; }
+    if (episode.filename) { return `https://thetvdb.com/banners/${episode.filename}`; }
+
+    return `https://thetvdb.com/banners/${this.series.fanart}`;
+  }
+
   setMeta(series, worst: boolean) {
     const description = `A list of the 25 ${worst ? 'lowest' : 'highest'} rated episodes of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
     const title = `The ${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName}`;
