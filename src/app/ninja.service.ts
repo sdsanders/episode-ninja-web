@@ -23,6 +23,7 @@ export class NinjaService {
   }
 
   getDirector(slug: string) {
+    slug = encodeURIComponent(slug);
     return this.http.get(`${environment.apiUrl}/director/${slug}`)
       .catch(this.handleError);
   }
