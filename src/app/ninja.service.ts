@@ -29,6 +29,7 @@ export class NinjaService {
   }
 
   getSeries(slug: string, worst: boolean) {
+    slug = encodeURIComponent(slug);
     const params = worst ? `${slug}?worst=true` : slug;
 
     return this.http.get(`${environment.apiUrl}/episodes/${params}`)
