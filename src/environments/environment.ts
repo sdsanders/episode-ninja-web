@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://episodes.stevendsanders.com'
+  apiUrl: 'https://api.episode.ninja'
 };
