@@ -41,7 +41,7 @@ function generateSitemap() {
   newSitemap.add({url: '/about'});
 
   rp({
-    uri: 'https://episodes.stevendsanders.com/shows',
+    uri: 'https://api.episode.ninja/shows',
     json: true
   }).then(shows => {
     showList = shows;
