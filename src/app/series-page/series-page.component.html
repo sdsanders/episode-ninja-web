@@ -51,6 +51,9 @@
               <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="btn btn-warning btn-sm">
                 Watch on Amazon
               </a>
+              <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                Buy on iTunes
+              </a>
             </div>
           </div>
         </div>
