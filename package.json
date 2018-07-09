@@ -29,7 +29,7 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "apicache": "0.8.7",
+    "apicache": "^1.2.3",
     "bootstrap": "4.0.0-alpha.6",
     "codelyzer": "~3.1.1",
     "compression": "1.6.2",
