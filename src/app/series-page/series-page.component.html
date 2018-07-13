@@ -48,10 +48,10 @@
                   {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
                 </a>
               </div>
-              <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="btn btn-warning btn-sm">
+              <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="btn btn-warning btn-sm mb-1">
                 Watch on Amazon
               </a>
-              <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+              <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
                 Buy on iTunes
               </a>
             </div>
