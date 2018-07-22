@@ -37,16 +37,21 @@
               </h2>
               <h3 class="h6 card-subtitle text-muted mb-3">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h3>
               <p class="card-text mr-3">{{episode.overview}}</p>
-              <div class="float-right text-muted mr-3">
+              <div *ngIf="episode.directors.length" class="mb-1">
+                Directors: <a *ngFor="let director of episode.directors; let i = index;" [routerLink]="'/director/' + director.slug">
+                  {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
+                </a>
+              </div>
+              <div class="float-right text-muted mr-3 mt-3">
                 <div class="episode-rating">
                   <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
                 </div>
                 {{episode.ratingCount | number:'.0'}} votes
               </div>
               <div *ngIf="episode.directors.length" class="mb-3">
-                Directors: <a *ngFor="let director of episode.directors; let i = index;" [routerLink]="'/director/' + director.slug">
-                  {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
-                </a>
+                Writers: <span *ngFor="let writer of episode.writers; let i = index;">
+                  {{writer}}<span *ngIf="i !== episode.writers.length - 1">, </span>
+                </span>
               </div>
               <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="btn btn-warning btn-sm mb-1">
                 Watch on Amazon
