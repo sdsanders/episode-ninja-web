@@ -50,6 +50,9 @@ function generateSitemap() {
       if (show.totalEpisodes >= 50) {
         newSitemap.add({url: `/series/${show.slug}/worst-episodes`});
       }
+      if (show.totalSeasons >= 4) {
+        newSitemap.add({url: `/series/${show.slug}/best-seasons`});
+      }
     });
 
     sitemap = newSitemap;
