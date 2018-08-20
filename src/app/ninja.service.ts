@@ -28,6 +28,12 @@ export class NinjaService {
       .catch(this.handleError);
   }
 
+  getSeasons(slug: string) {
+    slug = encodeURIComponent(slug);
+
+    return this.http.get(`${environment.apiUrl}/seasons/${slug}`)
+  }
+
   getSeries(slug: string, worst: boolean) {
     slug = encodeURIComponent(slug);
     const params = worst ? `${slug}?worst=true` : slug;

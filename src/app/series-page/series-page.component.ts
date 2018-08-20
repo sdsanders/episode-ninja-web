@@ -12,6 +12,7 @@ export class SeriesPageComponent implements OnInit {
   series: any = {};
   images: any = [];
   worst: boolean = false;
+  bestSeasons: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,14 +25,16 @@ export class SeriesPageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.worst = this.router.url.includes('worst-episodes');
-      this.getSeries(params['slug'], this.worst);
+      this.bestSeasons = this.router.url.includes('best-seasons');
+      this.getSeries(params['slug'], this.worst, this.bestSeasons);
     });
   }
 
-  getSeries(slug: string, worst: boolean) {
-    this.ninjaService.getSeries(slug, worst).subscribe(series => {
+  getSeries(slug: string, worst: boolean, seasons: boolean) {
+    const request = seasons ? this.ninjaService.getSeasons(slug) : this.ninjaService.getSeries(slug, worst);
+    request.subscribe(series => {
       this.series = series;
-      this.setMeta(this.series, worst);
+      this.setMeta(this.series, worst, seasons);
     }, error => {
       console.log('error', error);
     });
@@ -44,12 +47,16 @@ export class SeriesPageComponent implements OnInit {
     return `https://thetvdb.com/banners/${this.series.fanart}`;
   }
 
-  setMeta(series, worst: boolean) {
-    const description = `A list of the 25 ${worst ? 'lowest' : 'highest'} rated episodes of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
-    const title = `The ${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName}`;
+  seasonImage(season) {
+    return `https://cdn.episode.ninja/file/episodeninja/${season.id}.jpg`;
+  }
+
+  setMeta(series, worst: boolean, seasons: boolean) {
+    const description = `A list of the 25 ${worst ? 'lowest' : 'highest'} rated ${seasons ? 'seasons' : 'episodes'} of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
+    const title = `The ${worst ? 'Worst' : 'Best'} ${seasons ? 'Seasons' : 'Episodes'} of ${series.seriesName}`;
     const image = `https://cdn.episode.ninja/file/episodeninja/${series.id}.jpg`;
 
-    this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} Episodes of ${series.seriesName} | episode.ninja`);
+    this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} ${seasons ? 'Seasons' : 'Episodes'} of ${series.seriesName} | episode.ninja`);
     this.meta.addTag(this.renderer, {
       property: 'og:title',
       content: title

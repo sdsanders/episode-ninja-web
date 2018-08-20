@@ -25,6 +25,7 @@ const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent },
   { path: 'series/:slug/worst-episodes', component: SeriesPageComponent },
+  { path: 'series/:slug/best-seasons', component: SeriesPageComponent },
   { path: 'shows', component: ShowsPageComponent },
   { path: 'director/:slug', component: DirectorPageComponent },
   { path: 'about', component: AboutPageComponent },

@@ -1,12 +1,42 @@
-<div  class="series-background mb-2 mb-sm-3" [style.background-image]="'url(https://cdn.episode.ninja/file/episodeninja/' + series.id + '.jpg)'">
+<div class="series-background" [style.background-image]="'url(https://cdn.episode.ninja/file/episodeninja/' + series.id + '.jpg)'">
   <div class="container text-white">
     <div class="series-text col-lg-9 px-0">
-      <h1 class="series-name pt-1 mb-0">The {{worst ? 'Worst' : 'Best'}} Episodes of {{series.seriesName}}</h1>
+      <h1 class="series-name pt-1 mb-0">The {{worst ? 'Worst' : 'Best'}} {{bestSeasons ? 'Seasons' : 'Episodes'}} of {{series.seriesName}}</h1>
       <p class="series-description mb-1 mb-sm-3">Last Updated: {{series.updatedAt | date}}</p>
       <p class="series-description mb-lg-5 mb-xl-5">{{series.overview}}</p>
     </div>
   </div>
 </div>
+<nav class="series-nav mb-2 mb-sm-3">
+  <div class="container">
+    <div class="row">
+      <a
+        class="col series-nav-link"
+        [class.active]="!worst && !bestSeasons"
+        *ngIf="series.totalEpisodes >= 50 || series.totalSeasons >= 4"
+        [routerLink]="'/series/' + series.slug"
+      >
+        Best Episodes
+      </a>
+      <a
+        class="col series-nav-link"
+        [class.active]="worst"
+        *ngIf="series.totalEpisodes >= 50"
+        [routerLink]="'/series/' + series.slug + '/worst-episodes'"
+      >
+        Worst Episodes
+      </a>
+      <a
+        class="col series-nav-link"
+        [class.active]="bestSeasons"
+        *ngIf="series.totalSeasons >= 4"
+        [routerLink]="'/series/' + series.slug + '/best-seasons'"
+      >
+        Best Seasons
+      </a>
+    </div>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
     <div class="col-lg-9">
@@ -63,12 +93,32 @@
           </div>
         </div>
       </ng-template>
+
+      <ng-template ngFor let-index="index" let-season [ngForOf]="series.seasons">
+        <div class="card mt-1 mb-3">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-5">
+              <img class="img-fluid w-100" [src]="seasonImage(season)" [alt]="season.title" *ngIf="season.id">
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
+              <h2 class="h2 card-title mb-1">
+                #{{index + 1}} - {{season.title}}
+              </h2>
+              <h3 class="h6 card-subtitle text-muted mb-3">First Aired: {{season.first_aired | date}}</h3>
+              <p class="card-text mr-3">{{season.overview}}</p>
+              <div class="float-right text-muted mr-3 mt-3">
+                <div class="episode-rating">
+                  <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{season.rating | number: '1.2-2'}}
+                </div>
+                {{season.votes | number:'.0'}} votes
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
     </div>
     <aside class="col-lg-3 sidebar">
-      <div *ngIf="series.totalEpisodes >= 50" class="my-2">
-        <a [routerLink]="'/series/' + series.slug" class="btn btn-block btn-success" *ngIf="worst">Show me the best episodes</a>
-        <a [routerLink]="'/series/' + series.slug + '/worst-episodes'" class="btn btn-block btn-danger" *ngIf="!worst">Show me the worst episodes</a>
-      </div>
       <h3>Share This Page</h3>
       <a [href]="'https://facebook.com/sharer/sharer.php?u=https://episode.ninja' + this.router.url" target="_blank" rel="noopener" aria-label="Share on Facebook" class="sharing-button facebook mr-1" title="Share on Facebook">
         <span class="sr-only">Share on Facebook</span>
