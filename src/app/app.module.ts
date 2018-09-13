@@ -18,6 +18,7 @@ import { PopularShowsComponent } from './popular-shows/popular-shows.component';
 import { SearchComponent } from './search/search.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ShowCardComponent } from './show-card/show-card.component';
+import { AmazonAdComponent } from './amazon-ad/amazon-ad.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AdComponent } from './ad/ad.component';
@@ -58,7 +59,8 @@ export function ninjaServiceFactory(http, router) {
     ShowCardComponent,
     SearchPageComponent,
     NotFoundPageComponent,
-    AdComponent
+    AdComponent,
+    AmazonAdComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
