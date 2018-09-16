@@ -94,10 +94,16 @@ body {
 }
 
 .sharing-button {
-  display: inline-block;
+  color: #fff;
+  display: block;
+  float: left;
   fill: #fff;
-  height: 20px;
-  width: 20px;
+  padding: 8px 20px;
+
+  svg {
+    margin-right: 5px;
+    vertical-align: text-top;
+  }
 }
 
 .site-wrap {
