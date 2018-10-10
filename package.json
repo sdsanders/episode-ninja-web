@@ -4,11 +4,13 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "node ./server.js > log-file.txt",
+    "start": "node ./server.js",
     "test": "ng test",
-    "appbuild": "ng build --prod",
-    "serverbuild": "ng build --prod --app 1",
-    "build": "npm run appbuild && npm run serverbuild && cp dist-server/styles.*.bundle.css dist/styles.bundle.css && cp dist-server/main.*.bundle.js dist-server/main.bundle.js"
+    "build:app": "ng build --prod",
+    "build:server": "ng build --prod --app 1",
+    "copy:styles": "cp dist-server/styles.*.bundle.css dist/styles.bundle.css",
+    "copy:scripts": "cp dist-server/main.*.bundle.js dist-server/main.bundle.js",
+    "build": "npm run build:app && npm run build:server && npm run copy:styles && npm run copy:scripts"
   },
   "private": true,
   "dependencies": {
