@@ -14,14 +14,9 @@ export class AmazonAdComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.products);
-    let scriptSrc = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US';
+    const scriptSrc = '//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1';
 
-    if (this.products && (this.products.length === 4 || this.products.length === 8)) {
-      this.generateSettingsScript(this.products);
-    } else {
-      scriptSrc += `&adInstanceId=${this.ad}`;
-    }
+    this.generateSettingsScript(this.products);
 
     const script = this.renderer.createElement('script');
 
@@ -30,16 +25,16 @@ export class AmazonAdComponent implements OnInit {
   }
 
   generateSettingsScript(products) {
-    let settingsString = 'amzn_assoc_placement = "adunit0";';
-    settingsString += 'amzn_assoc_search_bar = "false";';
-    settingsString += 'amzn_assoc_tracking_id = "episodeninja-20";';
-    settingsString += 'amzn_assoc_ad_mode = "manual";';
-    settingsString += 'amzn_assoc_ad_type = "smart";';
+    let settingsString = 'amzn_assoc_ad_type = "banner";';
     settingsString += 'amzn_assoc_marketplace = "amazon";';
     settingsString += 'amzn_assoc_region = "US";';
-    settingsString += 'amzn_assoc_title = "Related Products";';
-    settingsString += 'amzn_assoc_linkid = "556dab7ae7c1954c4023d7aaff7faa9c";';
-    settingsString += `amzn_assoc_asins = "${products.toString()}";`;
+    settingsString += 'amzn_assoc_placement = "assoc_banner_placement_default";';
+    settingsString += 'amzn_assoc_campaigns = "amzn_firetv_1003_stick4k";';
+    settingsString += 'amzn_assoc_banner_type = "category";';
+    settingsString += 'amzn_assoc_isresponsive = "true";';
+    settingsString += 'amzn_assoc_banner_id = "16AMVYEPTZTVP7638N02";';
+    settingsString += 'amzn_assoc_tracking_id = "episodeninja-20";';
+    settingsString += 'amzn_assoc_linkid = "3a0454890b796f3b4988c3a1ede9b5a8";';
 
     const text = this.renderer.createText(settingsString);
     const script = this.renderer.createElement('script');
