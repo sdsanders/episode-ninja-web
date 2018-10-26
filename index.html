@@ -2,4 +2,19 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-52VC7DP');</script><!-- End Google Tag Manager --><link href="styles.bundle.css" rel="stylesheet"/></head><body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52VC7DP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) --><app-root>Loading...</app-root><script>document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.btn-group-sm .btn').forEach(button => button.addEventListener('click', () => alert('Voting coming soon!'))));</script></body></html>
+    })(window,document,'script','dataLayer','GTM-52VC7DP');</script><!-- End Google Tag Manager --><link href="styles.bundle.css" rel="stylesheet"/></head><body><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52VC7DP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) --><app-root>Loading...</app-root><script>document.addEventListener('DOMContentLoaded', () => document.querySelectorAll('.btn-group-sm .btn').forEach(button => button.addEventListener('click', () => alert('Voting coming soon!'))));</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+      <script>
+        var slideout = new Slideout({
+          'panel': document.getElementById('panel'),
+          'menu': document.getElementById('menu'),
+          'padding': 256,
+          'tolerance': 70
+        });
+
+        // Toggle button
+        document.querySelector('.toggle-button').addEventListener('click', function() {
+          slideout.toggle();
+        });
+      </script>
+  </body></html>

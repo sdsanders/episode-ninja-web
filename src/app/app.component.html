@@ -1,4 +1,4 @@
-<div class="mobile-navigation bg-inverse hidden-sm-up">
+<div id="menu" class="mobile-navigation bg-inverse">
   <app-search style="min-width: 250px;" class="py-3 pr-4 pl-2"></app-search>
 
   <ul class="list-unstyled">
@@ -7,14 +7,14 @@
   </ul>
 </div>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger hidden-sm-up" />
-<label for="nav-trigger" class="hidden-sm-up"></label>
-
-<div class="site-wrap">
-  <nav class="navbar" [class.bg-inverse]="!router.url.includes('series')">
+<div id="panel" class="site-wrap">
+  <nav class="navbar navbar-inverse" [class.bg-inverse]="!router.url.includes('series')">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-8 d-flex">
+      <div class="row justify-content-start">
+        <div class="col-4 hidden-sm-up">
+          <button class="toggle-button navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+        </div>
+        <div class="col-12">
           <a class="navbar-brand text-white" routerLink="/">
             <img src="/assets/logo.svg" width="30" height="30" class="float-left mr-1" alt="Episode Ninja">
             episode.ninja<br>
