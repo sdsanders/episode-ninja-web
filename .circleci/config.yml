@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10-browsers
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+
+      # deploy
+      - deploy:
+          name: Deployment
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run build
+              git init
+              git add .
+              git add dist -f
+              git add dist-server -f
+              git -c user.name='Episode Ninja' -c user.email='contact@episode.ninja' commit -m "deploy"
+              ssh-keyscan -H dokku2.episode.ninja >> ~/.ssh/known_hosts
+              git remote add dokku dokku@dokku2.episode.ninja:episode.ninja && git push -f dokku ${CIRCLE_BRANCH}:master
+            fi
