@@ -111,13 +111,6 @@
             </div>
           </div>
         </div>
-
-        <app-amazon-ad
-          *ngIf="index === 4 || index === 14 || index === 24"
-          [ad]="'3d047510-b751-4c99-bd44-c3a8e0ebb96a'"
-          [products]="series.products"
-          class="card mt-1 mb-3 p-3
-        "></app-amazon-ad>
       </ng-template>
 
       <ng-template ngFor let-index="index" let-season [ngForOf]="series.seasons">
@@ -159,7 +152,6 @@
         </div>
       </div>
 
-      <app-amazon-ad [ad]="'3d047510-b751-4c99-bd44-c3a8e0ebb96a'" [products]="series.products" class="p-3"></app-amazon-ad>
       <app-popular-shows sidebar="true" [shows]="series.relatedShows"></app-popular-shows>
     </aside>
   </div>
