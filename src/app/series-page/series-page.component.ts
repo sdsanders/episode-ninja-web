@@ -1,6 +1,6 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { MetaService } from '../meta.service';
+import { Meta, Title } from '@angular/platform-browser';
 import { NinjaService } from '../ninja.service';
 
 @Component({
@@ -17,8 +17,8 @@ export class SeriesPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public router: Router,
-    public renderer: Renderer,
-    public meta: MetaService,
+    private meta: Meta,
+    private title: Title,
     public ninjaService: NinjaService
   ) { }
 
@@ -56,43 +56,45 @@ export class SeriesPageComponent implements OnInit {
     const title = `The ${worst ? 'Worst' : 'Best'} ${seasons ? 'Seasons' : 'Episodes'} of ${series.seriesName}`;
     const image = `https://cdn.episode.ninja/file/episodeninja/${series.id}.jpg`;
 
-    this.meta.setTitle(this.renderer, `${worst ? 'Worst' : 'Best'} ${series.seriesName} ${seasons ? 'Seasons' : 'Episodes'} | episode.ninja`);
-    this.meta.addTag(this.renderer, {
-      property: 'og:title',
-      content: title
-    });
-    this.meta.addTag(this.renderer, {
-      name: 'description',
-      content: description
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'og:description',
-      content: description
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'og:image',
-      content: image
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'twitter:card',
-      content: 'summary_large_image'
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'twitter:title',
-      content: title
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'twitter:description',
-      content: description
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'twitter:image',
-      content: image
-    });
-    this.meta.addTag(this.renderer, {
-      property: 'twitter:site',
-      content: '@theepisodeninja'
-    });
+    this.title.setTitle(`${worst ? 'Worst' : 'Best'} ${series.seriesName} ${seasons ? 'Seasons' : 'Episodes'} | episode.ninja`);
+    this.meta.addTags([
+      {
+        property: 'og:title',
+        content: title
+      },
+      {
+        name: 'description',
+        content: description
+      },
+      {
+        property: 'og:description',
+        content: description
+      },
+      {
+        property: 'og:image',
+        content: image
+      },
+      {
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        property: 'twitter:title',
+        content: title
+      },
+      {
+        property: 'twitter:description',
+        content: description
+      },
+      {
+        property: 'twitter:image',
+        content: image
+      },
+      {
+        property: 'twitter:site',
+        content: '@theepisodeninja'
+      }
+    ]);
   }
 
 }

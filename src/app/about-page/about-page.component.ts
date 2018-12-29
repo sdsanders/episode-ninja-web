@@ -1,20 +1,20 @@
-import { Component, AfterViewInit, Renderer } from '@angular/core';
-import { MetaService } from '../meta.service';
+import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-page',
   templateUrl: './about-page.component.html'
 })
-export class AboutPageComponent {
+export class AboutPageComponent implements OnInit {
 
   constructor(
-    public renderer: Renderer,
-    public meta: MetaService
+    private meta: Meta,
+    private title: Title
   ) {}
 
-  ngAfterViewInit() {
-    this.meta.setTitle(this.renderer, 'About | episode.ninja');
-    this.meta.addTag(this.renderer, {
+  ngOnInit() {
+    this.title.setTitle('About | episode.ninja');
+    this.meta.addTag({
       name: 'description',
       content: 'The goal of this site is to provide a list of the best episodes of any TV show'
     });

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { MetaService } from '../meta.service';
 import { NinjaService } from '../ninja.service';
 
 @Component({
@@ -13,7 +12,6 @@ export class SearchPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public router: Router,
-    public meta: MetaService,
     public ninjaService: NinjaService
   ) { }
 

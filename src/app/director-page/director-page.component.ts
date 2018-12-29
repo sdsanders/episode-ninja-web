@@ -1,7 +1,7 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { MetaService } from '../meta.service';
 import { NinjaService } from '../ninja.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-director-page',
@@ -14,8 +14,8 @@ export class DirectorPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public renderer: Renderer,
-    public meta: MetaService,
+    private meta: Meta,
+    private title: Title,
     public ninjaService: NinjaService
   ) { }
 
@@ -33,19 +33,21 @@ export class DirectorPageComponent implements OnInit {
   getDirector(slug: string) {
     this.ninjaService.getDirector(slug).subscribe((episodes: any) => {
       this.episodes = episodes;
-      this.meta.setTitle(this.renderer, `Best Episodes Directed by ${this.director} | episode.ninja`);
-      this.meta.addTag(this.renderer, {
-        property: 'og:title',
-        content: `The Best Episodes Directed by ${this.director}`
-      });
-      this.meta.addTag(this.renderer, {
-        name: 'description',
-        content: `The highest user rated episodes directed by ${this.director}`
-      });
-      this.meta.addTag(this.renderer, {
-        property: 'og:description',
-        content: `The highest user rated episodes directed by ${this.director}`
-      });
+      this.title.setTitle(`Best Episodes Directed by ${this.director} | episode.ninja`);
+      this.meta.addTags([
+        {
+          property: 'og:title',
+          content: `The Best Episodes Directed by ${this.director}`
+        },
+        {
+          name: 'description',
+          content: `The highest user rated episodes directed by ${this.director}`
+        },
+        {
+          property: 'og:description',
+          content: `The highest user rated episodes directed by ${this.director}`
+        }
+      ]);
     }, error => {
       console.log('error', error);
     });
