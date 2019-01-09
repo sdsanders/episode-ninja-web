@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
+import { catchError, map } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable()
 export class NinjaService {
@@ -25,7 +25,7 @@ export class NinjaService {
   getDirector(slug: string) {
     slug = encodeURIComponent(slug);
     return this.http.get(`${environment.apiUrl}/director/${slug}`)
-      .catch(this.handleError);
+      .pipe(catchError(this.handleError));
   }
 
   getSeasons(slug: string) {
@@ -39,7 +39,7 @@ export class NinjaService {
     const params = worst ? `${slug}?worst=true` : slug;
 
     return this.http.get(`${environment.apiUrl}/episodes/${params}`)
-      .map((series: any) => {
+      .pipe(map((series: any) => {
         series.episodes.map(episode => {
           let directorObjects = [];
           episode.directors.forEach(director => {
@@ -52,8 +52,7 @@ export class NinjaService {
           return episode;
         });
         return series;
-      })
-      .catch(err => this.handleError(err));
+      }, catchError(this.handleError)));
   }
 
   search(searchTerm: string) {
@@ -66,6 +65,7 @@ export class NinjaService {
       console.log('routing');
       return this.router.navigate(['/not-found'], { skipLocationChange: true });
     }
-    return Observable.throw(error);
+
+    return throwError(error);
   }
 }

@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { AppComponent } from './index';
+import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeriesPageComponent } from './series-page/series-page.component';
 import { ShowsPageComponent } from './shows-page/shows-page.component';

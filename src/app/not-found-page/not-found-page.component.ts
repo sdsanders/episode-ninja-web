@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RESPONSE } from '@nguniversal/express-engine/tokens';
-import { Injector } from '@angular/core';
 
 @Component({
   selector: 'app-not-found-page',
@@ -9,13 +9,15 @@ import { Injector } from '@angular/core';
 })
 export class NotFoundPageComponent implements OnInit {
 
-  constructor(private injector: Injector) {
-    const res = this.injector.get(RESPONSE);
-
-    res.status(404);
-  }
+  constructor(
+    @Optional() @Inject(RESPONSE) private response: any,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      this.response.status(404);
+    }
   }
 
 }
