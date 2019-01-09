@@ -15,7 +15,7 @@
           <a [routerLink]="'/series/' + episode.seriesSlug">{{episode.seriesName}}</a> Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}
         </h3>
         <p class="card-text mr-3">{{episode.overview}}</p>
-        <div class="float-right text-muted mr-3">
+        <div class="float-right text-muted mx-3">
           <div class="episode-rating">
             <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
           </div>
