@@ -96,3 +96,15 @@
     height: 70vh;
   }
 }
+
+@media(min-width: 1200px) {
+  .content {
+    flex: 0 0 calc(100% - 330px);
+    max-width: calc(100% - 330px);
+  }
+
+  .sidebar {
+    flex: 0 0 330px;
+    max-width: 330px;
+  }
+}
