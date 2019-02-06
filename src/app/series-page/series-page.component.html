@@ -89,7 +89,13 @@
             </div>
           </div>
           <div class="card-footer">
-            Rate this episode
+            <span style="font-family: Lato; font-size: 18px; line-height: 25px;">Rate This Episode:</span>
+            <star-rating
+              [starType]="'svg'"
+              class="float-right"
+              [rating]="episode.ratings?.length ? episode.ratings[0]?.rating / 2 : 0"
+              (starClickChange)="onRatingChange($event, episode)"
+            ></star-rating>
           </div>
         </div>
       </ng-template>

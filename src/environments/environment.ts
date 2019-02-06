@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.episode.ninja',
+  apiUrl: 'http://localhost:4000',
   amplify: {
     Auth: {
       region: 'us-east-1',

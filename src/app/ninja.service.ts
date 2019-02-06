@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, mergeMap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class NinjaService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
 
@@ -57,6 +59,12 @@ export class NinjaService {
 
   search(searchTerm: string) {
     return this.http.get(`${environment.apiUrl}/search/${searchTerm}`);
+  }
+
+  vote(seriesId: string, episodeId: string, rating: number) {
+    return this.http.post(`${environment.apiUrl}/vote`, {
+      seriesId, episodeId, rating
+    });
   }
 
   handleError(error) {

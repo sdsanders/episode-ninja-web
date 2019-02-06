@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { StarRatingModule } from 'angular-star-rating';
+import { SimpleModalModule } from 'ngx-simple-modal';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -25,6 +28,8 @@ import { SignupComponent } from './signup/signup.component';
 
 import { NinjaService } from './ninja.service';
 import { AuthService } from './auth.service';
+import { TokenInterceptor } from './token.interceptor';
+import { SignupPromptComponent } from './signup-prompt/signup-prompt.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -41,8 +46,8 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'not-found' }
 ];
 
-export function ninjaServiceFactory(http, router) {
-  return new NinjaService(http, router);
+export function ninjaServiceFactory(http, router, authService) {
+  return new NinjaService(http, router, authService);
 }
 
 /**
@@ -67,7 +72,11 @@ export function ninjaServiceFactory(http, router) {
     AdComponent,
     AmazonAdComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SignupPromptComponent
+  ],
+  entryComponents: [
+    SignupPromptComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
@@ -75,15 +84,22 @@ export function ninjaServiceFactory(http, router) {
     FormsModule,
     RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StarRatingModule.forRoot(),
+    SimpleModalModule
   ],
   providers: [
     {
       provide: NinjaService,
       useFactory: ninjaServiceFactory,
-      deps: [HttpClient, Router]
+      deps: [HttpClient, Router, AuthService]
     },
-    AuthService
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ]
 })
 export class AppModule {

@@ -58,4 +58,8 @@ export class AuthService {
         error => console.log(error)
       );
   }
+
+  public currentSession() {
+    return from(Auth.currentSession());
+  }
 }

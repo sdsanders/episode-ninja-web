@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { NinjaService } from '../ninja.service';
+import { AuthService } from '../auth.service';
+import { SignupPromptComponent } from '../signup-prompt/signup-prompt.component';
+
+import { SimpleModalService } from 'ngx-simple-modal';
 
 @Component({
   selector: 'app-series-page',
@@ -19,7 +23,9 @@ export class SeriesPageComponent implements OnInit {
     public router: Router,
     private meta: Meta,
     private title: Title,
-    public ninjaService: NinjaService
+    private ninjaService: NinjaService,
+    private authService: AuthService,
+    private simpleModalService: SimpleModalService
   ) { }
 
   ngOnInit() {
@@ -95,6 +101,27 @@ export class SeriesPageComponent implements OnInit {
         content: '@theepisodeninja'
       }
     ]);
+  }
+
+  onRatingClick(event) {
+    console.log('click');
+    event.preventDefault();
+  }
+
+  onRatingChange({ rating }, episode) {
+    this.authService.isAuthenticated().subscribe((loggedIn: boolean) => {
+      if (loggedIn) {
+        this.ninjaService.vote(this.series.id, episode.id, rating * 2).subscribe(console.log);
+      } else {
+        episode.ratings = [{ rating: 0 }];
+
+        const disposable = this.simpleModalService.addModal(SignupPromptComponent)
+        .subscribe(() => {
+          disposable.unsubscribe();
+          this.simpleModalService.removeAll();
+        });
+      }
+    });
   }
 
 }
