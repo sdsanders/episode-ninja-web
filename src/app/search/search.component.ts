@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
 export class SearchComponent {
   public query: String = '';
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  onSubmit() {
+    this.router.navigate(['/search'], { queryParams: { query: this.query } });
+  }
 }

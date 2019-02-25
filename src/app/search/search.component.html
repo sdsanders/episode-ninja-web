@@ -1,4 +1,4 @@
-<form #form="ngForm" class="dropdown text-center" action="/search">
+<form #form="ngForm" class="dropdown text-center" action="/search" (ngSubmit)="onSubmit()">
   <label for="search" class="sr-only">Search for a show</label>
   <input type="search" class="form-control" [(ngModel)]="query" name="query" placeholder="Search for a show..." autocomplete="off">
 </form>
