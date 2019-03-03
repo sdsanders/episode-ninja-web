@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -65,7 +66,8 @@ export function ninjaServiceFactory(http, router) {
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' })
+    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
+    BrowserAnimationsModule
   ],
   providers: [
     {

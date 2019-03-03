@@ -33,58 +33,25 @@ app-search {
   display: block;
 }
 
-.mobile-navigation {
-  width: 75vw;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.nav-trigger {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-}
-
-label[for="nav-trigger"] {
-  position: fixed;
-  left: 15px; top: 15px;
-  z-index: 2;
-  height: 20px;
-  width: 20px;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' fill='#fff' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-  background-size: contain;
-}
-
-.nav-trigger + label, .site-wrap {
-  transition: left 0.2s;
-}
-
-.nav-trigger:checked + label {
-  left: calc(75vw + 15px);
-}
-
-.nav-trigger:checked ~ .site-wrap {
-  left: 75vw;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-}
-
-body {
-  overflow-x: hidden;
-}
-
 .navbar {
+  padding: 5px 0 0;
   z-index: 1;
+
+  @media (max-width: 575px) {
+    .container {
+      width: 100%;
+    }
+
+    .navbar-brand {
+      margin: 0 auto;
+    }
+  }
 }
 
 .navbar-brand {
   font-size: 1.1rem;
   line-height: 0.85;
-  padding: 0;
+  padding: 5px 0 0;
   text-shadow: 0 0 20px #000;
 
   small {

@@ -1,28 +1,32 @@
-<div class="mobile-navigation bg-inverse hidden-sm-up">
-  <app-search style="min-width: 250px;" class="py-3 pr-4 pl-2"></app-search>
-
-  <ul class="list-unstyled">
-    <li><a routerLink="/shows" class="text-white btn-link btn-block py-1 px-3">All Shows</a></li>
-    <li><a routerLink="/about" class="text-white btn-link btn-block py-1 px-3">About</a></li>
-  </ul>
-</div>
-
-<input type="checkbox" id="nav-trigger" class="nav-trigger hidden-sm-up" />
-<label for="nav-trigger" class="hidden-sm-up"></label>
-
 <div class="site-wrap">
   <nav class="navbar" [class.bg-inverse]="!router.url.includes('series')">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 d-flex">
+        <div class="col-2 hidden-sm-up">
+          <button type="button" class="btn btn-link btn-search" (click)="toggleSearch()">
+            <img src="/assets/search.svg" alt="Search">
+          </button>
+        </div>
+        <div class="col-8 d-flex">
           <a class="navbar-brand text-white" routerLink="/">
             <img src="/assets/logo.svg" width="30" height="30" class="float-left mr-1" alt="Episode Ninja">
             episode.ninja<br>
             <small>The best episodes of any tv show</small>
           </a>
         </div>
+        <div class="col-12" *ngIf="showSearch" [@enterAnimation] style="position: absolute; top: 36px;">
+          <app-search
+            style="min-width: 250px;"
+            class="mb-1"
+            (submitted)="toggleSearch()"
+          ></app-search>
+        </div>
         <div class="col-sm-4 hidden-sm-down">
-          <app-search *ngIf="router.url !== '/'" style="min-width: 250px;" class="mb-1"></app-search>
+          <app-search
+            *ngIf="router.url !== '/'"
+            style="min-width: 250px;"
+            class="mb-1"
+          ></app-search>
         </div>
       </div>
     </div>
