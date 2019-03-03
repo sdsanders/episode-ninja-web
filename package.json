@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=100.115.92.195",
-    "build": "ng build",
+    "start": "npm run serve:ssr",
+    "build": "npm run server && npm run build:client-and-server-bundles && npm run webpack:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "ng run episode-ninja-web:server",
-    "build:ssr": "npm run server && npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server.js",
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --project=episode-ninja-web --output-hashing none",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
