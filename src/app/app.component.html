@@ -32,8 +32,8 @@
     </div>
   </nav>
 
-  <main>
-    <router-outlet></router-outlet>
+  <main [@fadeAnimation]="getRouterOutletState(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </main>
 
   <footer class="bg-inverse text-white pt-3 pb-2">
