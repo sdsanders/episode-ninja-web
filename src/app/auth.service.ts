@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { of, Observable, BehaviorSubject, from } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 
-import Amplify, { Auth } from 'aws-amplify';
+// import Amplify, { Auth } from 'aws-amplify';
+// import { Auth } from 'aws-amplify';
+import Auth from '@aws-amplify/auth';
 import { environment } from '../environments/environment';
 
 @Injectable()
@@ -14,7 +16,7 @@ export class AuthService {
   constructor(
     private router: Router
   ) {
-    Amplify.configure(environment.amplify);
+    Auth.configure(environment.amplify);
     this.loggedIn = new BehaviorSubject<boolean>(false);
   }
 
