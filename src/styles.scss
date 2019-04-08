@@ -67,6 +67,14 @@ app-search {
   fill: #fff;
   padding: 8px 20px;
 
+  &.facebook {
+    background: #3b5999;
+  }
+
+  &.twitter {
+    background: #55acee;
+  }
+
   svg {
     margin-right: 5px;
     vertical-align: text-top;
