@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+
+import { switchMap } from 'rxjs/operators';
+
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,13 +11,12 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  public signupForm: FormGroup;
-  public confirmationForm: FormGroup;
-  public successfullySignup: boolean;
+  signupForm: FormGroup;
+  successfulSignup = false;
+  errorMessage: string;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router,
     private auth: AuthService
   ) { }
 
@@ -32,13 +33,13 @@ export class SignupComponent implements OnInit {
 
   onSubmitSignup(value: any) {
     const email = value.email, password = value.password;
-    this.auth.signUp(email, password)
-      .subscribe(
-        result => {
-          this.successfullySignup = true;
-        },
-        error => {
-          console.log(error);
-        });
+    this.auth.signUp(email, password).pipe(
+      switchMap(() => this.auth.signIn(email, password))
+    ).subscribe(() => {
+      this.successfulSignup = true;
+    }, error => {
+      console.log(error);
+      this.errorMessage = error.message;
+    });
   }
 }
