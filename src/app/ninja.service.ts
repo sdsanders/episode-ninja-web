@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -61,8 +61,8 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/search/${searchTerm}`);
   }
 
-  vote(seriesId: string, episodeId: string, rating: number) {
-    return this.http.post(`${environment.apiUrl}/vote`, {
+  vote(seriesId: string, episodeId: string, rating: number): Observable<{rating: number, ratingCount: number}> {
+    return this.http.post<{rating: number, ratingCount: number}>(`${environment.apiUrl}/vote`, {
       seriesId, episodeId, rating
     });
   }
