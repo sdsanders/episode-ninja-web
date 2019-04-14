@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   successfulSignup = false;
   errorMessage: string;
+  submitting = false;
 
   constructor(
     private fb: FormBuilder,
@@ -33,12 +34,15 @@ export class SignupComponent implements OnInit {
 
   onSubmitSignup(value: any) {
     const email = value.email, password = value.password;
+    this.submitting = true;
+
     this.auth.signUp(email, password).pipe(
       switchMap(() => this.auth.signIn(email, password))
     ).subscribe(() => {
       this.successfulSignup = true;
     }, error => {
       console.log(error);
+      this.submitting = false;
       this.errorMessage = error.message;
     });
   }

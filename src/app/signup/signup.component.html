@@ -18,7 +18,7 @@
         {{errorMessage}}
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block" [disabled]="!signupForm.valid">Sign Up</button>
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="!signupForm.valid || submitting">Sign Up</button>
     </form>
   </div>
 
