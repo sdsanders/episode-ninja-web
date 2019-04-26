@@ -43,6 +43,7 @@ function generateSitemap() {
   newSitemap.add({url: '/'});
   newSitemap.add({url: '/shows'});
   newSitemap.add({url: '/about'});
+  newSitemap.add({url: '/podcast'});
 
   rp({
     uri: 'https://api.episode.ninja/shows',

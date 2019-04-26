@@ -30,6 +30,7 @@ import { NinjaService } from './ninja.service';
 import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
 import { SignupPromptComponent } from './signup-prompt/signup-prompt.component';
+import { PodcastPageComponent } from './podcast-page/podcast-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   { path: 'not-found', component: NotFoundPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'podcast', component: PodcastPageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -73,7 +75,8 @@ export function ninjaServiceFactory(http, router, authService) {
     AmazonAdComponent,
     LoginComponent,
     SignupComponent,
-    SignupPromptComponent
+    SignupPromptComponent,
+    PodcastPageComponent
   ],
   entryComponents: [
     SignupPromptComponent
