@@ -13,6 +13,20 @@ import { SimpleModalService } from 'ngx-simple-modal';
   styleUrls: ['./series-page.component.scss']
 })
 export class SeriesPageComponent implements OnInit {
+  readonly products = [
+    {
+      'buy-url': 'http://www.jdoqocy.com/click-9040012-10676519-1519117620681?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fthe-office-michael-scott-bobblehead%2F&amp;cjsku=7228',
+      'image-url': 'https://www.tvstoreonline.com/product_images/v/424/31gIchHG3xL__34617__51886.jpg',
+      'name': 'The Office Michael Scott Bobblehead',
+      'price': '39.95'
+    },
+    {
+      'buy-url': 'http://www.anrdoezrs.net/click-9040012-10676519-1519117620673?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fdunder-mifflin-inc-paper-company-logo-t-shirt%2F&amp;cjsku=7205',
+      'image-url': 'http://www.tvstoreonline.com/product_images/f/514/Black-Dunder-Mifflin-Paper-Co-Inc-Scranton-PA-The-Office-Dwight-Jim-Pam-T-Shirt__04478.jpg',
+      'name': 'Dunder Mifflin INC Paper Company Logo T-shirt',
+      'price': '17.95'
+    }
+  ];
   series: any = {};
   images: any = [];
   worst: boolean = false;
