@@ -22,7 +22,7 @@ export class SeriesPageComponent implements OnInit {
     },
     {
       'buy-url': 'http://www.anrdoezrs.net/click-9040012-10676519-1519117620673?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fdunder-mifflin-inc-paper-company-logo-t-shirt%2F&amp;cjsku=7205',
-      'image-url': 'http://www.tvstoreonline.com/product_images/f/514/Black-Dunder-Mifflin-Paper-Co-Inc-Scranton-PA-The-Office-Dwight-Jim-Pam-T-Shirt__04478.jpg',
+      'image-url': 'https://www.tvstoreonline.com/product_images/f/514/Black-Dunder-Mifflin-Paper-Co-Inc-Scranton-PA-The-Office-Dwight-Jim-Pam-T-Shirt__04478.jpg',
       'name': 'Dunder Mifflin INC Paper Company Logo T-shirt',
       'price': '17.95'
     }
