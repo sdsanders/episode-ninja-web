@@ -110,6 +110,15 @@
             ></star-rating>
           </div>
         </div>
+        <div class="text-center">
+          <button
+            *ngIf="index === series.episodes.length - 1 && index < series.totalEpisodes - 1"
+            class="btn btn-success mt-4 mb-5"
+            (click)="getSeries(series.slug, worst, bestSeasons, index + 1)"
+          >
+            Load More Episodes
+          </button>
+        </div>
       </ng-template>
 
       <ng-template ngFor let-index="index" let-season [ngForOf]="series.seasons">

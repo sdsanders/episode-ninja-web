@@ -36,11 +36,14 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/seasons/${slug}`)
   }
 
-  getSeries(slug: string, worst: boolean) {
+  getSeries(slug: string, worst: boolean, offset: number) {
+    const params = {
+      worst: worst.toString(),
+      offset: offset.toString()
+    };
     slug = encodeURIComponent(slug);
-    const params = worst ? `${slug}?worst=true` : slug;
 
-    return this.http.get(`${environment.apiUrl}/episodes/${params}`)
+    return this.http.get(`${environment.apiUrl}/episodes/${slug}`, { params })
       .pipe(map((series: any) => {
         series.episodes.map(episode => {
           let directorObjects = [];

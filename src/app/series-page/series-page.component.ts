@@ -50,11 +50,18 @@ export class SeriesPageComponent implements OnInit {
     });
   }
 
-  getSeries(slug: string, worst: boolean, seasons: boolean) {
-    const request = seasons ? this.ninjaService.getSeasons(slug) : this.ninjaService.getSeries(slug, worst);
+  getSeries(slug: string, worst: boolean, seasons: boolean, offset = 0) {
+    let request = this.ninjaService.getSeries(slug, worst, offset);
+    if (seasons) { request = this.ninjaService.getSeasons(slug); }
+
     request.subscribe(series => {
-      this.series = series;
-      this.setMeta(this.series, worst, seasons);
+      if (offset === 0) {
+        this.series = series;
+        this.setMeta(this.series, worst, seasons);
+        return;
+      }
+
+      this.series.episodes = [...this.series.episodes, ...series.episodes];
     }, error => {
       console.log('error', error);
     });
