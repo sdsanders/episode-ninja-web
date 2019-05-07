@@ -13,7 +13,7 @@ import { SimpleModalService } from 'ngx-simple-modal';
   styleUrls: ['./series-page.component.scss']
 })
 export class SeriesPageComponent implements OnInit {
-  readonly products = [
+  readonly defaultProducts = [
     {
       'buy-url': 'http://www.jdoqocy.com/click-9040012-10676519-1519117620681?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fthe-office-michael-scott-bobblehead%2F&amp;cjsku=7228',
       'image-url': 'https://www.tvstoreonline.com/product_images/v/424/31gIchHG3xL__34617__51886.jpg',
@@ -21,12 +21,32 @@ export class SeriesPageComponent implements OnInit {
       'price': '39.95'
     },
     {
-      'buy-url': 'http://www.anrdoezrs.net/click-9040012-10676519-1519117620673?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fdunder-mifflin-inc-paper-company-logo-t-shirt%2F&amp;cjsku=7205',
+      'buy-url': 'http://www.kqzyfj.com/97115r09608OYPTPPQROQPVWVUQY?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fdunder-mifflin-inc-paper-company-logo-t-shirt%2F&cjsku=7205',
       'image-url': 'https://www.tvstoreonline.com/product_images/f/514/Black-Dunder-Mifflin-Paper-Co-Inc-Scranton-PA-The-Office-Dwight-Jim-Pam-T-Shirt__04478.jpg',
       'name': 'Dunder Mifflin INC Paper Company Logo T-shirt',
       'price': '17.95'
     }
   ];
+  readonly narutoProducts = [
+    {
+      'buy-url': 'http://www.dpbolvw.net/8q79uoxuowBLCGCCDEBDCIJIHDL?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fnaruto-metal-plate-sand-village-snapback-hat%2F&cjsku=9928',
+      'image-url': 'https://www.tvstoreonline.com/product_images/i/581/naruto-sand-village-hat-front__42566.jpg',
+      'name': 'Naruto Metal Plate Sand Village Snapback Hat',
+      'price': '18.95'
+    },
+    {
+      'buy-url': 'http://www.dpbolvw.net/click-9040012-10676519?url=http%3A%2F%2Fwww.tvstoreonline.com%2Fnaruto-shippuden-akatsuki-shinobi-hoodie%2F&cjsku=9911',
+      'image-url': 'http://www.tvstoreonline.com/product_images/d/308/Naruto_Shippuden_Akatsuki_Shinobi_Adult_Hoodie__29994.jpg',
+      'name': 'Naruto Shippuden Akatsuki Shinobi Hoodie',
+      'price': '54.95'
+    }
+  ];
+  products: {
+    'buy-url': string,
+    'image-url': string,
+    name: string,
+    price: string
+  }[] = [];
   series: any = {};
   images: any = [];
   worst: boolean = false;
@@ -44,9 +64,17 @@ export class SeriesPageComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      const slug = params['slug'];
+
+      if (slug.includes('naruto')) {
+        this.products = this.narutoProducts;
+      } else {
+        this.products = this.defaultProducts;
+      }
+
       this.worst = this.router.url.includes('worst-episodes');
       this.bestSeasons = this.router.url.includes('best-seasons');
-      this.getSeries(params['slug'], this.worst, this.bestSeasons);
+      this.getSeries(slug, this.worst, this.bestSeasons);
     });
   }
 
