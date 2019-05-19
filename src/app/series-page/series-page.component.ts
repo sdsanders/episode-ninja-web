@@ -111,7 +111,7 @@ export class SeriesPageComponent implements OnInit {
     const title = `The ${worst ? 'Worst' : 'Best'} ${seasons ? 'Seasons' : 'Episodes'} of ${series.seriesName}`;
     const image = `https://cdn.episode.ninja/file/episodeninja/${series.id}.jpg`;
 
-    this.title.setTitle(`${worst ? 'Worst' : 'Best'} ${series.seriesName} ${seasons ? 'Seasons' : 'Episodes'} | episode.ninja`);
+    this.title.setTitle(`${worst ? 'Worst' : 'Best'} ${series.seriesName} ${seasons ? 'Seasons' : 'Episodes'} | Episode Ninja`);
     this.meta.addTags([
       {
         property: 'og:title',

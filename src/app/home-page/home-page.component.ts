@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('episode.ninja | The Best Episodes of Your Favorite Shows');
+    this.title.setTitle('Episode Ninja | The Best Episodes of Your Favorite Shows');
     this.meta.addTag({
       name: 'description',
       content: 'The best episodes of any television show chosen by millions of ratings from fans!'

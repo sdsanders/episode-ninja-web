@@ -14,7 +14,7 @@ export class PodcastPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Podcast | episode.ninja');
+    this.title.setTitle('Podcast | Episode Ninja');
     this.meta.addTag({
       name: 'description',
       content: 'The Episode Ninja Podcast - Coming Soon!'

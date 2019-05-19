@@ -13,7 +13,7 @@ export class AboutPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('About | episode.ninja');
+    this.title.setTitle('About | Episode Ninja');
     this.meta.addTag({
       name: 'description',
       content: 'The goal of this site is to provide a list of the best episodes of any TV show'
