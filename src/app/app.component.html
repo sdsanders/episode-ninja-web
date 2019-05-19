@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-2 hidden-sm-up">
-          <button type="button" class="btn btn-link btn-search" (click)="toggleSearch()">
+          <button type="button" class="btn btn-link btn-search" (click)="toggleSearch()" *ngIf="router.url !== '/'">
             <img src="/assets/search.svg" alt="Search">
           </button>
         </div>
