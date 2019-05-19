@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
-import { catchError, map, mergeMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
@@ -12,7 +13,8 @@ export class NinjaService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private sanitizer: DomSanitizer
   ) { }
 
 
@@ -77,6 +79,17 @@ export class NinjaService {
     return this.http.post<{rating: number, ratingCount: number}>(`${environment.apiUrl}/vote`, {
       seriesId, episodeId, rating
     });
+  }
+
+  getPodcast() {
+    return this.http.get(`${environment.apiUrl}/podcast`)
+    .pipe(map((podcast: any) => {
+      podcast.items.map(item => {
+        item.player = this.sanitizer.bypassSecurityTrustResourceUrl(item.player);
+        return item;
+      });
+      return podcast;
+    }));
   }
 
   handleError(error) {

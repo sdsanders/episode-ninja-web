@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -50,8 +50,8 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'not-found' }
 ];
 
-export function ninjaServiceFactory(http, router, authService) {
-  return new NinjaService(http, router, authService);
+export function ninjaServiceFactory(http, router, authService, sanitizer) {
+  return new NinjaService(http, router, authService, sanitizer);
 }
 
 /**
@@ -98,7 +98,7 @@ export function ninjaServiceFactory(http, router, authService) {
     {
       provide: NinjaService,
       useFactory: ninjaServiceFactory,
-      deps: [HttpClient, Router, AuthService]
+      deps: [HttpClient, Router, AuthService, DomSanitizer]
     },
     AuthService,
     {

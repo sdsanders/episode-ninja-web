@@ -1,4 +1,23 @@
-<div class="container py-3">
-  <h1>The Episode Ninja Podcast</h1>
-  <p>Coming soon!</p>
+<div class="bg-inverse">
+  <h1 class="container text-white mb-3 py-3 podcast-title">
+    the<br> <span>episode ninja</span><br> podcast
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col content">
+      <p>{{podcast?.description}}</p>
+      <div class="card mb-3" *ngFor="let item of podcast?.items">
+        <div class="card-block">
+          <h2 class="card-title">{{item.title}}</h2>
+          <h3 class="h6 card-subtitle text-muted mb-3">{{item.pubDate | date}}</h3>
+
+          <div class="card-text" [innerHTML]="item.content"></div>
+
+          <iframe [src]="item.player" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
