@@ -27,6 +27,7 @@
     "@angular/platform-server": "^7.2.0",
     "@angular/router": "~7.1.0",
     "@aws-amplify/auth": "^1.2.19",
+    "@nguniversal/common": "^7.1.1",
     "@nguniversal/express-engine": "^7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "angular-star-rating": "^4.0.0-beta.3",

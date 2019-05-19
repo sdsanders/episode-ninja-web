@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { StarRatingModule } from 'angular-star-rating';
 import { SimpleModalModule } from 'ngx-simple-modal';
@@ -89,7 +90,8 @@ export function ninjaServiceFactory(http, router, authService) {
     BrowserAnimationsModule,
     ReactiveFormsModule,
     StarRatingModule.forRoot(),
-    SimpleModalModule
+    SimpleModalModule,
+    TransferHttpCacheModule
   ],
   providers: [
     {

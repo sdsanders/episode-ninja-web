@@ -37,27 +37,36 @@ export class NinjaService {
   }
 
   getSeries(slug: string, worst: boolean, offset: number) {
-    const params = {
-      worst: worst.toString(),
-      offset: offset.toString()
-    };
-    slug = encodeURIComponent(slug);
+    return this.authService.isAuthenticated().pipe(
+      mergeMap((authenticated: boolean) => {
+        const params = {
+          worst: worst.toString(),
+          offset: offset.toString(),
+          authenticated: authenticated.toString()
+        };
+        slug = encodeURIComponent(slug);
 
-    return this.http.get(`${environment.apiUrl}/episodes/${slug}`, { params })
-      .pipe(map((series: any) => {
-        series.episodes.map(episode => {
-          let directorObjects = [];
-          episode.directors.forEach(director => {
-            directorObjects.push({
-              name: director,
-              slug: director.replace(/ /g, '-').toLowerCase()
+        return this.http.get(`${environment.apiUrl}/episodes/${slug}`, { params })
+          .pipe(map((series: any) => {
+            series.episodes = series.episodes.map(episode => {
+              episode.directors = episode.directors.map(director => {
+                if (typeof director !== 'string') {
+                  return director;
+                }
+
+                return {
+                  name: director,
+                  slug: director.replace(/ /g, '-').toLowerCase()
+                };
+              });
+
+              return episode;
             });
-          });
-          episode.directors = directorObjects;
-          return episode;
-        });
-        return series;
-      }, catchError(this.handleError)));
+
+            return series;
+          }, catchError(this.handleError)));
+      })
+    );
   }
 
   search(searchTerm: string) {

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
     // by the ServerModule from @angular/platform-server.
     AppModule,
     ServerModule,
+    ServerTransferStateModule,
   ],
   // Since the bootstrapped component is not inherited from your
   // imported AppModule, it needs to be repeated here.
