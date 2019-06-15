@@ -10,6 +10,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { StarRatingModule } from 'angular-star-rating';
 import { SimpleModalModule } from 'ngx-simple-modal';
+import { AdsenseModule } from 'ng2-adsense';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -91,7 +92,11 @@ export function ninjaServiceFactory(http, router, authService) {
     ReactiveFormsModule,
     StarRatingModule.forRoot(),
     SimpleModalModule,
-    TransferHttpCacheModule
+    TransferHttpCacheModule,
+    AdsenseModule.forRoot({
+      adClient: 'ca-pub-1168742975782022',
+      adSlot: 6732777857,
+    }),
   ],
   providers: [
     {
