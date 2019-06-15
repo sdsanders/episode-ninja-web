@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {  server: './server.ts' },
@@ -33,6 +34,9 @@ module.exports = {
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
       {}
-    )
+    ),
+    new CopyPlugin([
+      { from: 'public', to: 'public' }
+    ])
   ]
 }

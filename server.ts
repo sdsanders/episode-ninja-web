@@ -66,6 +66,8 @@ function generateSitemap() {
 
 generateSitemap();
 
+app.use(express.static('public'));
+
 app.engine('html', (_, options, callback) => {
   renderModuleFactory(AppServerModuleNgFactory, {
     // Our index.html
