@@ -52,18 +52,6 @@
   <div class="row">
     <div class="col-lg-9 content">
       <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
-        <div *ngIf="index === 5" class="hidden-sm-up">
-          <h3>Shop Popular Products</h3>
-          <div class="card-group">
-            <a class="card product-card mb-3 p-3" *ngFor="let product of products" [href]="product['buy-url']" target="_blank" rel="noopener noreferrer">
-              <div class="card-block p-0">
-                <img class="img-fluid w-100 mb-3" [src]="product['image-url']" [alt]="product.name">
-                {{product.name}}<br>
-              </div>
-              <span class="price">${{product.price}}</span>
-            </a>
-          </div>
-        </div>
         <div class="card mt-1 mb-3">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-6 col-lg-5">
@@ -159,17 +147,6 @@
           </a>
         </div>
       </div>
-
-      <a href="http://www.kqzyfj.com/click-9040012-10685217" target="_blank" class="d-block mb-3">
-        <img src="https://www.awltovhc.com/image-9040012-10685217" class="img-fluid w-100" alt="TV Store Online" />
-      </a>
-
-      <h3>Shop Popular Products</h3>
-      <a class="card p-3 product-card" *ngFor="let product of products" [href]="product['buy-url']" target="_blank" rel="noopener noreferrer">
-        <img class="img-fluid w-100 mb-3" [src]="product['image-url']" [alt]="product.name">
-        {{product.name}}<br>
-        <span class="price">${{product.price}}</span>
-      </a>
 
       <app-popular-shows sidebar="true" [shows]="series.relatedShows"></app-popular-shows>
     </aside>
