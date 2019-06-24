@@ -80,6 +80,9 @@
                   {{writer}}<span *ngIf="i !== episode.writers.length - 1">, </span>
                 </span>
               </div>
+              <a [href]="episode.hulu" *ngIf="episode.hulu" target="_blank" rel="noopener" class="btn btn-hulu btn-sm mb-1">
+                Watch on Hulu
+              </a>
               <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="btn btn-warning btn-sm mb-1">
                 Watch on Amazon
               </a>
