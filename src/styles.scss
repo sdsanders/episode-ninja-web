@@ -163,3 +163,8 @@ star-rating div:focus {
 .modal-open .modal {
   opacity: 1;
 }
+
+.list-inline-item:not(:last-child) a {
+  border-right: 1px solid;
+  padding-right: 7px;
+}
