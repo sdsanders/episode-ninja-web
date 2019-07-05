@@ -80,6 +80,31 @@
   line-height: 25px;
 }
 
+.watch-link-wrapper {
+  margin: 0 -10px;
+}
+
+.watch-link {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 175px;
+  padding: 5px 15px;
+  text-align: center;
+
+  &.hulu {
+    background-color: #1CE783;
+  }
+  &.amazon {
+    background-color: #FF9900;
+  }
+  &.itunes {
+    background-color: #1D1D1D;
+    color: #fff;
+  }
+}
+
 @media (max-width: 544px) {
   .series-name {
     font-size: 1.5rem;
