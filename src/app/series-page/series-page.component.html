@@ -89,6 +89,12 @@
               <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="btn btn-secondary btn-sm mb-1">
                 Buy on iTunes
               </a>
+              <a [href]="episode.vudu" *ngIf="episode.vudu" target="_blank" rel="noopener" class="btn btn-vudu btn-sm mb-1">
+                Buy on Vudu
+              </a>
+              <a [href]="episode.cbs" *ngIf="episode.cbs" target="_blank" rel="noopener" class="btn btn-cbs btn-sm mb-1">
+                Watch on CBS
+              </a>
             </div>
           </div>
           <div class="card-footer">
