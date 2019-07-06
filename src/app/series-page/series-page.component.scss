@@ -16,6 +16,11 @@
   padding-top: 7rem;
 }
 
+.series-tagline {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
 .card {
   font-size: 14px;
   line-height: 1.25;
@@ -99,6 +104,10 @@
     font-size: 1.5rem;
   }
 
+  .series-tagline {
+    font-size: 1rem;
+  }
+
   .series-description {
     font-size: 0.85rem;
     line-height: 1.25;
@@ -112,6 +121,10 @@
 @media (min-width: 545px) and (max-width: 767px) {
   .series-name {
     font-size: 2rem;
+  }
+
+  .series-tagline {
+    font-size: 1rem;
   }
 
   .series-description {

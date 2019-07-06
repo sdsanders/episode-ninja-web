@@ -1,9 +1,8 @@
 <div class="series-background" [style.background-image]="'url(https://cdn.episode.ninja/file/episodeninja/show/' + series.id + '.jpg)'">
   <div class="container text-white">
     <div class="series-text col-lg-9 px-0">
-      <h1 class="series-name pt-1 mb-0">The {{worst ? 'Worst' : 'Best'}} {{bestSeasons ? 'Seasons' : 'Episodes'}} of {{series.seriesName}}</h1>
-      <p class="series-description mb-1 mb-sm-3">Last Updated: {{series.updatedAt | date}}</p>
-      <p class="series-description mb-lg-5 mb-xl-5">{{series.overview}}</p>
+      <h1 class="series-name pt-1 mb-1">The {{worst ? 'WORST' : 'BEST'}} {{bestSeasons ? 'Seasons' : 'Episodes'}} of {{series.seriesName}}</h1>
+      <h2 class="series-tagline mb-3 mb-lg-5 mb-xl-5">Every {{bestSeasons ? 'season' : 'episode'}} ever - ranked by fan votes!</h2>
     </div>
   </div>
 </div>
@@ -51,6 +50,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9 content">
+      <p class="series-description">Last Updated: {{series.updatedAt | date}}</p>
+      <p class="series-description">{{series.overview}}</p>
       <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
         <div class="card mt-1 mb-3">
           <div class="row align-items-center">
