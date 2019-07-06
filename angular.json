@@ -29,10 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/lazysizes/lazysizes.js",
-              "node_modules/lazysizes/plugins/attrchange/ls.attrchange.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
