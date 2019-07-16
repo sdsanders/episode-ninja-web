@@ -17,6 +17,41 @@ export class SeriesPageComponent implements OnInit {
   images: any = [];
   worst: boolean = false;
   bestSeasons: boolean = false;
+  single = [
+    {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    },
+    {
+      "name": "France",
+      "value": 7200000
+    }
+  ];
+  multi: any[];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = 'Country';
+  showYAxisLabel = false;
+  yAxisLabel = 'Population';
+
+  colorScheme = {
+    domain: ['#5AA454']
+  };
+
+  onSelect(event) {
+    console.log(event);
+  }
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +61,7 @@ export class SeriesPageComponent implements OnInit {
     private ninjaService: NinjaService,
     private authService: AuthService,
     private simpleModalService: SimpleModalService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -35,6 +70,12 @@ export class SeriesPageComponent implements OnInit {
       this.worst = this.router.url.includes('worst-episodes');
       this.bestSeasons = this.router.url.includes('best-seasons');
       this.getSeries(slug, this.worst, this.bestSeasons);
+
+      this.ninjaService.getLifetime(slug).subscribe(({ episodes }) => {
+        this.single = episodes.map(episode => {
+          return { name: episode.airedSeason + '-' + episode.airedEpisodeNumber, value: episode.rating };
+        });
+      });
     });
   }
 

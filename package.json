@@ -30,6 +30,7 @@
     "@nguniversal/common": "^7.1.1",
     "@nguniversal/express-engine": "^7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
+    "@swimlane/ngx-charts": "^12.0.1",
     "angular-star-rating": "^4.0.0-beta.3",
     "apicache": "^1.2.3",
     "bootstrap": "^4.0.0-alpha.6",

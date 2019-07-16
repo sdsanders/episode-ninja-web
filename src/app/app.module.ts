@@ -11,6 +11,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { StarRatingModule } from 'angular-star-rating';
 import { SimpleModalModule } from 'ngx-simple-modal';
 import { AdsenseModule } from 'ng2-adsense';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -97,6 +98,7 @@ export function ninjaServiceFactory(http, router, authService) {
       adClient: 'ca-pub-1168742975782022',
       adSlot: 6732777857,
     }),
+    NgxChartsModule,
   ],
   providers: [
     {

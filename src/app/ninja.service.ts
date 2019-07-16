@@ -69,6 +69,10 @@ export class NinjaService {
     );
   }
 
+  getLifetime(slug: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/episodes/${slug}/lifetime`);
+  }
+
   search(searchTerm: string) {
     return this.http.get(`${environment.apiUrl}/search/${searchTerm}`);
   }
