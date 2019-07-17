@@ -3,7 +3,7 @@
 
   <div class="row pb-3">
     <div class="col-sm-6 col-lg-4 pb-3" *ngFor="let show of shows">
-      <a [routerLink]="'/series/' + show.slug">
+      <a [href]="'/series/' + show.slug">
         <img class="img-fluid w-100" [src]="'https://thetvdb.com/banners/' + show.banner" [alt]="show.seriesName">
       </a>
     </div>

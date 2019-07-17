@@ -12,7 +12,7 @@
           #{{index + 1}} - {{episode.episodeName}}
         </h2>
         <h3 class="h6 card-subtitle text-muted mb-3">
-          <a [routerLink]="'/series/' + episode.seriesSlug">{{episode.seriesName}}</a> Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}
+          <a [href]="'/series/' + episode.seriesSlug">{{episode.seriesName}}</a> Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}
         </h3>
         <p class="card-text mr-3">{{episode.overview}}</p>
         <div class="float-right text-muted mx-3">

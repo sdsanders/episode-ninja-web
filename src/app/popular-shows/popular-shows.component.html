@@ -4,10 +4,14 @@
     <app-show-card *ngFor="let show of shows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
 
+  <div id="mmt-65c6c14c-9dac-4695-ac7b-815c9c518be5" *ngIf="sidebar" class="mb-3"></div>
+
   <h3>Popular Shows</h3>
   <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of popularShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
+
+  <div id="mmt-33d4ee1c-3c88-4de3-8cf2-26e999ff6b9a" *ngIf="sidebar" class="mb-3"></div>
 
   <h3>Recently Added Shows</h3>
   <div class="row no-gutters">

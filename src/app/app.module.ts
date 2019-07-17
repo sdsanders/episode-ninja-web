@@ -93,10 +93,6 @@ export function ninjaServiceFactory(http, router, authService) {
     StarRatingModule.forRoot(),
     SimpleModalModule,
     TransferHttpCacheModule,
-    AdsenseModule.forRoot({
-      adClient: 'ca-pub-1168742975782022',
-      adSlot: 6732777857,
-    }),
   ],
   providers: [
     {

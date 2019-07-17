@@ -36,6 +36,13 @@ export class SeriesPageComponent implements OnInit {
       this.bestSeasons = this.router.url.includes('best-seasons');
       this.getSeries(slug, this.worst, this.bestSeasons);
     });
+
+    const $MMT = window['$MMT'] || {}; $MMT.cmd = $MMT.cmd || [];
+    $MMT.cmd.push(function() {$MMT.display.slots.push(['f7b740f6-3325-4485-a7a5-c637611a45c4']); });
+    $MMT.cmd.push(function() {$MMT.display.slots.push(['0df7e575-f573-42a0-bd4f-fdcffc167c2b']); });
+    $MMT.cmd.push(function() {$MMT.display.slots.push(['092090b1-1785-42bf-b9f8-9105951e8e02']); });
+    $MMT.cmd.push(function() {$MMT.display.slots.push(['be0bf847-dfc8-4de2-acf4-14e27455e85f']); });
+    $MMT.cmd.push(function() {$MMT.display.slots.push(['334d41fd-8651-4869-94ea-665aab721f20']); });
   }
 
   getSeries(slug: string, worst: boolean, seasons: boolean, offset = 0) {
