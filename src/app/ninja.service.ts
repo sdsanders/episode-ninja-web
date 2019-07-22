@@ -92,6 +92,14 @@ export class NinjaService {
     }));
   }
 
+  getPodcastEpisode(slug: string) {
+    return this.http.get(`${environment.apiUrl}/podcast/${slug}`)
+    .pipe(map((episode: any) => {
+      episode.player = this.sanitizer.bypassSecurityTrustResourceUrl(episode.player);
+      return episode;
+    }));
+  }
+
   handleError(error) {
     console.log('handling error', error);
     if (error.status === 404) {

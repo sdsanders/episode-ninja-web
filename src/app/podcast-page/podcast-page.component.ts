@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 import { NinjaService } from '../ninja.service';
 
@@ -10,22 +11,43 @@ import { NinjaService } from '../ninja.service';
 })
 export class PodcastPageComponent implements OnInit {
   podcast;
+  episode;
 
   constructor(
     private meta: Meta,
     private title: Title,
-    private ninjaService: NinjaService
+    private ninjaService: NinjaService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Podcast | Episode Ninja');
-    this.meta.addTag({
-      name: 'description',
-      content: 'The Episode Ninja Podcast - Coming Soon!'
-    });
+    this.route.params.subscribe(params => {
+      const slug = params['slug'];
 
-    this.ninjaService.getPodcast().subscribe(podcast => {
-      this.podcast = podcast;
+      if (slug) {
+        this.ninjaService.getPodcastEpisode(slug).subscribe(episode => {
+          this.title.setTitle(`${episode.title} | The Episode Ninja Podcast`);
+          this.meta.addTag({
+            name: 'description',
+            content: episode.contentSnippet
+          });
+
+          this.episode = episode;
+        });
+
+        return;
+      }
+
+      this.title.setTitle('The Episode Ninja Podcast | Episode Ninja');
+
+      this.ninjaService.getPodcast().subscribe(podcast => {
+        this.meta.addTag({
+          name: 'description',
+          content: podcast.description
+        });
+
+        this.podcast = podcast;
+      });
     });
   }
 

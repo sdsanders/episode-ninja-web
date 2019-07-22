@@ -6,17 +6,32 @@
 
 <div class="container">
   <div class="row">
-    <div class="col content">
+    <!-- all episodes -->
+    <div class="col content" *ngIf="podcast">
       <p>{{podcast?.description}}</p>
       <div class="card mb-3" *ngFor="let item of podcast?.items">
         <div class="card-block">
-          <h2 class="card-title">{{item.title}}</h2>
+          <h2 class="card-title">
+            <a [href]="'/podcast/' + item.slug">{{item.title}}</a>
+          </h2>
           <h3 class="h6 card-subtitle text-muted mb-3">{{item.pubDate | date}}</h3>
 
           <div class="card-text" [innerHTML]="item.content"></div>
 
           <iframe [src]="item.player" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
         </div>
+      </div>
+    </div>
+
+    <!-- single episodes -->
+    <div class="col content" *ngIf="episode">
+      <div class="card-block">
+        <h2 class="card-title">{{episode.title}}</h2>
+        <h3 class="h6 card-subtitle text-muted mb-3">{{episode.pubDate | date}}</h3>
+
+        <div class="card-text" [innerHTML]="episode.content"></div>
+
+        <iframe [src]="episode.player" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
       </div>
     </div>
   </div>

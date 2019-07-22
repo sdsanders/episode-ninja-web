@@ -62,6 +62,17 @@ function generateSitemap() {
 
     sitemap = newSitemap;
   });
+
+  rp({
+    uri: 'https://api.episode.ninja/podcast',
+    json: true
+  }).then(({ items }) => {
+    items.forEach(item => {
+      newSitemap.add({url: `/podcast/${item.slug}`});
+    });
+
+    sitemap = newSitemap;
+  });
 }
 
 generateSitemap();
