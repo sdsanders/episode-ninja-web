@@ -1,10 +1,12 @@
-import { Component, Renderer2, OnInit, ElementRef } from '@angular/core';
+import { Component, Renderer2, OnInit, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ad',
-  template: ''
+  template: '<div [id]="\'mmt-\' + id" *ngIf="id"></div>',
+  styles: [':host { display: block; }']
 })
 export class AdComponent implements OnInit {
+  @Input() id: string;
   constructor(
     private renderer: Renderer2,
     private el: ElementRef
@@ -12,11 +14,13 @@ export class AdComponent implements OnInit {
 
   ngOnInit() {
     const script = this.renderer.createElement('script');
-    const src = '//native.propellerads.com/1?z=1981755&eid=';
+    const check = `$MMT = window.$MMT || {}; $MMT.cmd = $MMT.cmd || [];`;
+    const command = `$MMT.cmd.push(function(){ $MMT.display.slots.push(["${this.id}"]); })`;
+    const content = this.renderer.createText(`${check} ${command}`);
 
-    this.renderer.setAttribute(script, 'async', 'async');
+    this.renderer.setAttribute(script, 'type', 'text/javascript');
     this.renderer.setAttribute(script, 'data-cfasync', 'false');
-    this.renderer.setAttribute(script, 'src', src);
+    this.renderer.appendChild(script, content);
     this.renderer.appendChild(this.el.nativeElement, script);
   }
 }
