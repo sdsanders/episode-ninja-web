@@ -1,0 +1,20 @@
+<div class="banner">
+  <div class="logo">
+    <img src="/assets/logo.svg" />
+    <div class="logo__text">
+      <div>the</div>
+      <div class="logo__ninja">Episode Ninja</div>
+      <div>podcast</div>
+    </div>
+  </div>
+  <div class="description">
+    <div class="description__episode">
+      EPISODE {{episode.itunes.episode}}
+    </div>
+
+    <div class="description__title">
+      {{episode.title}}
+    </div>
+    <a [href]="'/podcast/' + episode.slug">Listen Now</a>
+  </div>
+</div>

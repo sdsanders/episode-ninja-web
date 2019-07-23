@@ -33,6 +33,7 @@ import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
 import { SignupPromptComponent } from './signup-prompt/signup-prompt.component';
 import { PodcastPageComponent } from './podcast-page/podcast-page.component';
+import { PodcastBannerComponent } from './podcast-banner/podcast-banner.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -79,7 +80,8 @@ export function ninjaServiceFactory(http, router, authService, sanitizer) {
     LoginComponent,
     SignupComponent,
     SignupPromptComponent,
-    PodcastPageComponent
+    PodcastPageComponent,
+    PodcastBannerComponent
   ],
   entryComponents: [
     SignupPromptComponent
