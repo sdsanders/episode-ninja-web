@@ -111,6 +111,12 @@
             ></star-rating>
           </div>
         </div>
+
+        <app-podcast-banner
+          class="mt-1 mb-3"
+          *ngIf="(index + 1) % 6 === 0"
+        ></app-podcast-banner>
+
         <div class="text-center">
           <button
             *ngIf="index === series.episodes.length - 1 && index < series.totalEpisodes - 1"
