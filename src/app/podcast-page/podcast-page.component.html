@@ -18,7 +18,7 @@
 
           <div class="card-text" [innerHTML]="item.content"></div>
 
-          <iframe [src]="item.player" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
+          <iframe [src]="getPlayer(item.player)" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
 
         <div class="card-text" [innerHTML]="episode.content"></div>
 
-        <iframe [src]="episode.player" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
+        <iframe [src]="getPlayer(episode.player)" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
       </div>
     </div>
   </div>

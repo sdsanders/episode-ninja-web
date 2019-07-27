@@ -52,8 +52,8 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: 'not-found' }
 ];
 
-export function ninjaServiceFactory(http, router, authService, sanitizer) {
-  return new NinjaService(http, router, authService, sanitizer);
+export function ninjaServiceFactory(http, router, authService) {
+  return new NinjaService(http, router, authService);
 }
 
 /**

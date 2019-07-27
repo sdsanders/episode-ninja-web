@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { NinjaService } from '../ninja.service';
@@ -18,6 +18,7 @@ export class PodcastPageComponent implements OnInit {
     private title: Title,
     private ninjaService: NinjaService,
     private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -49,6 +50,10 @@ export class PodcastPageComponent implements OnInit {
         this.podcast = podcast;
       });
     });
+  }
+
+  getPlayer(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

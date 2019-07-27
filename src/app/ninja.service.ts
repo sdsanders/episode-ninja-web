@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
@@ -13,8 +12,7 @@ export class NinjaService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService,
-    private sanitizer: DomSanitizer
+    private authService: AuthService
   ) { }
 
 
@@ -81,23 +79,12 @@ export class NinjaService {
     });
   }
 
-  getPodcast() {
-    return this.http.get(`${environment.apiUrl}/podcast`)
-    .pipe(map((podcast: any) => {
-      podcast.items.map(item => {
-        item.player = this.sanitizer.bypassSecurityTrustResourceUrl(item.player);
-        return item;
-      });
-      return podcast;
-    }));
+  getPodcast(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/podcast`);
   }
 
-  getPodcastEpisode(slug: string) {
-    return this.http.get(`${environment.apiUrl}/podcast/${slug}`)
-    .pipe(map((episode: any) => {
-      episode.player = this.sanitizer.bypassSecurityTrustResourceUrl(episode.player);
-      return episode;
-    }));
+  getPodcastEpisode(slug: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/podcast/${slug}`);
   }
 
   handleError(error) {
