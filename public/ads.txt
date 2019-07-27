@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2019/07/16 18-21-385585 by MONUMETRIC
+# Ads.txt last updated on: 2019/07/26 17-13-997079 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1   #sovrn
@@ -61,7 +61,7 @@ google.com, pub-3848273848634341, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-7439041255533808, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-9242135695870166, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-9557089510405422, RESELLER, f08c47fec0942fa0 #for GUMGUM
-gumgum.com, 11483, DIRECT, ffdef49475d318a9      #for GUMGUM
+gumgum.com, 11483, RESELLER, ffdef49475d318a9      #for GUMGUM
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
 Indexexchange.com, 183756, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
 media.net, 8CU5ZWB19, RESELLER  #for GUMGUM
