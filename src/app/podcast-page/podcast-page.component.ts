@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Meta, Title, DomSanitizer, DOCUMENT } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { NinjaService } from '../ninja.service';
@@ -18,7 +18,8 @@ export class PodcastPageComponent implements OnInit {
     private title: Title,
     private ninjaService: NinjaService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    @Inject(DOCUMENT) private document
   ) { }
 
   ngOnInit() {
@@ -49,6 +50,13 @@ export class PodcastPageComponent implements OnInit {
 
         this.podcast = podcast;
       });
+
+      const link: HTMLLinkElement = this.document.createElement('link');
+      link.setAttribute('type', 'application/rss+xml');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('title', 'The Episode Ninja Podcast');
+      link.setAttribute('href', 'https://feed.podbean.com/episodeninja/feed.xml');
+      this.document.head.appendChild(link);
     });
   }
 
