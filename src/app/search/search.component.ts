@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +6,12 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   @Output() submitted = new EventEmitter();
-  public query: String = '';
+  public query = '';
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   onSubmit() {
-    this.router.navigate(['/search'], { queryParams: { query: this.query } });
+    window.location.href = `/search?query="${encodeURIComponent(this.query)}`;
     this.submitted.emit(null);
-    console.log('emitting');
   }
 }
