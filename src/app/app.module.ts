@@ -34,6 +34,7 @@ import { TokenInterceptor } from './token.interceptor';
 import { SignupPromptComponent } from './signup-prompt/signup-prompt.component';
 import { PodcastPageComponent } from './podcast-page/podcast-page.component';
 import { PodcastBannerComponent } from './podcast-banner/podcast-banner.component';
+import { FinalesPageComponent } from './finales-page/finales-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'podcast', component: PodcastPageComponent },
   { path: 'podcast/:slug', component: PodcastPageComponent },
+  { path: 'best-finales', component: FinalesPageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -81,7 +83,8 @@ export function ninjaServiceFactory(http, router, authService) {
     SignupComponent,
     SignupPromptComponent,
     PodcastPageComponent,
-    PodcastBannerComponent
+    PodcastBannerComponent,
+    FinalesPageComponent
   ],
   entryComponents: [
     SignupPromptComponent

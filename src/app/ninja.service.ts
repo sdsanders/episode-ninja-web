@@ -87,6 +87,10 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/podcast/${slug}`);
   }
 
+  getFinales(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/finales`);
+  }
+
   handleError(error) {
     console.log('handling error', error);
     if (error.status === 404) {

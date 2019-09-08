@@ -1,0 +1,52 @@
+<ng-template ngFor let-index="index" let-episode [ngForOf]="finales">
+  <div class="card mt-1 mb-3">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-6 col-lg-5">
+        <!-- <img class="img-fluid w-100" > -->
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
+        <h2 class="h2 card-title mb-1">
+          #{{index + 1}} - {{episode.episodeName}}
+        </h2>
+        <h3 class="h6 card-subtitle text-muted mb-3">Season {{episode.airedSeason}} - Episode {{episode.airedEpisodeNumber}}</h3>
+        <p class="card-text mr-3">{{episode.overview}}</p>
+        <div class="float-right text-muted mx-3">
+          <div class="episode-rating">
+            <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{episode.rating | number: '1.2-2'}}
+          </div>
+          {{episode.ratingCount | number:'.0'}} votes
+        </div>
+        <!-- <div *ngIf="episode.directors.length" class="mb-1">
+          Directors: <a *ngFor="let director of episode.directors; let i = index;" [href]="'/director/' + director.slug">
+            {{director.name}}<span *ngIf="i !== episode.directors.length - 1">, </span>
+          </a>
+        </div> -->
+        <!-- <div *ngIf="episode.directors.length" class="mb-3">
+          Writers: <span *ngFor="let writer of episode.writers; let i = index;">
+            {{writer}}<span *ngIf="i !== episode.writers.length - 1">, </span>
+          </span>
+        </div> -->
+        <!-- <div class="d-flex watch-link-wrapper">
+          <a [href]="episode.hulu" *ngIf="episode.hulu" target="_blank" rel="noopener" class="col watch-link btn-hulu">
+            Watch on Hulu
+          </a>
+          <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="col watch-link btn-amazon">
+            Watch on Amazon
+          </a>
+          <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="col watch-link btn-itunes">
+            Buy on iTunes
+          </a>
+          <a [href]="episode.vudu" *ngIf="episode.vudu" target="_blank" rel="noopener" class="col watch-link btn-vudu">
+            Buy on Vudu
+          </a>
+          <a [href]="episode.cbs" *ngIf="episode.cbs" target="_blank" rel="noopener" class="col watch-link btn-cbs">
+            Watch on CBS
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <app-ad id="334d41fd-8651-4869-94ea-665aab721f20" class="mb-3"></app-ad>
+</ng-template>
