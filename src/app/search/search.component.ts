@@ -11,7 +11,7 @@ export class SearchComponent {
   constructor() {}
 
   onSubmit() {
-    window.location.href = `/search?query="${encodeURIComponent(this.query)}`;
+    window.location.href = `/search?query=${encodeURIComponent(this.query)}`;
     this.submitted.emit(null);
   }
 }
