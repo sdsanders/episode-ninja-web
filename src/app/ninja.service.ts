@@ -87,6 +87,28 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/podcast/${slug}`);
   }
 
+  getFinales(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/finales`)
+    .pipe(map((episodes: any) => {
+      episodes = episodes.map(episode => {
+        episode.directors = episode.directors.map(director => {
+          if (typeof director !== 'string') {
+            return director;
+          }
+
+          return {
+            name: director,
+            slug: director.replace(/ /g, '-').toLowerCase()
+          };
+        });
+
+        return episode;
+      });
+
+      return episodes;
+    }, catchError(this.handleError)));
+  }
+
   handleError(error) {
     console.log('handling error', error);
     if (error.status === 404) {
