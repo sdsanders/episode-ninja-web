@@ -44,6 +44,7 @@ function generateSitemap() {
   newSitemap.add({url: '/shows'});
   newSitemap.add({url: '/about'});
   newSitemap.add({url: '/podcast'});
+  newSitemap.add({url: '/best-tv-series-finales'});
 
   rp({
     uri: 'https://api.episode.ninja/shows',
