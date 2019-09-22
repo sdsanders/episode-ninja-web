@@ -74,6 +74,17 @@ function generateSitemap() {
 
     sitemap = newSitemap;
   });
+
+  rp({
+    uri: 'https://api.episode.ninja/networks',
+    json: true
+  }).then((networks) => {
+    networks.forEach(({ networkSlug }) => {
+      newSitemap.add({url: `/best-${networkSlug}-shows`});
+    });
+
+    sitemap = newSitemap;
+  });
 }
 
 generateSitemap();
