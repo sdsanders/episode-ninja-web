@@ -50,7 +50,17 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-9 content">
-      <p class="series-description">Last Updated: {{series.updatedAt | date}}</p>
+      <div class="row">
+        <div class="col">
+          <p class="series-description">Last Updated: {{series.updatedAt | date}}</p>
+        </div>
+        <div class="col">
+          <p class="series-description">
+            Network: <a [href]="'/best-' + series.networkSlug + '-shows'">{{series.network}}</a>
+          </p>
+        </div>
+      </div>
+
       <p class="series-description">{{series.overview}}</p>
       <app-ad id="be0bf847-dfc8-4de2-acf4-14e27455e85f"></app-ad>
       <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
