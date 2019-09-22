@@ -109,6 +109,10 @@ export class NinjaService {
     }, catchError(this.handleError)));
   }
 
+  getNetworkShows(slug: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/networks/${slug}`);
+  }
+
   handleError(error) {
     console.log('handling error', error);
     if (error.status === 404) {

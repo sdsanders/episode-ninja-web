@@ -159,6 +159,13 @@ app-search {
 .card {
   border-radius: 0;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.episode-rating {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
 }
 
 .card-img {

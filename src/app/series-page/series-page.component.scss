@@ -21,11 +21,6 @@
   font-weight: 500;
 }
 
-.card {
-  font-size: 14px;
-  line-height: 1.25;
-}
-
 .card-group {
   display: flex;
   flex-flow: row wrap;
@@ -54,11 +49,6 @@
   &:hover {
     text-decoration: none;
   }
-}
-
-.episode-rating {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
 }
 
 .series-nav {

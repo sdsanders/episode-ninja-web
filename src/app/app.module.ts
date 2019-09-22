@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlSegment } from '@angular/router';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
@@ -35,6 +35,26 @@ import { SignupPromptComponent } from './signup-prompt/signup-prompt.component';
 import { PodcastPageComponent } from './podcast-page/podcast-page.component';
 import { PodcastBannerComponent } from './podcast-banner/podcast-banner.component';
 import { EpisodeListPageComponent } from './episode-list-page/episode-list-page.component';
+import { SeriesListPageComponent } from './series-list-page/series-list-page.component';
+
+export function networkPageMatcher(url: UrlSegment[]) {
+  if (url.length !== 1) {
+    return null;
+  }
+
+  const path = url[0].path;
+  if (path.startsWith('best-') && path.endsWith('-shows')) {
+    const networkSlug = path.replace('best-', '').replace('-shows', '');
+    return {
+      consumed: url,
+      posParams: {
+        slug: new UrlSegment(networkSlug, {})
+      }
+    };
+  }
+
+  return null;
+}
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -51,6 +71,7 @@ const appRoutes: Routes = [
   { path: 'podcast', component: PodcastPageComponent },
   { path: 'podcast/:slug', component: PodcastPageComponent },
   { path: 'best-tv-series-finales', component: EpisodeListPageComponent },
+  { matcher: networkPageMatcher, component: SeriesListPageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -84,7 +105,8 @@ export function ninjaServiceFactory(http, router, authService) {
     SignupPromptComponent,
     PodcastPageComponent,
     PodcastBannerComponent,
-    EpisodeListPageComponent
+    EpisodeListPageComponent,
+    SeriesListPageComponent
   ],
   entryComponents: [
     SignupPromptComponent
