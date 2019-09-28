@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Meta, Title, DomSanitizer, DOCUMENT } from '@angular/platform-browser';
+import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 import { NinjaService } from '../ninja.service';
 

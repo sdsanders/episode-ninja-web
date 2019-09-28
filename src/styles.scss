@@ -15,7 +15,7 @@
 @import "../node_modules/bootstrap/scss/_utilities.scss";
 @import "../node_modules/bootstrap/scss/_modal.scss";
 @import "../node_modules/bootstrap/scss/_alert.scss";
-@import '~css-star-rating/scss/star-rating';
+@import "~css-star-rating/css/star-rating.min.css";
 
 .bg-inverse {
   background: #1D1D1D !important;
