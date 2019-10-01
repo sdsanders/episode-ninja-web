@@ -1,4 +1,4 @@
-<div class="bg-inverse">
+<div class="bg-dark">
   <h1 class="container text-white mb-3 py-3 podcast-title">
     the<br> <span>episode ninja</span><br> podcast
   </h1>
@@ -10,7 +10,7 @@
     <div class="col content" *ngIf="podcast">
       <p>{{podcast?.description}}</p>
       <div class="card mb-3" *ngFor="let item of podcast?.items">
-        <div class="card-block">
+        <div class="card-body">
           <h2 class="card-title">
             <a [href]="'/podcast/' + item.slug">{{item.title}}</a>
           </h2>
@@ -25,7 +25,7 @@
 
     <!-- single episodes -->
     <div class="col content" *ngIf="episode">
-      <div class="card-block">
+      <div class="card-body">
         <h2 class="card-title">{{episode.title}}</h2>
         <h3 class="h6 card-subtitle text-muted mb-3">{{episode.pubDate | date}}</h3>
 

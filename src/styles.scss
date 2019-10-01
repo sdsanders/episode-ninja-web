@@ -1,23 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/scss/_variables.scss";
-@import "../node_modules/bootstrap/scss/_mixins.scss";
-@import "../node_modules/bootstrap/scss/_normalize.scss";
-@import "../node_modules/bootstrap/scss/_reboot.scss";
-@import "../node_modules/bootstrap/scss/_buttons.scss";
-@import "../node_modules/bootstrap/scss/_button-group.scss";
-@import "../node_modules/bootstrap/scss/_card.scss";
-@import "../node_modules/bootstrap/scss/_dropdown.scss";
-@import "../node_modules/bootstrap/scss/_forms.scss";
-@import "../node_modules/bootstrap/scss/_grid.scss";
-@import "../node_modules/bootstrap/scss/_navbar.scss";
-@import "../node_modules/bootstrap/scss/_images.scss";
-@import "../node_modules/bootstrap/scss/_type.scss";
-@import "../node_modules/bootstrap/scss/_utilities.scss";
-@import "../node_modules/bootstrap/scss/_modal.scss";
-@import "../node_modules/bootstrap/scss/_alert.scss";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/alert";
 @import "~css-star-rating/css/star-rating.min.css";
 
-.bg-inverse {
+.bg-dark {
   background: #1D1D1D !important;
 }
 
@@ -161,6 +162,10 @@ app-search {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   font-size: 14px;
   line-height: 1.25;
+}
+
+a.card {
+  color: #fff;
 }
 
 .episode-rating {

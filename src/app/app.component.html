@@ -1,33 +1,31 @@
 <div class="site-wrap">
-  <nav class="navbar" [class.bg-inverse]="!router.url.startsWith('/series')" *ngIf="!router.url.startsWith('/podcast')">
+  <nav class="navbar" [class.bg-dark]="!router.url.startsWith('/series')" *ngIf="!router.url.startsWith('/podcast')">
     <div class="container">
-      <div class="row">
-        <div class="col-2 hidden-sm-up">
-          <button type="button" class="btn btn-link btn-search" (click)="toggleSearch()" *ngIf="router.url !== '/'">
-            <img src="/assets/search.svg" alt="Search">
-          </button>
-        </div>
-        <div class="col-8 d-flex">
-          <a class="navbar-brand" href="/">
-            <img src="/assets/logo.svg" width="30" height="30" class="float-left mr-1" alt="Episode Ninja">
-            Episode Ninja<br>
-            <small>the best episodes of any tv show</small>
-          </a>
-        </div>
-        <div class="col-12" *ngIf="showSearch" [@enterAnimation] style="position: absolute; top: 36px;">
-          <app-search
-            style="min-width: 250px;"
-            class="mb-1"
-            (submitted)="toggleSearch()"
-          ></app-search>
-        </div>
-        <div class="col-sm-4 hidden-sm-down">
-          <app-search
-            *ngIf="router.url !== '/'"
-            style="min-width: 250px;"
-            class="mb-1"
-          ></app-search>
-        </div>
+      <div class="d-flex">
+        <a class="navbar-brand mr-auto" href="/">
+          <img src="/assets/logo.svg" width="30" height="30" class="float-left mr-1" alt="Episode Ninja">
+          Episode Ninja<br>
+          <small>the best episodes of any tv show</small>
+        </a>
+      </div>
+      <div class="d-sm-none">
+        <button type="button" class="btn btn-link btn-search" (click)="toggleSearch()" *ngIf="router.url !== '/'">
+          <img src="/assets/search.svg" alt="Search">
+        </button>
+      </div>
+      <div *ngIf="showSearch" [@enterAnimation] style="position: absolute; top: 48px; left: 0; right: 0;" class="col-12">
+        <app-search
+          style="min-width: 250px;"
+          class="mb-1"
+          (submitted)="toggleSearch()"
+        ></app-search>
+      </div>
+      <div class="d-none d-md-flex">
+        <app-search
+          *ngIf="router.url !== '/'"
+          style="min-width: 250px;"
+          class="mb-1"
+        ></app-search>
       </div>
     </div>
   </nav>
@@ -36,7 +34,7 @@
     <router-outlet></router-outlet>
   </main>
 
-  <footer class="bg-inverse text-white pt-3 pb-2">
+  <footer class="bg-dark text-white pt-3 pb-2">
     <div class="container">
       <span class="float-sm-right">&copy; Copyright {{currentYear}} <a href="/" class="text-white">Episode Ninja</a></span>
       <ul class="list-inline">
