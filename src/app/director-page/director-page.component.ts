@@ -13,7 +13,7 @@ export class DirectorPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private meta: Meta,
     private title: Title,
     public ninjaService: NinjaService
