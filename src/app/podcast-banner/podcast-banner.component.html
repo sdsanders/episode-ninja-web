@@ -9,12 +9,12 @@
   </a>
   <div class="description">
     <div class="description__episode">
-      EPISODE {{episode.itunes.episode}}
+      EPISODE {{episode?.itunes.episode}}
     </div>
 
     <div class="description__title">
-      {{episode.title}}
+      {{episode?.title}}
     </div>
-    <a [href]="'/podcast/' + episode.slug" class="listen">Listen Now</a>
+    <a [href]="'/podcast/' + episode?.slug" class="listen">Listen Now</a>
   </div>
 </div>
