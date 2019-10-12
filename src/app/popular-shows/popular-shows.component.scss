@@ -6,3 +6,19 @@
   flex: none;
   max-width: 100%;
 }
+
+.card-network {
+  color: #fff;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  height: 170px;
+  justify-content: center;
+  text-align: center;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}

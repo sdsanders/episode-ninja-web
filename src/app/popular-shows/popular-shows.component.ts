@@ -12,6 +12,7 @@ export class PopularShowsComponent implements OnInit {
   @Input('shows') shows: any[] = [];
   public popularShows: any[] = [];
   public newShows: any[] = [];
+  networks: { name: string, slug: string }[] = [];
 
   constructor(
     private ninjaService: NinjaService
@@ -22,9 +23,10 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.ninjaService.getFeaturedShows().subscribe(({popular, recent}: any) => {
+    this.ninjaService.getFeaturedShows().subscribe(({ popular, recent, networks }: any) => {
       this.popularShows = popular;
       this.newShows = recent;
+      this.networks = networks;
     });
   }
 }

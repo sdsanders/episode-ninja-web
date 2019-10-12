@@ -14,7 +14,18 @@
   <app-ad id="33d4ee1c-3c88-4de3-8cf2-26e999ff6b9a" *ngIf="sidebar" class="mb-3"></app-ad>
 
   <h3>Recently Added Shows</h3>
-  <div class="row no-gutters">
+  <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of newShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
+  </div>
+
+  <app-ad id="686cc5c0-6750-459d-9a3b-e4635d45856c" *ngIf="sidebar" class="mb-3"></app-ad>
+
+  <h3>Popular Networks</h3>
+  <div class="row mb-3">
+    <div *ngFor="let network of networks" class="col-sm-6 col-lg-4">
+      <a class="card card-network bg-inverse mb-3" [href]="'/best-' + network.slug + '-shows'">
+        {{network.name}}
+      </a>
+    </div>
   </div>
 </div>
