@@ -57,9 +57,8 @@ export class SeriesPageComponent implements OnInit {
 
   episodeImage(episode) {
     if (episode.imageUrl) { return episode.imageUrl; }
-    if (episode.filename) { return `https://thetvdb.com/banners/${episode.filename}`; }
 
-    return `https://thetvdb.com/banners/${this.series.fanart}`;
+    return `https://cdn.episode.ninja/file/episodeninja/show/${this.series.id}-thumb.jpg`;
   }
 
   seasonImage(season) {
