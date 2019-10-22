@@ -15,6 +15,15 @@
     <div class="description__title">
       {{episode?.title}}
     </div>
-    <a [href]="'/podcast/' + episode?.slug" class="listen">Listen Now</a>
+    <a [href]="'/podcast/' + episode?.slug" class="btn btn-warning mx-1 mb-3 mb-sm-0">Listen Now</a>
+
+    <br class="hidden-sm-up">
+
+    <a href="https://podcasts.apple.com/us/podcast/the-episode-ninja-podcast/id1472869866" class="d-inline-block">
+      <img src="/assets/apple-podcasts.svg" alt="Listen on Apple Podcasts" height="38" loading="lazy" class="mx-1" />
+    </a>
+    <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL2VwaXNvZGVuaW5qYS9mZWVkLnhtbA%3D%3D" class="d-inline-block">
+      <img src="/assets/google-podcasts.svg" alt="Listen on Google Podcasts" height="38" loading="lazy" class="mx-1" />
+    </a>
   </div>
 </div>
