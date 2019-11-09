@@ -62,7 +62,7 @@ export class SeriesPageComponent implements OnInit {
   }
 
   seasonImage(season) {
-    return `https://cdn.episode.ninja/file/episodeninja/${season.id}.jpg`;
+    return `https://cdn.episode.ninja/file/episodeninja/season/${season.id}.jpg`;
   }
 
   setMeta(series, worst: boolean, seasons: boolean) {
