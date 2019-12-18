@@ -27,37 +27,33 @@ export class PodcastPageComponent implements OnInit {
     this.route.params.subscribe(params => {
       const slug = params['slug'];
 
-      if (slug) {
-        this.ninjaService.getPodcastEpisode(slug).subscribe(episode => {
-          this.title.setTitle(`${episode.title} | The Episode Ninja Podcast`);
+      this.ninjaService.getPodcast().subscribe(podcast => {
+        this.podcast = podcast;
+
+        if (slug) {
+          this.episode = podcast.items.find(item => item.slug === slug);
+
+          this.title.setTitle(`${this.episode.title} | The Episode Ninja Podcast`);
           this.meta.addTag({
             name: 'description',
-            content: episode.contentSnippet
+            content: this.episode.contentSnippet
           });
 
-          this.episode = episode;
-        });
+          return;
+        }
 
-        return;
-      }
-
-      this.title.setTitle('The Episode Ninja Podcast | Episode Ninja');
-
-      this.ninjaService.getPodcast().subscribe(podcast => {
+        const link: HTMLLinkElement = this.document.createElement('link');
+        link.setAttribute('type', 'application/rss+xml');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('title', 'The Episode Ninja Podcast');
+        link.setAttribute('href', 'https://feed.podbean.com/episodeninja/feed.xml');
+        this.document.head.appendChild(link);
+        this.title.setTitle('The Episode Ninja Podcast | Episode Ninja');
         this.meta.addTag({
           name: 'description',
           content: podcast.description
         });
-
-        this.podcast = podcast;
       });
-
-      const link: HTMLLinkElement = this.document.createElement('link');
-      link.setAttribute('type', 'application/rss+xml');
-      link.setAttribute('rel', 'alternate');
-      link.setAttribute('title', 'The Episode Ninja Podcast');
-      link.setAttribute('href', 'https://feed.podbean.com/episodeninja/feed.xml');
-      this.document.head.appendChild(link);
     });
   }
 

@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <!-- all episodes -->
-    <div class="col content" *ngIf="podcast">
+    <div class="col content" *ngIf="!episode">
       <p>{{podcast?.description}}</p>
       <div class="card mb-3" *ngFor="let item of podcast?.items">
         <div class="card-block">
@@ -24,15 +24,30 @@
     </div>
 
     <!-- single episodes -->
-    <div class="col content" *ngIf="episode">
-      <div class="card-block">
-        <h2 class="card-title">{{episode.title}}</h2>
-        <h3 class="h6 card-subtitle text-muted mb-3">{{episode.pubDate | date}}</h3>
-
-        <div class="card-text" [innerHTML]="episode.content"></div>
-
-        <iframe [src]="getPlayer(episode.player)" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
+    <ng-container *ngIf="episode">
+      <div class="col-3">
+        <h4>Previous Episodes</h4>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+        </div>
       </div>
-    </div>
+      <div class="col-9 content">
+        <div class="card-block">
+          <h2 class="card-title">{{episode.title}}</h2>
+          <h3 class="h6 card-subtitle text-muted mb-3">{{episode.pubDate | date}}</h3>
+
+          <div class="card-text" [innerHTML]="episode.content"></div>
+
+          <iframe [src]="getPlayer(episode.player)" frameborder="0" height="100" width="100%" scrolling="no"></iframe>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
