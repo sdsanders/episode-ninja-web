@@ -66,7 +66,7 @@ export class SeriesPageComponent implements OnInit {
   }
 
   setMeta(series, worst: boolean, seasons: boolean) {
-    const description = `A list of the ${worst ? 'lowest' : 'highest'} rated ${seasons ? 'seasons' : 'episodes'} of ${series.seriesName}, ranked by thousands of ratings from fans of the series`;
+    const description = `Every ${seasons ? 'season' : 'episode'} of ${series.seriesName} ever, ranked from ${worst ? 'worst' : 'best'} to ${worst ? 'best' : 'worst'} by thousands of votes from fans of the show. The ${worst ? 'worst' : 'best'} episodes of ${series.seriesName}!`
     const title = `The ${worst ? 'Worst' : 'Best'} ${seasons ? 'Seasons' : 'Episodes'} of ${series.seriesName}`;
     const image = `https://cdn.episode.ninja/file/episodeninja/show/${series.id}.jpg`;
 
