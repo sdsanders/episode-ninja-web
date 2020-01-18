@@ -56,6 +56,22 @@ export function networkPageMatcher(url: UrlSegment[]) {
   return null;
 }
 
+export function showYearMatcher(url: UrlSegment[]) {
+  const path = url[0].path;
+
+  if (url.length !== 1 || !path.startsWith('best-shows-of-')) {
+    return null;
+  }
+
+  const year = path.replace('best-shows-of-', '');
+  return {
+    consumed: url,
+    posParams: {
+      year: new UrlSegment(year, {})
+    }
+  };
+}
+
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'series/:slug', component: SeriesPageComponent },
@@ -72,6 +88,7 @@ const appRoutes: Routes = [
   { path: 'podcast/:slug', component: PodcastPageComponent },
   { path: 'best-tv-series-finales', component: EpisodeListPageComponent },
   { matcher: networkPageMatcher, component: SeriesListPageComponent },
+  { matcher: showYearMatcher, component: SeriesListPageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 

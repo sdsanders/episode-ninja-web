@@ -17,9 +17,9 @@
               <p class="card-text mr-3">{{show.overview}}</p>
               <div class="float-right text-muted mx-3">
                 <div class="episode-rating">
-                  <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{show.ninjaRating | number: '1.2-2'}}
+                  <img src="/assets/star.svg" alt="star" width="25" height="25" class="align-top"> {{(show.ninjaRating || show.average) | number: '1.2-2'}}
                 </div>
-                {{show.ninjaRatingCount | number:'.0'}} votes
+                {{(show.ninjaRatingCount || show.traktRatingCount) | number:'.0'}} votes
               </div>
               <a [href]="'/series/' + show.slug" class="btn btn-warning">View Episode Rankings</a>
             </div>

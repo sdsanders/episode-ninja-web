@@ -23,19 +23,45 @@ export class SeriesListPageComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       const slug = paramMap.get('slug');
+      const year = paramMap.get('year');
 
-      this.ninjaService.getNetworkShows(slug).subscribe(({ network, shows }) => {
-        this.network = network;
-        this.shows = shows;
+      if (slug) {
+        this.getNetworkShows(slug);
+      }
 
-        this.title.setTitle(`The Best ${network} Shows | Episode Ninja`);
-        this.meta.addTags([
-          {
-            name: 'description',
-            content: `The best ${shows.length} shows on ${network}, ranked by user votes`
-          }
-        ]);
-      });
+      if (year) {
+        this.getYearShows(year);
+      }
+    });
+  }
+
+  getNetworkShows(slug: string) {
+    this.ninjaService.getNetworkShows(slug).subscribe(({ network, shows }) => {
+      this.network = network;
+      this.shows = shows;
+
+      this.title.setTitle(`The Best ${network} Shows | Episode Ninja`);
+      this.meta.addTags([
+        {
+          name: 'description',
+          content: `The best ${shows.length} shows on ${network}, ranked by user votes`
+        }
+      ]);
+    });
+  }
+
+  getYearShows(year: string) {
+    this.ninjaService.getYearShows(year).subscribe(shows => {
+      console.log('shows', shows);
+      this.shows = shows;
+
+      this.title.setTitle(`The Best Shows of ${year} | Episode Ninja`);
+      this.meta.addTags([
+        {
+          name: 'description',
+          content: `The best ${shows.length} shows of ${year}, ranked by user votes`
+        }
+      ]);
     });
   }
 

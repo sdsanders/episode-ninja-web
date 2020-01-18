@@ -113,6 +113,10 @@ export class NinjaService {
     return this.http.get(`${environment.apiUrl}/networks/${slug}`);
   }
 
+  getYearShows(year: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/year/${year}/shows`);
+  }
+
   handleError(error) {
     console.log('handling error', error);
     if (error.status === 404) {
