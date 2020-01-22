@@ -46,6 +46,10 @@ function generateSitemap() {
   newSitemap.add({url: '/podcast'});
   newSitemap.add({url: '/best-tv-series-finales'});
 
+  for (let year = 1960; year <= new Date().getFullYear(); year++) {
+    newSitemap.add({url: `best-shows-of-${year}`});
+ }
+
   rp({
     uri: 'https://api.episode.ninja/shows',
     json: true
