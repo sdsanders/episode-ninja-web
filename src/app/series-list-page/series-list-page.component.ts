@@ -10,6 +10,7 @@ import { NinjaService } from '../ninja.service';
 })
 export class SeriesListPageComponent implements OnInit {
   network: string;
+  year
   shows: any[] = [];
 
   constructor(
@@ -23,19 +24,45 @@ export class SeriesListPageComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
       const slug = paramMap.get('slug');
+      const year = paramMap.get('year');
 
-      this.ninjaService.getNetworkShows(slug).subscribe(({ network, shows }) => {
-        this.network = network;
-        this.shows = shows;
+      if (slug) {
+        this.getNetworkShows(slug);
+      }
 
-        this.title.setTitle(`The Best ${network} Shows | Episode Ninja`);
-        this.meta.addTags([
-          {
-            name: 'description',
-            content: `The best ${shows.length} shows on ${network}, ranked by user votes`
-          }
-        ]);
-      });
+      if (year) {
+        this.year = year;
+        this.getYearShows(year);
+      }
+    });
+  }
+
+  getNetworkShows(slug: string): void {
+    this.ninjaService.getNetworkShows(slug).subscribe(({ network, shows }) => {
+      this.network = network;
+      this.shows = shows;
+
+      this.title.setTitle(`The Best ${network} Shows | Episode Ninja`);
+      this.meta.addTags([
+        {
+          name: 'description',
+          content: `The best ${shows.length} shows on ${network}, ranked by user votes`
+        }
+      ]);
+    });
+  }
+
+  getYearShows(year: string): void {
+    this.ninjaService.getYearShows(year).subscribe(shows => {
+      this.shows = shows;
+
+      this.title.setTitle(`The Best Shows of ${year} | Episode Ninja`);
+      this.meta.addTags([
+        {
+          name: 'description',
+          content: `The best ${shows.length} shows of ${year}, ranked by user votes`
+        }
+      ]);
     });
   }
 
