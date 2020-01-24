@@ -13,6 +13,7 @@ export class PopularShowsComponent implements OnInit {
   public popularShows: any[] = [];
   public newShows: any[] = [];
   networks: { name: string, slug: string }[] = [];
+  years: number[] = Array.from({ length: 9 }, (_, i) => new Date().getFullYear() - i);
 
   constructor(
     private ninjaService: NinjaService

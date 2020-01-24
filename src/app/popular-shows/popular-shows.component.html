@@ -24,6 +24,17 @@
 
   <app-ad id="686cc5c0-6750-459d-9a3b-e4635d45856c" *ngIf="sidebar" class="mb-3"></app-ad>
 
+  <h3>Recent Years</h3>
+  <div class="row mb-3">
+    <div *ngFor="let year of years" class="col-sm-6 col-lg-4">
+      <a class="card card-network bg-inverse mb-3" [href]="'/best-shows-of-' + year">
+        Best Shows of {{year}}
+      </a>
+    </div>
+  </div>
+
+  <app-ad id="d38a1d84-bec6-46dd-a156-d8f35e506b1c" *ngIf="sidebar" class="mb-3"></app-ad>
+
   <h3>Recently Added Shows</h3>
   <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of newShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
