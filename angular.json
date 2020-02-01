@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -53,6 +54,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -62,8 +67,16 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/server",
-            "main": "src/main.server.ts",
+            "main": "server.ts",
             "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [],
+              "sourceMap": false,
+              "optimization": true
+            }
           }
         },
         "serve": {
@@ -110,6 +123,30 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "episode-ninja-web:build:production",
+            "serverTarget": "episode-ninja-web:server:production",
+            "routes": []
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "episode-ninja-web:build",
+            "serverTarget": "episode-ninja-web:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "episode-ninja-web:build:production",
+              "serverTarget": "episode-ninja-web:server:production"
+            }
           }
         }
       }
