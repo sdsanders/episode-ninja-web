@@ -10,7 +10,6 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { StarRatingModule } from 'angular-star-rating';
 import { SimpleModalModule } from 'ngx-simple-modal';
-import { AdsenseModule } from 'ng2-adsense';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
