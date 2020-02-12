@@ -28,6 +28,8 @@ jobs:
 
       - run: npm run generate-sitemap
 
+      - run: cp ./public/ads.txt ./dist/browser/ads.txt
+
       - deploy:
           name: Deployment
           command: |
