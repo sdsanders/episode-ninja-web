@@ -22,13 +22,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
 
+      - run: npm run prerender
 
-      # deploy
       - deploy:
           name: Deployment
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              npm run build
               git init
               git add .
               git add dist -f
