@@ -11,8 +11,9 @@
     "dev:ssr": "ng run episode-ninja-web:serve-ssr",
     "serve:ssr": "node dist/episode-ninja-web/server/main.js",
     "build:ssr": "ng build --prod && ng run episode-ninja-web:server:production",
-    "prerender": "npm run download-pages && ng run episode-ninja-web:prerender --routesFile routes.txt",
-    "download-pages": "curl https://jobs.episode.ninja/pages -o routes.txt"
+    "prerender": "ng run episode-ninja-web:prerender --routesFile routes.txt",
+    "download-pages": "curl https://jobs.episode.ninja/pages -o routes.txt",
+    "generate-sitemap": "cd dist/browser && npx sitemap-static --prefix=https://episode.ninja/ --pretty . > sitemap.xml"
   },
   "private": true,
   "dependencies": {

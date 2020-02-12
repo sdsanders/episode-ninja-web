@@ -22,7 +22,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ .Branch }}-{{ checksum "package.json" }}
 
+      - run: npm run download-pages
+
       - run: npm run prerender
+
+      - run: npm run generate-sitemap
 
       - deploy:
           name: Deployment
