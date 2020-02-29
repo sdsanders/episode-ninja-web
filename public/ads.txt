@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2019/07/26 17-13-997079 by MONUMETRIC
+# Ads.txt last updated on: 2020/02/26 17-58-907463 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1   #sovrn
@@ -41,19 +41,30 @@ sovrn.com, 237451, DIRECT, fafdf38b16bf6b2b
 sovrn.com, 240462, DIRECT, fafdf38b16bf6b2b
 sovrn.com, 249252, DIRECT, fafdf38b16bf6b2b
 sovrn.com, 249902, DIRECT, fafdf38b16bf6b2b
+pubmatic.com, 137711, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156212, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156972, DIRECT, 5d62403b186f2ace        #for PubMatic
+33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c
 33across.com, 33, RESELLER  #for GUMGUM
 adtech.com, 9904, RESELLER   #for GUMGUM
 advertising.com, 8603, RESELLER #for GUMGUM
 aolcloud.net, 9904, RESELLER   #for GUMGUM
 appnexus.com, 1001, RESELLER, f5ab79cb980f11d1 #for GUMGUM
+appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
+appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
+appnexus.com, 1942, RESELLER, f5ab79cb980f11d1
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1  #for GUMGUM
 appnexus.com, 3135, RESELLER, f5ab79cb980f11d1 #for GUMGUM
 appnexus.com, 3364, RESELLER, f5ab79cb980f11d1  #for GUMGUM
+appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
+appnexus.com, 9316, RESELLER, f5ab79cb980f11d1
 bidtellect.com, 1407, RESELLER, 1c34aa2d85d45e93 #for GUMGUM
 contextweb.com, 558355, RESELLER #for GUMGUM
 contextweb.com, 560382, RESELLER  #for GUMGUM
+coxmt.com, 2000067995202, RESELLER
 criteo.com, 109412, RESELLER, 9fac4a4a87c2a44f #for GUMGUM
 criteo.com, 3450, RESELLER, 9fac4a4a87c2a44f #for GUMGUM
+EMXDGT.com, 1284, RESELLER, 1e1d41537f7cad7f
 featureforward.com, 10, RESELLER  #for GUMGUM
 fyber.com, 1a12a7e3f84fe560ccf95a3a73043abb, RESELLER #for GUMGUM
 fyber.com, ad9de41d28d494354b23133f26f83122, RESELLER #for GUMGUM
@@ -61,17 +72,25 @@ google.com, pub-3848273848634341, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-7439041255533808, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-9242135695870166, RESELLER, f08c47fec0942fa0 #for GUMGUM
 google.com, pub-9557089510405422, RESELLER, f08c47fec0942fa0 #for GUMGUM
+gumgum.com, 11483, DIRECT, ffdef49475d318a9
 gumgum.com, 11483, RESELLER, ffdef49475d318a9      #for GUMGUM
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
 Indexexchange.com, 183756, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
+indexexchange.com, 190966, RESELLER, 50b1c356f2c5c8fc
 media.net, 8CU5ZWB19, RESELLER  #for GUMGUM
 openx.com, 46857, RESELLER, 6a698e2ec38604c6 #for GUMGUM
 openx.com, 537120563, RESELLER, 6a698e2ec38604c6 #for GUMGUM
 openx.com, 537149485, RESELLER, 6a698e2ec38604c6  #for GUMGUM
+openx.com, 539392223, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 156307, RESELLER, 5d62403b186f2ace #for GUMGUM
+pubmatic.com, 156344, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156423, RESELLER, 5d62403b186f2ace
 pubmatic.com, 157897, RESELLER, 5d62403b186f2ace
 pubmatic.com, 50758, RESELLER, 5d62403b186f2ace   #for GUMGUM
 revcontent.com, 76611, RESELLER #for GUMGUM
+rhythmone.com, 78519861, RESELLER
+rubiconproject.com, 13344, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 16698, RESELLER, 0bfd66d529a55807 #for GUMGUM
 smaato.com, 1100033117, RESELLER #for GUMGUM
 sovrn.com, 233111, RESELLER, fafdf38b16bf6b2b #for GUMGUM
@@ -80,9 +99,12 @@ spotxchange.com, 71451, RESELLER, 7842df1d2fe2db34 #for GUMGUM
 spotx.tv, 147949, RESELLER, 7842df1d2fe2db34 #for GUMGUM
 spotx.tv,71451,RESELLER, 7842df1d2fe2db34 #for GUMGUM
 synacor.com, 81591, RESELLER #for GUMGUM
+synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
 taboola.com, 1062984,RESELLER,c228e6794e811952 #for GUMGUM
 tremorhub.com, z87wm, RESELLER, 1a4e959a1b50034a #for GUMGUM
 appnexus.com, 2854, RESELLER                     #for APPNEXUS
+adtech.com, 9505, DIRECT, e1a5b5b6e3255540                       #for AOL
+adtech.com, 9505, DIRECT                         #for AOL
 google.com, pub-8203063731231781, DIRECT, f08c47fec0942fa0 #for Adsense
 coxmt.com, 2000068032502, DIRECT  #for Comet EB
 google.com, pub-3944954862316283, DIRECT, f08c47fec0942fa0 #AdEx
@@ -90,7 +112,9 @@ google.com, pub-3944954862316283, RESELLER, f08c47fec0942fa0   #AdEx
 google.com, pub-6227966137537604, DIRECT, f08c47fec0942fa0 #AdEx
 google.com, pub-6227966137537604, RESELLER, f08c47fec0942fa0   #AdEx
 Indexexchange.com, 187819, DIRECT, 50b1c356f2c5c8fc  #for Index EB
+monumetric.com, 224201501, DIRECT  #m-2692
 pubmatic.com, 157200, DIRECT, 5d62403b186f2ace #for Pubmatic EB
+rhythmone.com, 32202710, DIRECT, a670c89d4a324e47 #for RhythmOne EB
 
 
 # ADD ANY CUSTOM ENTRY BELOW THIS LINE ONLY
