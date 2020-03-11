@@ -34,5 +34,5 @@ jobs:
           name: Deployment
           command: |
             if [ "${CIRCLE_BRANCH}" == "prerender" ]; then
-              npx netlify-cli deploy --dir=dist/browser
+              npm run deploy
             fi
