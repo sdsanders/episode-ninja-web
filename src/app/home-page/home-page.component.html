@@ -1,11 +1,15 @@
 <div  class="py-3 bg-inverse home-hero">
   <div class="container my-md-5" style="max-width: 660px">
-    <h1 class="text-white text-center h3 mb-3">The Best Episodes of Your Favorite Shows</h1>
-    <app-search></app-search>
-    <p class="text-white text-center mt-1">
+    <h1 class="text-white text-center h3">The Best Episodes of Your Favorite Shows</h1>
+    <h2 class="text-white text-center mb-4 sub-heading">
       Compiling millions of viewer ratings to rank the best episodes of any TV show
-    </p>
-
+    </h2>
+    <app-search class="mb-5"></app-search>
+    <div class="text-center mb-3">
+      <a href="/signup" class="btn btn-warning btn-register">
+        Sign up to vote on your favorite episodes!
+      </a>
+    </div>
     <div class="text-center">
       <a [href]="'https://facebook.com/sharer/sharer.php?u=https://episode.ninja'" target="_blank" rel="noopener" aria-label="Share on Facebook" class="sharing-button facebook col" title="Share on Facebook">
         <svg width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
@@ -17,7 +21,6 @@
         <span>Tweet</span>
       </a>
     </div>
-
   </div>
 </div>
 
