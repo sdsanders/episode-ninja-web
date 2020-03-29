@@ -10,6 +10,7 @@ import { NinjaService } from '../ninja.service';
 export class PopularShowsComponent implements OnInit {
   @Input('sidebar') sidebar: boolean;
   @Input('shows') shows: any[] = [];
+  public trendingShows: any[] = [];
   public popularShows: any[] = [];
   public newShows: any[] = [];
   networks: { name: string, slug: string }[] = [];
@@ -24,7 +25,8 @@ export class PopularShowsComponent implements OnInit {
   }
 
   getPopular() {
-    this.ninjaService.getFeaturedShows().subscribe(({ popular, recent, networks }: any) => {
+    this.ninjaService.getFeaturedShows().subscribe(({ trending, popular, recent, networks }: any) => {
+      this.trendingShows = trending;
       this.popularShows = popular;
       this.newShows = recent;
       this.networks = networks;
