@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/02/26 17-58-907463 by MONUMETRIC
+# Ads.txt last updated on: 2020/04/29 05-30-138514 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1   #sovrn
@@ -102,6 +102,8 @@ synacor.com, 81591, RESELLER #for GUMGUM
 synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
 taboola.com, 1062984,RESELLER,c228e6794e811952 #for GUMGUM
 tremorhub.com, z87wm, RESELLER, 1a4e959a1b50034a #for GUMGUM
+beachfront.com, 5880, DIRECT, e2541279e8e2ca4d
+beachfront.com, publisher_5880, DIRECT          #for BEACHFRONT
 appnexus.com, 2854, RESELLER                     #for APPNEXUS
 adtech.com, 9505, DIRECT, e1a5b5b6e3255540                       #for AOL
 adtech.com, 9505, DIRECT                         #for AOL
@@ -112,9 +114,29 @@ google.com, pub-3944954862316283, RESELLER, f08c47fec0942fa0   #AdEx
 google.com, pub-6227966137537604, DIRECT, f08c47fec0942fa0 #AdEx
 google.com, pub-6227966137537604, RESELLER, f08c47fec0942fa0   #AdEx
 Indexexchange.com, 187819, DIRECT, 50b1c356f2c5c8fc  #for Index EB
-monumetric.com, 224201501, DIRECT  #m-2692
 pubmatic.com, 157200, DIRECT, 5d62403b186f2ace #for Pubmatic EB
 rhythmone.com, 32202710, DIRECT, a670c89d4a324e47 #for RhythmOne EB
+33across.com, 0013300001ehumFAAQ, DIRECT, bbea06d9c4d2853c #33Across #hb #tag
+adtech.com, 12094, RESELLER #33Across #hb #tag
+adtech.com, 9993, RESELLER #33Across #tag
+advangelists.com, 8d3bba7425e7c98c50f52ca1b52d3735, RESELLER, 60d26397ec060f98 #33Across #hb #tag
+aol.com, 47594, RESELLER, e1a5b5b6e3255540 #33Across #hb #tag #viewable
+appnexus.com, 1001, RESELLER, f5ab79cb980f11d1 #33Across #tag
+appnexus.com, 10239, RESELLER, f5ab79cb980f11d1 #33Across #hb #tag
+appnexus.com, 3135, RESELLER, f5ab79cb980f11d1 #33Across #tag
+google.com, pub-9557089510405422, RESELLER, f08c47fec0942fa0 #33Across #tag
+indexexchange.com, 190966, RESELLER, 50b1c356f2c5c8fc #33Across #tag #ebda
+openx.com, 537120563, RESELLER, 6a698e2ec38604c6 #33Across #hb #tag
+openx.com, 539392223, RESELLER, 6a698e2ec38604c6 #33Across #tag #ebda
+openx.com, 540995201, RESELLER, 6a698e2ec38604c6 #33Across #hb #tag #viewable
+pubmatic.com, 156423, RESELLER, 5d62403b186f2ace #33Across #hb #tag
+pubmatic.com, 158136, RESELLER, 5d62403b186f2ace #33Across EU #hb #tag
+pubmatic.com, 158569, RESELLER, 5d62403b186f2ace #33Across #tag #ebda
+rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807 #33Across #hb #tag
+rubiconproject.com, 21434, RESELLER, 0bfd66d529a55807 #33Across #tag #ebda
+rubiconproject.com, 21642, RESELLER, 0bfd66d529a55807 #33Across #hb #tag
+sonobi.com, a416546bb7, RESELLER, d1a215d9eb5aee9e  #33Across #tag #ebda
+yahoo.com, 55188, RESELLER, e1a5b5b6e3255540 #33Across #tag #ebda
 
 
 # ADD ANY CUSTOM ENTRY BELOW THIS LINE ONLY
