@@ -23,7 +23,7 @@
       <a
         class="col series-nav-link"
         [class.active]="!worst && !bestSeasons"
-        *ngIf="series.totalEpisodes >= 50 || series.totalSeasons >= 4"
+        *ngIf="series.totalEpisodes >= 50 || series.totalSeasons >= 3"
         [href]="'/series/' + series.slug"
       >
         Best Episodes
@@ -39,7 +39,7 @@
       <a
         class="col series-nav-link"
         [class.active]="bestSeasons"
-        *ngIf="series.totalSeasons >= 4"
+        *ngIf="series.totalSeasons >= 3"
         [href]="'/series/' + series.slug + '/best-seasons'"
       >
         Best Seasons
@@ -63,6 +63,7 @@
 
       <p class="series-description">{{series.overview}}</p>
       <app-ad id="be0bf847-dfc8-4de2-acf4-14e27455e85f"></app-ad>
+
       <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
         <div class="card mt-1 mb-3">
           <div class="row align-items-center">
