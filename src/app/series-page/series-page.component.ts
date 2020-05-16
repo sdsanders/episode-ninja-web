@@ -39,8 +39,7 @@ export class SeriesPageComponent implements OnInit {
   }
 
   getSeries(slug: string, worst: boolean, seasons: boolean, offset = 0) {
-    let request = this.ninjaService.getSeries(slug, worst, offset);
-    if (seasons) { request = this.ninjaService.getSeasons(slug); }
+    const request = seasons ? this.ninjaService.getSeasons(slug) : this.ninjaService.getSeries(slug, worst, offset);
 
     request.subscribe(series => {
       if (offset === 0) {
