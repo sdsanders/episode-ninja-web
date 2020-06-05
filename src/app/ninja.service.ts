@@ -27,7 +27,7 @@ export class NinjaService {
   getDirector(slug: string) {
     slug = encodeURIComponent(slug);
     return this.http.get(`${environment.apiUrl}/director/${slug}`)
-      .pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
   getSeasons(slug: string) {
@@ -64,7 +64,7 @@ export class NinjaService {
             });
 
             return series;
-          }, catchError(this.handleError)));
+          }), catchError(this.handleError.bind(this)));
       })
     );
   }
@@ -106,7 +106,7 @@ export class NinjaService {
       });
 
       return episodes;
-    }, catchError(this.handleError)));
+    }), catchError(this.handleError.bind(this)));
   }
 
   getNetworkShows(slug: string): Observable<any> {
