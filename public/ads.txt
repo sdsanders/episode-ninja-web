@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/10/09 21-41-784198 by MONUMETRIC
+# Ads.txt last updated on: 2020/10/16 21-30-591456 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 7911, RESELLER #yieldmo
@@ -150,6 +150,8 @@ synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
 telaria.com,jrkl5-0ac26,RESELLER,1a4e959a1b50034a
 tremorhub.com,jrkl5-0ac26,RESELLER,1a4e959a1b50034a
 triplelift.com, 6030-EB, DIRECT, 6c33edb13117fd86
+undertone.com, 3231, DIRECT
+undertone.com, 3802, DIRECT
 33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c
 33across.com, 33, RESELLER  #for GUMGUM
 adtech.com, 9904, RESELLER   #for GUMGUM
@@ -224,6 +226,12 @@ rubiconproject.com, 18890, DIRECT, 0bfd66d529a55807
 sonobi.com, 6e5cfb5420, DIRECT, d1a215d9eb5aee9e
 sonobi.com, e55fb5d7c2, DIRECT, d1a215d9eb5aee9e
 sovrn.com, 248396, DIRECT, fafdf38b16bf6b2b
+spotxchange.com, 270977, DIRECT
+spotx.tv, 270977, DIRECT
+telaria.com, vtrdn-wjdav, DIRECT
+telaria.com, vtrdn-ysjam, DIRECT
+tremorhub.com, vtrdn-wjdav, DIRECT
+tremorhub.com, vtrdn-ysjam, DIRECT
 yahoo.com, 55104, DIRECT, e1a5b5b6e3255540
 beachfront.com, 5880, DIRECT, e2541279e8e2ca4d
 beachfront.com, publisher_5880, DIRECT          #for BEACHFRONT
