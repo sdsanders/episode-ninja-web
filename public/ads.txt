@@ -1,13 +1,13 @@
-# Ads.txt last updated on: 2020/10/16 21-30-591456 by MONUMETRIC
+# Ads.txt last updated on: 2020/11/03 05-21-340781 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 7911, RESELLER #yieldmo
 rubiconproject.com, 17070, RESELLER, 0bfd66d529a55807 #yieldmo
-Yieldmo.com, 2518831497914294538, Direct
-Yieldmo.com, 2518832149079990540, Direct
+yieldmo.com, 2518831497914294538, DIRECT
+yieldmo.com, 2518832149079990540, DIRECT
 ad-generation.jp, 12474, RESELLER
 adtech.com, 12068, RESELLER, e1a5b5b6e3255540
-adtech.com,12068,RESELLER #for UAM
+adtech.com, 12068, RESELLER #for UAM
 appnexus.com, 1908, RESELLER, f5ab79cb980f11d1 #for UAM
 appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
 aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
@@ -18,10 +18,10 @@ districtm.io, 100962, RESELLER #for UAM
 indexexchange.com, 192410, RESELLER, 50b1c356f2c5c8fc
 openx.com, 540191398, RESELLER, 6a698e2ec38604c6 #for UAM
 pubmatic.com, 157150, RESELLER, 5d62403b186f2ace #for UAM
-rhythmone.com,1001,RESELLER #for UAM
+rhythmone.com, 1001, RESELLER #for UAM
 rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
 rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807 #for UAM
-yahoo.com,55029,RESELLER,e1a5b5b6e3255540
+yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
 yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5 #for UAM
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1   #sovrn
 contextweb.com, 558511, RESELLER   #sovrn
@@ -73,7 +73,7 @@ openx.com, 540258065, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 156595, RESELLER, 5d62403b186f2ace
 rhythmone.com, 2338962694, RESELLER, a670c89d4a324e47
 rubiconproject.com, 20130, RESELLER, 0bfd66d529a55807
-Sekindo.com, 30071, DIRECT, b6b21d256ef43532
+sekindo.com, 30071, DIRECT, b6b21d256ef43532
 smartadserver.com, 3436, RESELLER
 spotxchange.com, 84294, RESELLER, 7842df1d2fe2db34
 spotx.tv, 84294, RESELLER, 7842df1d2fe2db34
@@ -98,7 +98,7 @@ appnexus.com, 9316, RESELLER, f5ab79cb980f11d1
 coxmt.com, 2000067995202, RESELLER
 criteo.com, 7822, RESELLER
 districtm.io, 100962, RESELLER, 3fd707be9c4527c3
-EMXDGT.com, 1284, RESELLER, 1e1d41537f7cad7f
+emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f
 emxdgt.com, 326, RESELLER, 1e1d41537f7cad7f
 google.com, pub-1789253751882305, DIRECT, f08c47fec0942fa0
 google.com, pub-1835489473992347, DIRECT, f08c47fec0942fa0
@@ -131,7 +131,7 @@ pubmatic.com, 157904, RESELLER, 5d62403b186f2ace
 pubmatic.com, 158541, DIRECT, 5d62403b186f2ace
 revcontent.com, 124709, DIRECT
 rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
-Rhythmone.com, 203808374, DIRECT, a670c89d4a324e47
+rhythmone.com, 203808374, DIRECT, a670c89d4a324e47
 rhythmone.com, 2439829435, RESELLER, a670c89d4a324e47
 rhythmone.com, 32202710, DIRECT, a670c89d4a324e47
 rhythmone.com, 78519861, RESELLER
@@ -142,13 +142,13 @@ rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 17346, RESELLER, 0bfd66d529a55807
 sovrn.com, 264726, DIRECT, fafdf38b16bf6b2b
 sovrn.com, 273657, DIRECT, fafdf38b16bf6b2b
-spotxchange.com,108706, RESELLER, 7842df1d2fe2db34
+spotxchange.com, 108706, RESELLER, 7842df1d2fe2db34
 spotxchange.com, 82069, DIRECT, 7842df1d2fe2db34
 spotx.tv, 108706, RESELLER, 7842df1d2fe2db34
 spotx.tv, 82069, DIRECT, 7842df1d2fe2db34
 synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
-telaria.com,jrkl5-0ac26,RESELLER,1a4e959a1b50034a
-tremorhub.com,jrkl5-0ac26,RESELLER,1a4e959a1b50034a
+telaria.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
+tremorhub.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
 triplelift.com, 6030-EB, DIRECT, 6c33edb13117fd86
 undertone.com, 3231, DIRECT
 undertone.com, 3802, DIRECT
@@ -171,7 +171,7 @@ contextweb.com, 558355, RESELLER #for GUMGUM
 contextweb.com, 560382, RESELLER  #for GUMGUM
 criteo.com, 109412, RESELLER, 9fac4a4a87c2a44f #for GUMGUM
 criteo.com, 3450, RESELLER, 9fac4a4a87c2a44f #for GUMGUM
-EMXDGT.com, 1284, RESELLER, 1e1d41537f7cad7f
+emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f
 featureforward.com, 10, RESELLER  #for GUMGUM
 fyber.com, 1a12a7e3f84fe560ccf95a3a73043abb, RESELLER #for GUMGUM
 fyber.com, ad9de41d28d494354b23133f26f83122, RESELLER #for GUMGUM
@@ -183,7 +183,7 @@ gumgum.com, 11483, DIRECT, ffdef49475d318a9
 gumgum.com, 11483, RESELLER, ffdef49475d318a9      #for GUMGUM
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
-Indexexchange.com, 183756, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
+indexexchange.com, 183756, RESELLER, 50b1c356f2c5c8fc #for GUMGUM
 media.net, 8CU5ZWB19, RESELLER  #for GUMGUM
 openx.com, 46857, RESELLER, 6a698e2ec38604c6 #for GUMGUM
 openx.com, 537149485, RESELLER, 6a698e2ec38604c6  #for GUMGUM
@@ -199,10 +199,10 @@ sovrn.com, 233111, RESELLER, fafdf38b16bf6b2b #for GUMGUM
 spotxchange.com, 147949, RESELLER, 7842df1d2fe2db34 #for GUMGUM
 spotxchange.com, 71451, RESELLER, 7842df1d2fe2db34 #for GUMGUM
 spotx.tv, 147949, RESELLER, 7842df1d2fe2db34 #for GUMGUM
-spotx.tv,71451,RESELLER, 7842df1d2fe2db34 #for GUMGUM
+spotx.tv, 71451, RESELLER, 7842df1d2fe2db34 #for GUMGUM
 synacor.com, 81591, RESELLER #for GUMGUM
 synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
-taboola.com, 1062984,RESELLER,c228e6794e811952 #for GUMGUM
+taboola.com, 1062984, RESELLER, c228e6794e811952 #for GUMGUM
 tremorhub.com, z87wm, RESELLER, 1a4e959a1b50034a #for GUMGUM
 adtech.com, 10947, DIRECT, e1a5b5b6e3255540
 advertising.com, 28409, DIRECT, e1a5b5b6e3255540
@@ -245,7 +245,7 @@ google.com, pub-3944954862316283, DIRECT, f08c47fec0942fa0 #AdEx
 google.com, pub-3944954862316283, RESELLER, f08c47fec0942fa0   #AdEx
 google.com, pub-6227966137537604, DIRECT, f08c47fec0942fa0 #AdEx
 google.com, pub-6227966137537604, RESELLER, f08c47fec0942fa0   #AdEx
-Indexexchange.com, 187819, DIRECT, 50b1c356f2c5c8fc  #for Index EB
+indexexchange.com, 187819, DIRECT, 50b1c356f2c5c8fc  #for Index EB
 pubmatic.com, 157200, DIRECT, 5d62403b186f2ace #for Pubmatic EB
 rhythmone.com, 32202710, DIRECT, a670c89d4a324e47 #for RhythmOne EB
 33across.com, 0013300001ehumFAAQ, DIRECT, bbea06d9c4d2853c #33Across #hb #tag
