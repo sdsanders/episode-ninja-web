@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/11/13 06-17-581935 by MONUMETRIC
+# Ads.txt last updated on: 2020/11/20 00-04-896162 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 appnexus.com, 7911, RESELLER #yieldmo
@@ -131,14 +131,16 @@ tremorhub.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
 triplelift.com, 6030-EB, DIRECT, 6c33edb13117fd86
 undertone.com, 3231, DIRECT
 undertone.com, 3802, DIRECT
-33across.com, 0013300001r0t9mAAA, reseller, bbea06d9c4d2853c #gg
+33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c #gg
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1 #gg
-emxdgt.com, 1284, reseller, 1e1d41537f7cad7f #gg
-google.com, pub-3848273848634341, reseller, f08c47fec0942fa0 #gg
+emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f #gg
+google.com, pub-3848273848634341, RESELLER, f08c47fec0942fa0 #gg
 gumgum.com, 11483, DIRECT, ffdef49475d318a9 #gg
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc #gg
 openx.com, 537149485, RESELLER, 6a698e2ec38604c6 #gg
-synacor.com, 82151, reseller, e108f11b2cdf7d5b #gg
+synacor.com, 82151, RESELLER, e108f11b2cdf7d5b #gg
+appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
+emxdgt.com, 40, DIRECT, 1e1d41537f7cad7f
 adtech.com, 10947, DIRECT, e1a5b5b6e3255540
 advertising.com, 28409, DIRECT, e1a5b5b6e3255540
 advertising.com, 28509, DIRECT, e1a5b5b6e3255540
