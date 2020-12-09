@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/12/01 20-56-015623 by MONUMETRIC
+# Ads.txt last updated on: 2020/12/07 22-40-237619 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -76,6 +76,7 @@ appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
 appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
 appnexus.com, 7666, RESELLER, f5ab79cb980f11d1
 appnexus.com, 9316, RESELLER, f5ab79cb980f11d1
+chocolateplatform.com, 14546, DIRECT, 49a66ce31a704197
 coxmt.com, 2000067995202, RESELLER
 criteo.com, 7822, RESELLER
 districtm.io, 100962, RESELLER, 3fd707be9c4527c3
@@ -90,6 +91,7 @@ google.com, pub-9685734445476814, RESELLER, f08c47fec0942fa0
 gumgum.com, 11483, DIRECT, ffdef49475d318a9
 gumgum.com, 13318, RESELLER, ffdef49475d318a9
 gumgum.com, 13926, DIRECT, ffdef49475d318a9
+improvedigital.com, 1530, DIRECT
 indexexchange.com, 184533, DIRECT
 indexexchange.com, 185192, RESELLER
 indexexchange.com, 188838, DIRECT
@@ -98,9 +100,11 @@ lijit.com, 264726, DIRECT, fafdf38b16bf6b2b
 lijit.com, 264726-eb, DIRECT, fafdf38b16bf6b2b
 lijit.com, 273657, DIRECT, fafdf38b16bf6b2b
 lijit.com, 273657-eb, DIRECT, fafdf38b16bf6b2b
+media.net, 8CU713ZQC, DIRECT
 my6sense.com, 9732, RESELLER
 nobid.io, 21936924067, DIRECT
 openx.com, 537125314, RESELLER, 6a698e2ec38604c6
+openx.com, 537153564, RESELLER, 6a698e2ec38604c6
 openx.com, 538929384, RESELLER, 6a698e2ec38604c6
 openx.com, 539392223, RESELLER, 6a698e2ec38604c6
 openx.com, 539392223, RESELLER, 6a698e2ec38604c6
@@ -121,6 +125,7 @@ rubiconproject.com, 156042, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
 rubiconproject.com, 17346, RESELLER, 0bfd66d529a55807
+sonobi.com, f22036b5f1, DIRECT, d1a215d9eb5aee9e
 sovrn.com, 264726, DIRECT, fafdf38b16bf6b2b
 sovrn.com, 273657, DIRECT, fafdf38b16bf6b2b
 spotxchange.com, 108706, RESELLER, 7842df1d2fe2db34
@@ -128,11 +133,16 @@ spotxchange.com, 82069, DIRECT, 7842df1d2fe2db34
 spotx.tv, 108706, RESELLER, 7842df1d2fe2db34
 spotx.tv, 82069, DIRECT, 7842df1d2fe2db34
 synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
+telaria.com, 32jid-ohl8i, DIRECT, 1a4e959a1b50034a
 telaria.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
+tremorhub.com, 32jid-ohl8i, DIRECT, 1a4e959a1b50034a
 tremorhub.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
 triplelift.com, 6030-EB, DIRECT, 6c33edb13117fd86
 undertone.com, 3231, DIRECT
 undertone.com, 3802, DIRECT
+vdopia.com, 14546, DIRECT, 49a66ce31a704197
+video.unrulymedia.com, 203808374, DIRECT
+yieldmo.com, 2230484298816456318, DIRECT
 33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c #gg
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1 #gg
 emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f #gg
