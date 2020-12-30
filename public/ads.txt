@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/12/16 16-31-445540 by MONUMETRIC
+# Ads.txt last updated on: 2020/12/27 22-36-201975 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -143,6 +143,8 @@ undertone.com, 3802, DIRECT
 vdopia.com, 14546, DIRECT, 49a66ce31a704197
 video.unrulymedia.com, 203808374, DIRECT
 yieldmo.com, 2230484298816456318, DIRECT
+indexexchange.com, 182762, DIRECT                #for INDEXEXCHANGE
+indexexchange.com, 185362, RESELLER
 33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c #gg
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1 #gg
 emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f #gg
