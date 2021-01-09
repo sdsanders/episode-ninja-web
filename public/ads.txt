@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2020/12/27 22-36-201975 by MONUMETRIC
+# Ads.txt last updated on: 2021/01/06 18-14-955070 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -45,6 +45,7 @@ sharethrough.com, 5629b363, DIRECT, d53b998a7bd4ecd2
 spotxchange.com, 212457, RESELLER
 spotx.tv, 212457, RESELLER
 advertising.com, 24410, RESELLER
+advertising.com, 28738, RESELLER
 advertising.com, 7372, RESELLER
 freewheel.tv, 19129, RESELLER
 freewheel.tv, 19133, RESELLER
@@ -67,6 +68,7 @@ adtech.com, 11574, DIRECT
 adtech.com, 12094, RESELLER
 advangelists.com, 8d3bba7425e7c98c50f52ca1b52d3735, RESELLER, 60d26397ec060f98
 advertising.com, 28488, DIRECT
+advertising.com, 28738, RESELLER
 appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
 appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
 appnexus.com, 11429, DIRECT
