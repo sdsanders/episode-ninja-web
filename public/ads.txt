@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2021/01/26 23-40-516756 by MONUMETRIC
+# Ads.txt last updated on: 2021/01/27 22-25-170288 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -7,25 +7,22 @@ rubiconproject.com, 17070, RESELLER, 0bfd66d529a55807 #yieldmo
 yieldmo.com, 2518831497914294538, DIRECT
 yieldmo.com, 2518832149079990540, DIRECT
 yahoo.com, 57424, DIRECT #verizon
-ad-generation.jp, 12474, RESELLER
-adtech.com, 12068, RESELLER, e1a5b5b6e3255540
-adtech.com, 12068, RESELLER #for UAM
-appnexus.com, 1908, RESELLER, f5ab79cb980f11d1 #for UAM
+ad-generation.jp, 12474, RESELLER, 7f4ea9029ac04e53
+appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
+appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
+appnexus.com, 2854, DIRECT, f5ab79cb980f11d1
 appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
 aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
-aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
-coxmt.com, 2000068024302, RESELLER #for UAM
 districtm.io, 100962, RESELLER, 3fd707be9c4527c3
-districtm.io, 100962, RESELLER #for UAM
-indexexchange.com, 192410, RESELLER, 50b1c356f2c5c8fc
-openx.com, 540191398, RESELLER, 6a698e2ec38604c6 #for UAM
-pubmatic.com, 157150, RESELLER, 5d62403b186f2ace #for UAM
+emxdgt.com, 1854, DIRECT, 1e1d41537f7cad7f
+lijit.com, 231887, DIRECT, fafdf38b16bf6b2b
+openx.com, 540191398, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 160172, DIRECT, 5d62403b186f2ace
-rhythmone.com, 1001, RESELLER #for UAM
 rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
-rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807 #for UAM
+rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807
+smaato.com, 1100044650, RESELLER, 07bcf65f187117b4
+sovrn.com, 231887, DIRECT, fafdf38b16bf6b2b
 yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
-yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5 #for UAM
 appnexus.com, 1360, RESELLER, f5ab79cb980f11d1 #sovrn
 gumgum.com, 11645, RESELLER, ffdef49475d318a9 #sovrn
 lijit.com, 231887, DIRECT, fafdf38b16bf6b2b #sovrn
@@ -48,30 +45,22 @@ spotx.tv, 212457, RESELLER
 ad-generation.jp, 12474, RESELLER
 adtech.com, 12068, RESELLER, e1a5b5b6e3255540
 adtech.com, 12068, RESELLER #for UAM
+adtech.com, 9505, DIRECT, e1a5b5b6e3255540
 advertising.com, 24410, RESELLER
 advertising.com, 28738, RESELLER
+advertising.com, 28738, RESELLER
 advertising.com, 7372, RESELLER
-appnexus.com, 1908, RESELLER, f5ab79cb980f11d1 #for UAM
-appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
-aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
-aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
 coxmt.com, 2000068024302, RESELLER #for UAM
-districtm.io, 100962, RESELLER, 3fd707be9c4527c3
-districtm.io, 100962, RESELLER #for UAM
 freewheel.tv, 19129, RESELLER
 freewheel.tv, 19133, RESELLER
 google.com, pub-1320774679920841, RESELLER, f08c47fec0942fa0
 indexexchange.com, 191923, RESELLER
 indexexchange.com, 192410, RESELLER, 50b1c356f2c5c8fc
-openx.com, 540191398, RESELLER, 6a698e2ec38604c6 #for UAM
 openx.com, 540258065, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 156595, RESELLER, 5d62403b186f2ace
 pubmatic.com, 157150, RESELLER, 5d62403b186f2ace #for UAM
-pubmatic.com, 160172, DIRECT, 5d62403b186f2ace
 rhythmone.com, 1001, RESELLER #for UAM
-rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
 rhythmone.com, 2338962694, RESELLER, a670c89d4a324e47
-rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807 #for UAM
 rubiconproject.com, 20130, RESELLER, 0bfd66d529a55807
 sekindo.com, 30071, DIRECT, b6b21d256ef43532
 smartadserver.com, 3436, RESELLER
@@ -81,6 +70,7 @@ telaria.com, mb9eo-oqsbf, RESELLER, 1a4e959a1b50034a
 tremorhub.com, mb9eo-oqsbf, RESELLER, 1a4e959a1b50034a
 video.unrulymedia.com, 2338962694, RESELLER
 yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
+yahoo.com, 57424, DIRECT #verizon
 yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5 #for UAM
 33across.com, 0010b00002Mq2FYAAZ, DIRECT, bbea06d9c4d2853c
 33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c
