@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2021/01/27 22-25-170288 by MONUMETRIC
+# Ads.txt last updated on: 2021/02/15 05-28-115752 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -51,6 +51,7 @@ advertising.com, 28738, RESELLER
 advertising.com, 28738, RESELLER
 advertising.com, 7372, RESELLER
 coxmt.com, 2000068024302, RESELLER #for UAM
+emxdgt.com, 1349, RESELLER, 1e1d41537f7cad7f
 freewheel.tv, 19129, RESELLER
 freewheel.tv, 19133, RESELLER
 google.com, pub-1320774679920841, RESELLER, f08c47fec0942fa0
