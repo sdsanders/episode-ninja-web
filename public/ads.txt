@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2021/02/15 05-28-115752 by MONUMETRIC
+# Ads.txt last updated on: 2021/03/05 00-19-368951 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -15,6 +15,7 @@ appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
 aps.amazon.com, 76b6d1d8-9f58-4ac7-a92e-f3232afccc8a, DIRECT
 districtm.io, 100962, RESELLER, 3fd707be9c4527c3
 emxdgt.com, 1854, DIRECT, 1e1d41537f7cad7f
+indexexchange.com, 194111, RESELLER
 lijit.com, 231887, DIRECT, fafdf38b16bf6b2b
 openx.com, 540191398, RESELLER, 6a698e2ec38604c6
 pubmatic.com, 160172, DIRECT, 5d62403b186f2ace
@@ -73,79 +74,30 @@ video.unrulymedia.com, 2338962694, RESELLER
 yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
 yahoo.com, 57424, DIRECT #verizon
 yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5 #for UAM
-33across.com, 0010b00002Mq2FYAAZ, DIRECT, bbea06d9c4d2853c
-33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c
-adtech.com, 11574, DIRECT
-adtech.com, 12094, RESELLER
-advangelists.com, 8d3bba7425e7c98c50f52ca1b52d3735, RESELLER, 60d26397ec060f98
-advertising.com, 28488, DIRECT
-advertising.com, 28738, RESELLER
-appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
-appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
-appnexus.com, 11429, DIRECT
-appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
-appnexus.com, 1942, RESELLER, f5ab79cb980f11d1
-appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
-appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
-appnexus.com, 7666, RESELLER, f5ab79cb980f11d1
-appnexus.com, 9316, RESELLER, f5ab79cb980f11d1
-chocolateplatform.com, 14546, DIRECT, 49a66ce31a704197
-coxmt.com, 2000067995202, RESELLER
-criteo.com, 7822, RESELLER
-districtm.io, 100962, RESELLER, 3fd707be9c4527c3
-emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f
-emxdgt.com, 326, RESELLER, 1e1d41537f7cad7f
-google.com, pub-1789253751882305, DIRECT, f08c47fec0942fa0
-google.com, pub-1835489473992347, DIRECT, f08c47fec0942fa0
-google.com, pub-1950215063958302, DIRECT, f08c47fec0942fa0
+advertising.com, 28488, DIRECT #EBDA
+aol.com, 55756, DIRECT #EBDA
+chocolateplatform.com, 14546,  DIRECT, 49a66ce31a704197
 google.com, pub-1956856209985681, DIRECT, f08c47fec0942fa0
 google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
-google.com, pub-9685734445476814, RESELLER, f08c47fec0942fa0
-gumgum.com, 11483, DIRECT, ffdef49475d318a9
-gumgum.com, 13318, RESELLER, ffdef49475d318a9
-gumgum.com, 13926, DIRECT, ffdef49475d318a9
-improvedigital.com, 1530, DIRECT
-indexexchange.com, 184533, DIRECT
+improvedigital.com, 1530,  DIRECT
 indexexchange.com, 185192, RESELLER
 indexexchange.com, 188838, DIRECT
-indexexchange.com, 190966, RESELLER, 50b1c356f2c5c8fc
-lijit.com, 264726, DIRECT, fafdf38b16bf6b2b
 lijit.com, 264726-eb, DIRECT, fafdf38b16bf6b2b
-lijit.com, 273657, DIRECT, fafdf38b16bf6b2b
-lijit.com, 273657-eb, DIRECT, fafdf38b16bf6b2b
-media.net, 8CU713ZQC, DIRECT
-my6sense.com, 9732, RESELLER
-nobid.io, 21936924067, DIRECT
-openx.com, 537125314, RESELLER, 6a698e2ec38604c6
-openx.com, 537153564, RESELLER, 6a698e2ec38604c6
+media.net, 8CU6YC6OW,  DIRECT
+media.net, 8CU713ZQC,  DIRECT
 openx.com, 538929384, RESELLER, 6a698e2ec38604c6
-openx.com, 539392223, RESELLER, 6a698e2ec38604c6
-openx.com, 539392223, RESELLER, 6a698e2ec38604c6
 openx.com, 540447746, DIRECT, 6a698e2ec38604c6
-pubmatic.com, 156344, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156423, RESELLER, 5d62403b186f2ace
-pubmatic.com, 156423, RESELLER, 5d62403b186f2ace
 pubmatic.com, 157904, RESELLER, 5d62403b186f2ace
 pubmatic.com, 158541, DIRECT, 5d62403b186f2ace
-revcontent.com, 124709, DIRECT
-rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
-rhythmone.com, 203808374, DIRECT, a670c89d4a324e47
-rhythmone.com, 2439829435, RESELLER, a670c89d4a324e47
-rhythmone.com, 32202710, DIRECT, a670c89d4a324e47
-rhythmone.com, 78519861, RESELLER
-rubiconproject.com, 13344, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 156042, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
+rhythmone.com, 203808374,  DIRECT, a670c89d4a324e47
 rubiconproject.com, 17346, RESELLER, 0bfd66d529a55807
-sonobi.com, f22036b5f1, DIRECT, d1a215d9eb5aee9e
+rubiconproject.com, 22114, DIRECT, 0bfd66d529a55807
+sonobi.com, f22036b5f1,  DIRECT, d1a215d9eb5aee9e
 sovrn.com, 264726, DIRECT, fafdf38b16bf6b2b
-sovrn.com, 273657, DIRECT, fafdf38b16bf6b2b
 spotxchange.com, 108706, RESELLER, 7842df1d2fe2db34
 spotxchange.com, 82069, DIRECT, 7842df1d2fe2db34
 spotx.tv, 108706, RESELLER, 7842df1d2fe2db34
 spotx.tv, 82069, DIRECT, 7842df1d2fe2db34
-synacor.com, 82151, RESELLER, e108f11b2cdf7d5b
 telaria.com, 32jid-ohl8i, DIRECT, 1a4e959a1b50034a
 telaria.com, jrkl5-0ac26, RESELLER, 1a4e959a1b50034a
 tremorhub.com, 32jid-ohl8i, DIRECT, 1a4e959a1b50034a
@@ -155,6 +107,7 @@ undertone.com, 3231, DIRECT
 undertone.com, 3802, DIRECT
 vdopia.com, 14546, DIRECT, 49a66ce31a704197
 video.unrulymedia.com, 203808374, DIRECT
+yahoo.com, 55756, DIRECT #EBDA
 yieldmo.com, 2230484298816456318, DIRECT
 indexexchange.com, 182762, DIRECT                #for INDEXEXCHANGE
 indexexchange.com, 185362, RESELLER
