@@ -1,4 +1,4 @@
-# Ads.txt last updated on: 2021/03/05 00-19-368951 by MONUMETRIC
+# Ads.txt last updated on: 2021/03/09 19-24-787764 by MONUMETRIC
 spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
 spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
 monumetric.com, 81af83d3-b24e-4dd2-969f-d0971daf1400, DIRECT, 032969285
@@ -76,6 +76,7 @@ yahoo.com, 57424, DIRECT #verizon
 yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5 #for UAM
 advertising.com, 28488, DIRECT #EBDA
 aol.com, 55756, DIRECT #EBDA
+beachfront.com, 14544, DIRECT, e2541279e8e2ca4d
 chocolateplatform.com, 14546,  DIRECT, 49a66ce31a704197
 google.com, pub-1956856209985681, DIRECT, f08c47fec0942fa0
 google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
@@ -113,11 +114,16 @@ indexexchange.com, 182762, DIRECT                #for INDEXEXCHANGE
 indexexchange.com, 185362, RESELLER
 33across.com, 0013300001r0t9mAAA, RESELLER, bbea06d9c4d2853c #gg
 appnexus.com, 2758, RESELLER, f5ab79cb980f11d1 #gg
+aps.amazon.com, 2840f06c-5d89-4853-a03e-3bfa567dd33c, RESELLER
+bidtellect.com, 1407, RESELLER, 1c34aa2d85d45e93
+contextweb.com, 558355, RESELLER
 emxdgt.com, 1284, RESELLER, 1e1d41537f7cad7f #gg
 google.com, pub-3848273848634341, RESELLER, f08c47fec0942fa0 #gg
 gumgum.com, 11483, DIRECT, ffdef49475d318a9 #gg
 indexexchange.com, 177754, RESELLER, 50b1c356f2c5c8fc #gg
 openx.com, 537149485, RESELLER, 6a698e2ec38604c6 #gg
+outbrain.com, 00254374f0c468f3b2732db17fd42cb6e5, RESELLER
+pubmatic.com, 157897, RESELLER, 5d62403b186f2ace
 synacor.com, 82151, RESELLER, e108f11b2cdf7d5b #gg
 appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
 emxdgt.com, 1854, DIRECT, 1e1d41537f7cad7f
