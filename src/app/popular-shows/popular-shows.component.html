@@ -1,24 +1,25 @@
 <div [class.sidebar]="sidebar" class="featured">
+  <app-ad id="sidebar-1" [sizes]="[['300','600']]" *ngIf="sidebar" class="mb-3"></app-ad>
+
   <h3 *ngIf="shows && shows.length">Similar Shows</h3>
   <div *ngIf="shows && shows.length" class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of shows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
+    <app-ad id="sidebar-2"></app-ad>
   </div>
-
-  <app-ad id="65c6c14c-9dac-4695-ac7b-815c9c518be5" *ngIf="sidebar" class="mb-3"></app-ad>
 
   <h3>Trending Shows</h3>
   <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of trendingShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
 
-  <app-ad id="33d4ee1c-3c88-4de3-8cf2-26e999ff6b9a" *ngIf="sidebar" class="mb-3"></app-ad>
+  <app-ad id="sidebar-3" *ngIf="sidebar" class="mb-3"></app-ad>
 
   <h3>Popular Shows</h3>
   <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of popularShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
 
-  <app-ad id="686cc5c0-6750-459d-9a3b-e4635d45856c" *ngIf="sidebar" class="mb-3"></app-ad>
+  <app-ad id="sidebar-4" *ngIf="sidebar" class="mb-3"></app-ad>
 
   <h3>Popular Networks</h3>
   <div class="row mb-3">
@@ -29,7 +30,7 @@
     </div>
   </div>
 
-  <app-ad id="d38a1d84-bec6-46dd-a156-d8f35e506b1c" *ngIf="sidebar" class="mb-3"></app-ad>
+  <app-ad id="sidebar-5" *ngIf="sidebar" class="mb-3"></app-ad>
 
   <h3>Recent Years</h3>
   <div class="row mb-3">
@@ -44,5 +45,7 @@
   <div class="row no-gutters mb-3">
     <app-show-card *ngFor="let show of newShows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
   </div>
+
+  <app-ad id="sidebar-6" *ngIf="sidebar"></app-ad>
 
 </div>

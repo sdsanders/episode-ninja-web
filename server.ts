@@ -93,8 +93,6 @@ function generateSitemap() {
 
 generateSitemap();
 
-app.use(express.static('public'));
-
 app.engine('html', (_, options, callback) => {
   renderModuleFactory(AppServerModuleNgFactory, {
     // Our index.html
@@ -136,6 +134,11 @@ app.post('/clear-cache', (req, res) => {
 
 app.post('/clear-cache/:slug?', (req, res) => {
   res.json(apicache.clear(`/series/${req.params.slug}`));
+});
+
+// Redirect to nitropay ads.txt file
+app.get('/ads.txt', (req, res) => {
+  res.redirect(301, "https://api.nitropay.com/v1/ads-729.txt");
 });
 
 

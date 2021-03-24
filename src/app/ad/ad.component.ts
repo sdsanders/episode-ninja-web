@@ -1,26 +1,48 @@
-import { Component, Renderer2, OnInit, ElementRef, Input } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
+import { Component, Input, AfterViewInit, PLATFORM_ID, Inject, isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app-ad',
-  template: '<div [id]="\'mmt-\' + id" *ngIf="id"></div>',
-  styles: [':host { display: block; }']
+  template: '<div [id]="\'nitro-\' + id" *ngIf="id"></div>',
+  styles: [':host { display: block; padding-top: 20px; }']
 })
-export class AdComponent implements OnInit {
+export class AdComponent implements AfterViewInit {
   @Input() id: string;
+  @Input() sizes: [[string, string]];
+
   constructor(
-    private renderer: Renderer2,
-    private el: ElementRef
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
-  ngOnInit() {
-    const script = this.renderer.createElement('script');
-    const check = `$MMT = window.$MMT || {}; $MMT.cmd = $MMT.cmd || [];`;
-    const command = `$MMT.cmd.push(function(){ $MMT.display.slots.push(["${this.id}"]); })`;
-    const content = this.renderer.createText(`${check} ${command}`);
+  ngAfterViewInit() {
+    if (isPlatformServer(this.platformId)) { return; }
 
-    this.renderer.setAttribute(script, 'type', 'text/javascript');
-    this.renderer.setAttribute(script, 'data-cfasync', 'false');
-    this.renderer.appendChild(script, content);
-    this.renderer.appendChild(this.el.nativeElement, script);
+    // Mobile ad config
+    // window['nitroAds'].createAd('mobile', {
+    //  "refreshLimit": 10,
+    //  "refreshTime": 90,
+    //  "format": "anchor",
+    //  "anchor": "bottom",
+    //  "report": {
+    //    "enabled": true,
+    //    "wording": "Report Ad",
+    //    "position": "top-right"
+    //  },
+    //  "mediaQuery": "(min-width: 320px) and (max-width: 767px)"
+    // });
+
+    window['nitroAds'].createAd(`nitro-${this.id}`, {
+      "demo": isDevMode(),
+      "refreshLimit": 10,
+      "refreshTime": 60,
+      "renderVisibleOnly": true,
+      "refreshVisibleOnly": true,
+      "report": {
+        "enabled": true,
+        "wording": "Report Ad",
+        "position": "top-right"
+      },
+      ...(this.sizes ? { sizes: this.sizes } : {})
+    });
   }
 }
