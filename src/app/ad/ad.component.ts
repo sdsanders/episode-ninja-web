@@ -34,7 +34,7 @@ export class AdComponent implements AfterViewInit {
     window['nitroAds'].createAd(`nitro-${this.id}`, {
       "demo": isDevMode(),
       "refreshLimit": 10,
-      "refreshTime": 60,
+      "refreshTime": 30,
       "renderVisibleOnly": true,
       "refreshVisibleOnly": true,
       "report": {
