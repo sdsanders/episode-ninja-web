@@ -9,6 +9,9 @@ import { Component, Input, AfterViewInit, PLATFORM_ID, Inject, isDevMode } from 
 export class AdComponent implements AfterViewInit {
   @Input() id: string;
   @Input() sizes: [[string, string]];
+  @Input() format: string;
+  @Input() anchor: string;
+  @Input() mediaQuery: string;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: any
@@ -42,7 +45,10 @@ export class AdComponent implements AfterViewInit {
         "wording": "Report Ad",
         "position": "top-right"
       },
-      ...(this.sizes ? { sizes: this.sizes } : {})
+      ...(this.sizes ? { sizes: this.sizes } : {}),
+      ...(this.format ? { format: this.format } : {}),
+      ...(this.anchor ? { anchor: this.anchor } : {}),
+      ...(this.mediaQuery ? { mediaQuery: this.mediaQuery } : {})
     });
   }
 }
