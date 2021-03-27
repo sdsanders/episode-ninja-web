@@ -128,8 +128,10 @@
 
         <app-podcast-banner
           class="mt-1 mb-3"
-          *ngIf="(index + 1) % 6 === 0"
+          *ngIf="index === 5"
         ></app-podcast-banner>
+
+        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6" class="mb-3"></app-ad>
 
         <div class="text-center">
           <button
