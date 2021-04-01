@@ -1,11 +1,14 @@
 <div [class.sidebar]="sidebar" class="featured">
   <app-ad id="sidebar-1" [sizes]="[['300','600']]" *ngIf="sidebar" class="mb-3"></app-ad>
 
-  <h3 *ngIf="shows && shows.length">Similar Shows</h3>
-  <div *ngIf="shows && shows.length" class="row no-gutters mb-3">
-    <app-show-card *ngFor="let show of shows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
-    <app-ad id="sidebar-2"></app-ad>
-  </div>
+  <ng-container *ngIf="shows && shows.length">
+    <h3>Similar Shows</h3>
+    <div class="row no-gutters mb-3">
+      <app-show-card *ngFor="let show of shows" [show]="show" class="col-sm-6 col-lg-4"></app-show-card>
+    </div>
+
+    <app-ad id="sidebar-2" class="mb-3"></app-ad>
+  </ng-container>
 
   <h3>Trending Shows</h3>
   <div class="row no-gutters mb-3">
