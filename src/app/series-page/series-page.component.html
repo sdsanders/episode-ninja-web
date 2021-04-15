@@ -61,7 +61,8 @@
         </div>
       </div>
 
-      <app-ad id="content-1" class="mb-3"></app-ad>
+      <app-ad id="content-1-mobile" [sizes]="[['300','250']]" mediaQuery="(min-width: 320px) and (max-width: 767px)" class="mobile-ad"></app-ad>
+      <app-ad id="content-1" mediaQuery="(min-width: 768px)"></app-ad>
 
       <p class="series-description">{{series.overview}}</p>
 
@@ -131,7 +132,8 @@
           *ngIf="index === 5"
         ></app-podcast-banner>
 
-        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6" class="mb-3"></app-ad>
+        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6 + '-mobile'" [sizes]="[['300','250']]" mediaQuery="(min-width: 320px) and (max-width: 767px)" class="mobile-ad"></app-ad>
+        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6" mediaQuery="(min-width: 768px)"></app-ad>
 
         <div class="text-center">
           <button

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  min-width: 50px;
+
+  > div {
+    padding: 1rem 0;
+
+    &:empty {
+      padding: 0;
+    }
+  }
+}

@@ -75,6 +75,10 @@
   line-height: 25px;
 }
 
+.mobile-ad {
+  min-height: 0;
+}
+
 @media (max-width: 544px) {
   .series-name {
     font-size: 1.5rem;
@@ -118,6 +122,10 @@
 @media (min-width: 768px) {
   .series-background {
     height: 50vh;
+  }
+
+  .mobile-ad {
+    min-height: 0;
   }
 }
 
