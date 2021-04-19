@@ -70,7 +70,7 @@
         <div class="card mt-1 mb-3">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-6 col-lg-5">
-              <img class="img-fluid w-100" [src]="episodeImage(episode)" [alt]="episode.episodeName" (error)="episode.filename = series.fanart" loading="lazy">
+              <img class="img-fluid w-100" [src]="episodeImage(episode)" [alt]="episode.episodeName" (error)="episode.filename = series.fanart" loading="lazy" width="640" height="360">
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
@@ -150,7 +150,7 @@
         <div class="card mt-1 mb-3">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-6 col-lg-5">
-              <img class="img-fluid w-100" [src]="seasonImage(season)" [alt]="season.title" *ngIf="season.id">
+              <img class="img-fluid w-100" [src]="seasonImage(season)" [alt]="season.title" *ngIf="season.id" width="400" height="578">
             </div>
 
             <div class="col-sm-12 col-md-6 col-lg-7 h-100 py-3 px-4 px-sm-4">
