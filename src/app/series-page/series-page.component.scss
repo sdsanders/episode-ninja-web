@@ -76,7 +76,7 @@
 }
 
 .mobile-ad {
-  min-height: 0;
+  min-height: 282px;
 }
 
 @media (max-width: 544px) {
@@ -122,10 +122,6 @@
 @media (min-width: 768px) {
   .series-background {
     height: 50vh;
-  }
-
-  .mobile-ad {
-    min-height: 0;
   }
 }
 
