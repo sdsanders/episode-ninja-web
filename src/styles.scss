@@ -129,7 +129,6 @@ app-search {
   min-height: 100%;
   min-width: 100%;
   background-color: #fff;
-  position: relative;
   top: 0;
   bottom: 100%;
   left: 0;
@@ -229,4 +228,8 @@ star-rating div:focus {
   max-width: 175px;
   padding: 5px 15px;
   text-align: center;
+}
+
+.ac-lre-wrapper.luminous-theme .ac-player-wrapper.ac-floated-player {
+  z-index: 9999999 !important;
 }
