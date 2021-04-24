@@ -1,5 +1,5 @@
 <div [class.sidebar]="sidebar" class="featured">
-  <app-ad id="desktop-video" format="video-ac" mediaQuery="(min-width: 768px)"></app-ad>
+  <app-ad id="desktop-video" format="video-ac" mediaQuery="(min-width: 768px)" *ngIf="sidebar"></app-ad>
 
   <ng-container *ngIf="shows && shows.length">
     <h3>Similar Shows</h3>
