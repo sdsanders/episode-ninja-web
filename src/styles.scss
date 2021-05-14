@@ -233,3 +233,9 @@ star-rating div:focus {
 .ac-lre-wrapper.luminous-theme .ac-player-wrapper.ac-floated-player {
   z-index: 9999999 !important;
 }
+
+@media screen and (max-width: 480px) {
+  .ac-lre-wrapper.luminous-theme .ac-player-wrapper.ac-floated-player {
+    bottom: 50px !important;
+  }
+}
