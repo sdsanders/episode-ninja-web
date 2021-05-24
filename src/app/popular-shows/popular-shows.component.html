@@ -1,5 +1,6 @@
 <div [class.sidebar]="sidebar" class="featured">
   <app-ad id="desktop-video" format="video-ac" *ngIf="sidebar"></app-ad>
+  <app-fallback></app-fallback>
 
   <ng-container *ngIf="shows && shows.length">
     <h3>Similar Shows</h3>
