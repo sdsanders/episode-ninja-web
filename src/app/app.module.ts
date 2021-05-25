@@ -35,6 +35,7 @@ import { PodcastPageComponent } from './podcast-page/podcast-page.component';
 import { PodcastBannerComponent } from './podcast-banner/podcast-banner.component';
 import { EpisodeListPageComponent } from './episode-list-page/episode-list-page.component';
 import { SeriesListPageComponent } from './series-list-page/series-list-page.component';
+import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
 
 export function networkPageMatcher(url: UrlSegment[]) {
   if (url.length !== 1) {
@@ -88,6 +89,7 @@ const appRoutes: Routes = [
   { path: 'best-tv-series-finales', component: EpisodeListPageComponent },
   { matcher: networkPageMatcher, component: SeriesListPageComponent },
   { matcher: showYearMatcher, component: SeriesListPageComponent },
+  { path: 'advertise', component: AdvertisePageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -122,7 +124,8 @@ export function ninjaServiceFactory(http, router, authService) {
     PodcastPageComponent,
     PodcastBannerComponent,
     EpisodeListPageComponent,
-    SeriesListPageComponent
+    SeriesListPageComponent,
+    AdvertisePageComponent
   ],
   entryComponents: [
     SignupPromptComponent

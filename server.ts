@@ -45,6 +45,7 @@ function generateSitemap() {
   newSitemap.add({url: '/about'});
   newSitemap.add({url: '/podcast'});
   newSitemap.add({url: '/best-tv-series-finales'});
+  newSitemap.add({url: '/advertise'});
 
   for (let year = 1960; year <= new Date().getFullYear(); year++) {
     newSitemap.add({url: `best-shows-of-${year}`});
