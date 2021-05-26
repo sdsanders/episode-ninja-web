@@ -32,20 +32,11 @@
                 </span>
               </div>
               <div class="d-flex watch-link-wrapper">
-                <a [href]="episode.hulu" *ngIf="episode.hulu" target="_blank" rel="noopener" class="col watch-link btn-hulu">
-                  Watch on Hulu
-                </a>
                 <a [href]="episode.watchLinks[0]?.amazon" *ngIf="episode.watchLinks && episode.watchLinks[0]?.amazon" target="_blank" rel="noopener" class="col watch-link btn-amazon">
                   Watch on Amazon
                 </a>
                 <a [href]="episode.itunes" *ngIf="episode.itunes" target="_blank" rel="noopener" class="col watch-link btn-itunes">
                   Buy on iTunes
-                </a>
-                <a [href]="episode.vudu" *ngIf="episode.vudu" target="_blank" rel="noopener" class="col watch-link btn-vudu">
-                  Buy on Vudu
-                </a>
-                <a [href]="episode.cbs" *ngIf="episode.cbs" target="_blank" rel="noopener" class="col watch-link btn-cbs">
-                  Watch on CBS
                 </a>
               </div>
             </div>
