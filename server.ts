@@ -17,7 +17,7 @@ import * as apicache from 'apicache';
 enableProdMode();
 
 // Express server
-const app = express();
+const server = express();
 
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
@@ -94,7 +94,7 @@ function generateSitemap() {
 
 generateSitemap();
 
-app.engine('html', (_, options, callback) => {
+server.engine('html', (_, options, callback) => {
   renderModuleFactory(AppServerModuleNgFactory, {
     // Our index.html
     document: template,
@@ -115,10 +115,10 @@ app.engine('html', (_, options, callback) => {
   });
 });
 
-app.set('view engine', 'html');
-app.set('views', join(DIST_FOLDER, 'browser'));
+server.set('view engine', 'html');
+server.set('views', join(DIST_FOLDER, 'browser'));
 
-app.get('/sitemap.xml', function(req, res) {
+server.get('/sitemap.xml', function(req, res) {
   sitemap.toXML((err, xml) => {
     if (err) {
       return res.status(500).end();
@@ -128,26 +128,26 @@ app.get('/sitemap.xml', function(req, res) {
   });
 });
 
-app.post('/clear-cache', (req, res) => {
+server.post('/clear-cache', (req, res) => {
   generateSitemap();
   res.json(apicache.clear());
 });
 
-app.post('/clear-cache/:slug?', (req, res) => {
+server.post('/clear-cache/:slug?', (req, res) => {
   res.json(apicache.clear(`/series/${req.params.slug}`));
 });
 
 // Redirect to nitropay ads.txt file
-app.get('/ads.txt', (req, res) => {
+server.get('/ads.txt', (req, res) => {
   res.redirect(301, "https://api.nitropay.com/v1/ads-729.txt");
 });
 
 
 // Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
+server.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
 
 // All regular routes use the Universal engine
-app.get('*', cache(cacheDuration), (req, res) => {
+server.get('*', cache(cacheDuration), (req, res) => {
     // If this is a series and the slug has changed
   // 301 redirect to the new slug
   let matchFound = false;
@@ -174,6 +174,10 @@ app.get('*', cache(cacheDuration), (req, res) => {
 });
 
 // Start up the Node server
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);
 });
+
+export function app() {
+  return server;
+}
