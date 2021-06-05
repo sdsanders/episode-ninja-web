@@ -234,6 +234,10 @@ star-rating div:focus {
   z-index: 9999999 !important;
 }
 
+.jw-widget-iframe {
+  margin-left: -15px;
+}
+
 @media screen and (max-width: 480px) {
   .ac-lre-wrapper.luminous-theme .ac-player-wrapper.ac-floated-player {
     bottom: 50px !important;

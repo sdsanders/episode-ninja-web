@@ -36,6 +36,7 @@ import { PodcastBannerComponent } from './podcast-banner/podcast-banner.componen
 import { EpisodeListPageComponent } from './episode-list-page/episode-list-page.component';
 import { SeriesListPageComponent } from './series-list-page/series-list-page.component';
 import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
+import { JustWatchComponent } from './just-watch/just-watch.component';
 
 export function networkPageMatcher(url: UrlSegment[]) {
   if (url.length !== 1) {
@@ -125,7 +126,8 @@ export function ninjaServiceFactory(http, router, authService) {
     PodcastBannerComponent,
     EpisodeListPageComponent,
     SeriesListPageComponent,
-    AdvertisePageComponent
+    AdvertisePageComponent,
+    JustWatchComponent
   ],
   entryComponents: [
     SignupPromptComponent

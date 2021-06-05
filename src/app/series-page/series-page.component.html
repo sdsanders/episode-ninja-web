@@ -66,20 +66,7 @@
 
       <p class="series-description">{{series.overview}}</p>
 
-      <ng-container *ngIf="series.imdbId">
-        <div
-          data-jw-widget
-          data-api-key="wPSjTkvaArVAFxgOn8nCVxBpDLZBjUCM"
-          data-object-type="show"
-          [attr.data-id]="series.imdbId"
-          data-id-type="imdb"
-          data-theme="light"
-        ></div>
-        <a style="font-size: 11px; font-family: sans-serif; color: black; text-decoration: none;" target="_blank" data-original="https://www.justwatch.com" href="https://www.justwatch.com">
-          Powered by
-          <span style="display: -moz-inline-box; display: inline-block; width: 66px; height: 10px; margin-left: 3px; background: url(https://widget.justwatch.com/assets/JW_logo_black_10px.svg); overflow: hidden; text-indent: -3000px;">JustWatch</span>
-        </a>
-      </ng-container>
+      <app-just-watch *ngIf="series.imdbId" [imdbId]="series.imdbId" class="card p-3 mb-3"></app-just-watch>
 
 
       <ng-template ngFor let-index="index" let-episode [ngForOf]="series.episodes">
