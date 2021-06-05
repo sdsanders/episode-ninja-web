@@ -31,7 +31,6 @@ $container-max-widths: (
 @import "../node_modules/bootstrap/scss/_utilities.scss";
 @import "../node_modules/bootstrap/scss/_modal.scss";
 @import "../node_modules/bootstrap/scss/_alert.scss";
-@import "~css-star-rating/css/star-rating.min.css";
 
 .bg-inverse {
   background: #1D1D1D !important;
@@ -194,11 +193,6 @@ app-search {
 .form-control {
   border-radius: 0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.18);
-}
-
-star-rating:focus,
-star-rating div:focus {
-  outline: none;
 }
 
 .modal {

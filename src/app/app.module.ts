@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
-import { StarRatingModule } from 'angular-star-rating';
 import { SimpleModalModule } from 'ngx-simple-modal';
 
 import { AppComponent } from './app.component';
@@ -139,7 +138,6 @@ export function ninjaServiceFactory(http, router, authService) {
     RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    StarRatingModule.forRoot(),
     SimpleModalModule,
     TransferHttpCacheModule,
   ],
