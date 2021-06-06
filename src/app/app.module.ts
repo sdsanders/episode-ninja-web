@@ -135,7 +135,7 @@ export function ninjaServiceFactory(http, router, authService) {
     BrowserModule.withServerTransition({appId: 'episode-ninja-web'}),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled', initialNavigation: 'enabled' }),
+    RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled', initialNavigation: 'enabled', relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     SimpleModalModule,
