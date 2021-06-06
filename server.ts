@@ -4,7 +4,7 @@ import 'reflect-metadata';
 
 import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-const { REQUEST, RESPONSE } = require('@nguniversal/express-engine/tokens');
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 
 import * as express from 'express';
 import { join } from 'path';
