@@ -115,7 +115,7 @@ export class SeriesPageComponent implements OnInit {
     event.preventDefault();
   }
 
-  onRatingChange({ rating }, episode) {
+  onRatingChange(rating, episode) {
     this.authService.isAuthenticated().subscribe((loggedIn: boolean) => {
       if (loggedIn) {
         this.ninjaService.vote(this.series.id, episode.id, rating * 2)

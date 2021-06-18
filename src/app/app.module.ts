@@ -36,6 +36,7 @@ import { EpisodeListPageComponent } from './episode-list-page/episode-list-page.
 import { SeriesListPageComponent } from './series-list-page/series-list-page.component';
 import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
 import { JustWatchComponent } from './just-watch/just-watch.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function networkPageMatcher(url: UrlSegment[]) {
   if (url.length !== 1) {
@@ -140,6 +141,7 @@ export function ninjaServiceFactory(http, router, authService) {
     ReactiveFormsModule,
     SimpleModalModule,
     TransferHttpCacheModule,
+    NgbModule,
   ],
   providers: [
     {

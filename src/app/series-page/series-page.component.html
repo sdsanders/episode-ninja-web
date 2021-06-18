@@ -112,6 +112,8 @@
           </div>
           <div class="card-footer">
             <span class="rating-header">Rate This Episode:</span>
+            <ngb-rating class="float-right" [rate]="episode.ratings?.length ? episode.ratings[0]?.rating : 0" (rateChange)="onRatingChange($event, episode)">
+            </ngb-rating>
           </div>
         </div>
 
