@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Meta, Title, DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import { first } from 'rxjs/operators';
 
 import { NinjaService } from '../ninja.service';
 
@@ -24,11 +25,15 @@ export class PodcastPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.route.params
+    .pipe(first())
+    .subscribe(params => {
       const slug = params['slug'];
 
       if (slug) {
-        this.ninjaService.getPodcastEpisode(slug).subscribe(episode => {
+        this.ninjaService.getPodcastEpisode(slug)
+        .pipe(first())
+        .subscribe(episode => {
           this.title.setTitle(`${episode.title} | The Episode Ninja Podcast`);
           this.meta.addTag({
             name: 'description',
@@ -43,7 +48,9 @@ export class PodcastPageComponent implements OnInit {
 
       this.title.setTitle('The Episode Ninja Podcast | Episode Ninja');
 
-      this.ninjaService.getPodcast().subscribe(podcast => {
+      this.ninjaService.getPodcast()
+      .pipe(first())
+      .subscribe(podcast => {
         this.meta.addTag({
           name: 'description',
           content: podcast.description

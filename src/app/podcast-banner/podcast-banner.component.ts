@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { first } from 'rxjs/operators';
 
 import { NinjaService } from '../ninja.service';
 
@@ -13,7 +14,9 @@ export class PodcastBannerComponent implements OnInit {
   constructor(private ninjaService: NinjaService) {}
 
   ngOnInit() {
-    this.ninjaService.getPodcast().subscribe(podcast => {
+    this.ninjaService.getPodcast()
+    .pipe(first())
+    .subscribe(podcast => {
       this.episode = podcast.items[0];
     });
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 import { NinjaService } from '../ninja.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class ShowsPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.ninjaService.getAllShows().subscribe((shows: any) => {
+    this.ninjaService.getAllShows()
+    .pipe(first())
+    .subscribe((shows: any) => {
       this.shows = shows;
     });
   }

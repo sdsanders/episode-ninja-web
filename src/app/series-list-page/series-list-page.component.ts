@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
+import { first } from 'rxjs/operators';
 
 import { NinjaService } from '../ninja.service';
 
@@ -22,7 +23,9 @@ export class SeriesListPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(paramMap => {
+    this.route.paramMap
+    .pipe(first())
+    .subscribe(paramMap => {
       const slug = paramMap.get('slug');
       const year = paramMap.get('year');
 
@@ -38,7 +41,9 @@ export class SeriesListPageComponent implements OnInit {
   }
 
   getNetworkShows(slug: string): void {
-    this.ninjaService.getNetworkShows(slug).subscribe(({ network, shows }) => {
+    this.ninjaService.getNetworkShows(slug)
+    .pipe(first())
+    .subscribe(({ network, shows }) => {
       this.network = network;
       this.shows = shows;
 
@@ -53,7 +58,9 @@ export class SeriesListPageComponent implements OnInit {
   }
 
   getYearShows(year: string): void {
-    this.ninjaService.getYearShows(year).subscribe(shows => {
+    this.ninjaService.getYearShows(year)
+    .pipe(first())
+    .subscribe(shows => {
       this.shows = shows;
 
       this.title.setTitle(`The Best Shows of ${year} | Episode Ninja`);

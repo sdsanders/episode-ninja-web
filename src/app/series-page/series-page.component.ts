@@ -6,6 +6,7 @@ import { AuthService } from '../auth.service';
 import { SignupPromptComponent } from '../signup-prompt/signup-prompt.component';
 
 import { SimpleModalService } from 'ngx-simple-modal';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-series-page',
@@ -29,7 +30,9 @@ export class SeriesPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.route.params
+    .pipe(first())
+    .subscribe(params => {
       const slug = params['slug'];
 
       this.worst = this.router.url.includes('worst-episodes');
@@ -41,7 +44,9 @@ export class SeriesPageComponent implements OnInit {
   getSeries(slug: string, worst: boolean, seasons: boolean, offset = 0) {
     const request = seasons ? this.ninjaService.getSeasons(slug) : this.ninjaService.getSeries(slug, worst, offset);
 
-    request.subscribe(series => {
+    request
+    .pipe(first())
+    .subscribe(series => {
       if (offset === 0) {
         this.series = series;
         this.setMeta(this.series, worst, seasons);
@@ -116,9 +121,12 @@ export class SeriesPageComponent implements OnInit {
   }
 
   onRatingChange(rating, episode) {
-    this.authService.isAuthenticated().subscribe((loggedIn: boolean) => {
+    this.authService.isAuthenticated()
+    .pipe(first())
+    .subscribe((loggedIn: boolean) => {
       if (loggedIn) {
         this.ninjaService.vote(this.series.id, episode.id, rating * 2)
+        .pipe(first())
         .subscribe(({ rating: newRating, ratingCount }) => {
           episode.rating = newRating;
           episode.ratingCount = ratingCount;
