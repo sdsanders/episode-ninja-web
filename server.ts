@@ -23,7 +23,7 @@ const cache = apicache.options({
     include: [200]
   }
 }).middleware;
-const cacheDuration = '14 days';
+const cacheDuration = '1 hour';
 let sitemap;
 
 // Faster server renders w/ Prod mode (dev mode never needed)
