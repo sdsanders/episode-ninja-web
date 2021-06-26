@@ -18,7 +18,11 @@ import { createSitemap } from 'sitemap';
 import * as rp from 'request-promise-native';
 import * as apicache from 'apicache';
 
-const cache = apicache.middleware;
+const cache = apicache.options({
+  statusCodes: {
+    include: [200]
+  }
+}).middleware;
 const cacheDuration = '14 days';
 let sitemap;
 
