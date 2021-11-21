@@ -117,13 +117,8 @@
           </div>
         </div>
 
-        <app-podcast-banner
-          class="mt-1 mb-3"
-          *ngIf="index === 5"
-        ></app-podcast-banner>
-
-        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6 + '-mobile'" [sizes]="[['300','250']]" mediaQuery="(min-width: 320px) and (max-width: 767px)" class="mobile-ad hidden-sm-up"></app-ad>
-        <app-ad *ngIf="index !== 5 && (index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6" mediaQuery="(min-width: 768px)" class="hidden-sm-down"></app-ad>
+        <app-ad *ngIf="(index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6 + '-mobile'" [sizes]="[['300','250']]" mediaQuery="(min-width: 320px) and (max-width: 767px)" class="mobile-ad hidden-sm-up"></app-ad>
+        <app-ad *ngIf="(index + 1) % 6 === 0" [id]="'content-' + (index + 1) / 6" mediaQuery="(min-width: 768px)" class="hidden-sm-down"></app-ad>
 
         <div class="text-center">
           <button
