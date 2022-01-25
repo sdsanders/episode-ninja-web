@@ -120,7 +120,17 @@
         <app-ad *ngIf="(index + 1) % 6 === 0" [id]="'content-' + (index + 2) / 6 + '-mobile'" [sizes]="[['300','250']]" mediaQuery="(min-width: 320px) and (max-width: 767px)" class="mobile-ad hidden-sm-up"></app-ad>
         <app-ad *ngIf="(index + 1) % 6 === 0" [id]="'content-' + (index + 2) / 6" mediaQuery="(min-width: 768px)" class="hidden-sm-down"></app-ad>
 
-        <div class="text-center">
+        <div class="card p-3 my-5 text-center mx-auto" *ngIf="index === series.episodes.length - 1 && index < series.totalEpisodes - 1">
+          <div class="h3 mb-3">
+            Want to see where all <span class="h2">{{series.totalEpisodes}}</span> episodes of {{series.seriesName}} rank?
+          </div>
+          <a href="/pro" class="btn btn-primary d-inline mb-2">
+            Join Episode Ninja Pro
+          </a>
+          <div>$5 monthly/$50 annually</div>
+        </div>
+
+        <!-- <div class="text-center">
           <button
             *ngIf="index === series.episodes.length - 1 && index < series.totalEpisodes - 1"
             class="btn btn-success mt-4 mb-5"
@@ -128,7 +138,7 @@
           >
             Load More Episodes
           </button>
-        </div>
+        </div> -->
       </ng-template>
 
       <ng-template ngFor let-index="index" let-season [ngForOf]="series.seasons">

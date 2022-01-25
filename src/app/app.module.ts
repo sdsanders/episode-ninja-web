@@ -37,6 +37,7 @@ import { SeriesListPageComponent } from './series-list-page/series-list-page.com
 import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
 import { JustWatchComponent } from './just-watch/just-watch.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProPageComponent } from './pro-page/pro-page.component';
 
 export function networkPageMatcher(url: UrlSegment[]) {
   if (url.length !== 1) {
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
   { matcher: networkPageMatcher, component: SeriesListPageComponent },
   { matcher: showYearMatcher, component: SeriesListPageComponent },
   { path: 'advertise', component: AdvertisePageComponent },
+  { path: 'pro', component: ProPageComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
